@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="upopark.list">
+      <field name="name">upopark list</field>
+      <field name="model">upopark.upopark</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="upopark.action_window">
+      <field name="name">upopark window</field>
+      <field name="res_model">upopark.upopark</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="upopark.action_server">
+      <field name="name">upopark server</field>
+      <field name="model_id" ref="model_upopark_upopark"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="upopark" id="upopark.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="upopark.menu_1" parent="upopark.menu_root"/>
+    <menuitem name="Menu 2" id="upopark.menu_2" parent="upopark.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="upopark.menu_1_list" parent="upopark.menu_1"
+              action="upopark.action_window"/>
+    <menuitem name="Server to list" id="upopark" parent="upopark.menu_2"
+              action="upopark.action_server"/>
+-->
+  </data>
+</odoo>
