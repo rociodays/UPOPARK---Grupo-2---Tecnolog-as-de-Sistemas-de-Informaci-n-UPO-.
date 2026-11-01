@@ -9,7 +9,6 @@ class HistorialReserva(models.Model):
     name = fields.Many2one()
 
     cNota = fields.Text(string='Nota', help='Observaciones sobre el motivo del cambio de estado.')
-    
     fFechaCambio = fields.Datetime('Fecha de Cambio', required=True, autodate = True, help="Dame la fecha de cambio de la reserva.")
     
     cEstadoNuevo = fields.Many2one()

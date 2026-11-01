@@ -7,6 +7,7 @@ class TipoVehiculo(models.Model):
     _name = 'upopark.tipo_vehiculo'
     _description = 'Tipo de Vehiculo'
 
+    #atributos simples
     name = fields.Selection(
         [('coche', 'Coche'),
             ('moto', 'Moto'),
@@ -14,3 +15,6 @@ class TipoVehiculo(models.Model):
             ('camion', 'Camion'),
             ('autobus', 'Autobus')], string='Tipo de Vehiculo', required=True)
     cDescripcion = fields.Text(string='Descripcion')
+
+    #atributos complejos
+    vehiculo_ids = fields.One2many('upopark.vehiculo','tipo_vehiculo_id','Vehiculos Registrados')
