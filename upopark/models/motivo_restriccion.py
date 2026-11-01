@@ -7,6 +7,7 @@ class MotivoRestriccion(models.Model):
     _name = 'upopark.motivo_restriccion'
     _description = 'Motivo de Restriccion'
 
+    #atributos simples
     name = fields.Selection(
         [('impago', 'Impago'),
             ('sancion', 'Sancion'),
@@ -14,3 +15,6 @@ class MotivoRestriccion(models.Model):
             ('mantenimiento', 'Mantenimiento'),
             ('otro', 'Otro motivo')], string='Motivo de Restriccion', required=True)
     cDescripcion = fields.Text(string='Descripcion')
+
+    #atributos complejos
+    restriccion_ids = fields.One2many('upopark.restriccion_acceso','motivo_restriccion_id','Restricciones Aplicadas')

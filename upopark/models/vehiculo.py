@@ -16,3 +16,5 @@ class Vehiculo(models.Model):
      #atributos complejos
      color_vehiculo_id = fields.Many2one('upopark.color_vehiculo',string='Color', help="Dame el color del vehiculo.")
      tipo_vehiculo_id = fields.Many2one('upopark.tipo_vehiculo',string='Tipo de Vehículo',required=True, help="Dame el tipo de vehiculo.")
+
+     restriccion_ids = fields.One2many('upopark.restriccion_acceso','vehiculo_id','Historial de Restricciones')
