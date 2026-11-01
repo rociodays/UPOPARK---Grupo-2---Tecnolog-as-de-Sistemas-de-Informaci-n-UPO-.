@@ -6,6 +6,7 @@ class EstadoReserva(models.Model):
     _name = 'upopark.estado_reserva'
     _description = 'Estados de Reserva'
 
+    #atributos simples    
     name = fields.Selection(
             [('borrador', 'Borrador'),
             ('confirmada', 'Confirmada'),
@@ -14,3 +15,6 @@ class EstadoReserva(models.Model):
             ('cancelada', 'Cancelada')], string='Estado Reserva', required=True)
     
     cDescripcion = fields.Text(string='Descripcion')
+
+    #atributos complejos
+    reserva_ids = fields.One2many('upopark.reserva','estado_reserva_id','Reservas en este Estado')

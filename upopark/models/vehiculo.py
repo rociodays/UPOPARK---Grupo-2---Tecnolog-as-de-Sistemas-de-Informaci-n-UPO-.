@@ -18,3 +18,4 @@ class Vehiculo(models.Model):
      tipo_vehiculo_id = fields.Many2one('upopark.tipo_vehiculo',string='Tipo de Vehículo',required=True, help="Dame el tipo de vehiculo.")
 
      restriccion_ids = fields.One2many('upopark.restriccion_acceso','vehiculo_id','Historial de Restricciones')
+     reserva_ids = fields.One2many('upopark.reserva','vehiculo_id','Historial de Reservas')
