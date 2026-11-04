@@ -1,0 +1,35 @@
+<odoo>
+  <data><record id="view_entidad_bancaria_list" model="ir.ui.view">
+      <field name="name">upopark.entidad_bancaria.list</field>
+      <field name="model">upopark.entidad_bancaria</field>
+      <field name="arch" type="xml">
+        <list string="Entidades Bancarias">
+          <field name="scodigo"/>
+          <field name="snombre"/>
+          <field name="sbic"/>
+        </list>
+      </field>
+    </record>
+    <record id="view_entidad_bancaria_form" model="ir.ui.view">
+      <field name="name">upopark.entidad_bancaria.form</field>
+      <field name="model">upopark.entidad_bancaria</field>
+      <field name="arch" type="xml">
+        <form string="Entidad Bancaria">
+          <sheet>
+            <group>
+              <field name="scodigo"/>
+              <field name="snombre"/>
+              <field name="sbic"/>
+              <field name="metodo_pago_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <record id="action_entidad_bancaria" model="ir.actions.act_window">
+      <field name="name">Entidades Bancarias</field>
+      <field name="res_model">upopark.entidad_bancaria</field>
+      <field name="view_mode">list,form</field>
+    </record>
+    </data>
+</odoo>

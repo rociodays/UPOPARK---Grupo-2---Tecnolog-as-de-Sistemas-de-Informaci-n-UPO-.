@@ -1,0 +1,42 @@
+<odoo>
+  <data><record id="view_descuento_asignado_list" model="ir.ui.view">
+      <field name="name">upopark.descuento_asignado.list</field>
+      <field name="model">upopark.descuento_asignado</field>
+      <field name="arch" type="xml">
+        <list string="Descuentos Asignados">
+          <field name="scod_tipo_des"/>
+          <field name="stipodocco"/>
+          <field name="snum_doc_co"/>
+          <field name="dfechainicio"/>
+          <field name="dfechafin"/>
+          <field name="bactivo"/>
+          <field name="tipo_descuento_id"/>
+        </list>
+      </field>
+    </record>
+    <record id="view_descuento_asignado_form" model="ir.ui.view">
+      <field name="name">upopark.descuento_asignado.form</field>
+      <field name="model">upopark.descuento_asignado</field>
+      <field name="arch" type="xml">
+        <form string="Descuento Asignado">
+          <header><button name="btn_activar" string="Activar" type="object" class="oe_highlight" invisible="bactivo"/><button name="btn_desactivar" string="Desactivar" type="object" invisible="not bactivo"/></header><sheet>
+            <group>
+              <field name="scod_tipo_des"/>
+              <field name="stipodocco"/>
+              <field name="snum_doc_co"/>
+              <field name="dfechainicio"/>
+              <field name="dfechafin"/>
+              <field name="bactivo"/>
+              <field name="tipo_descuento_id"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <record id="action_descuento_asignado" model="ir.actions.act_window">
+      <field name="name">Descuentos Asignados</field>
+      <field name="res_model">upopark.descuento_asignado</field>
+      <field name="view_mode">list,form</field>
+    </record>
+    </data>
+</odoo>

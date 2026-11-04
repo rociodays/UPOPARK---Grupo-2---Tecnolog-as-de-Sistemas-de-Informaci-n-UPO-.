@@ -1,0 +1,32 @@
+<odoo>
+  <data><record id="view_festivo_list" model="ir.ui.view">
+      <field name="name">upopark.festivo.list</field>
+      <field name="model">upopark.festivo</field>
+      <field name="arch" type="xml">
+        <list string="Festivos">
+          <field name="snombre"/>
+          <field name="dfecha"/>
+        </list>
+      </field>
+    </record>
+    <record id="view_festivo_form" model="ir.ui.view">
+      <field name="name">upopark.festivo.form</field>
+      <field name="model">upopark.festivo</field>
+      <field name="arch" type="xml">
+        <form string="Festivo">
+          <sheet>
+            <group>
+              <field name="snombre"/>
+              <field name="dfecha"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <record id="action_festivo" model="ir.actions.act_window">
+      <field name="name">Festivos</field>
+      <field name="res_model">upopark.festivo</field>
+      <field name="view_mode">list,form</field>
+    </record>
+    </data>
+</odoo>

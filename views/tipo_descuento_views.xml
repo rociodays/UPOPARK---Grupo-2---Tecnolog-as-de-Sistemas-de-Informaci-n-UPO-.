@@ -1,0 +1,35 @@
+<odoo>
+  <data><record id="view_tipo_descuento_list" model="ir.ui.view">
+      <field name="name">upopark.tipo_descuento.list</field>
+      <field name="model">upopark.tipo_descuento</field>
+      <field name="arch" type="xml">
+        <list string="Tipos de Descuento">
+          <field name="scodigo"/>
+          <field name="snombre"/>
+          <field name="fporcentaje"/>
+        </list>
+      </field>
+    </record>
+    <record id="view_tipo_descuento_form" model="ir.ui.view">
+      <field name="name">upopark.tipo_descuento.form</field>
+      <field name="model">upopark.tipo_descuento</field>
+      <field name="arch" type="xml">
+        <form string="Tipo de Descuento">
+          <sheet>
+            <group>
+              <field name="scodigo"/>
+              <field name="snombre"/>
+              <field name="fporcentaje"/>
+              <field name="descuento_asignado_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <record id="action_tipo_descuento" model="ir.actions.act_window">
+      <field name="name">Tipos de Descuento</field>
+      <field name="res_model">upopark.tipo_descuento</field>
+      <field name="view_mode">list,form</field>
+    </record>
+    </data>
+</odoo>
