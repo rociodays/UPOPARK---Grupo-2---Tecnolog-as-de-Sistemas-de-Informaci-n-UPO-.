@@ -15,3 +15,8 @@ class PoliticaReserva(models.Model):
 
     #atributos complejos
     reserva_ids = fields.One2many('upopark.reserva','politica_reserva_id','Reservas Vinculadas')
+
+    #sql constraints
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'El codigo de la politica ya esta registrado.'),
+    ]

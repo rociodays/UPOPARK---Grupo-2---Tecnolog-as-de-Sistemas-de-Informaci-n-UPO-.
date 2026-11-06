@@ -19,3 +19,8 @@ class Reserva(models.Model):
     
     historial_ids = fields.One2many('upopark.historial_reserva','reserva_id','Historial de Cambios')
     cancelacion_ids = fields.One2many('upopark.cancelacion_reserva','reserva_id','Registros de Cancelación')
+
+    #sql constraints
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'La referencia de la reserva ya esta registrada.')
+    ]
