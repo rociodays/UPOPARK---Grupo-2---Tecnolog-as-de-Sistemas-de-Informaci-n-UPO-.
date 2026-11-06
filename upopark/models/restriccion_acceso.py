@@ -11,6 +11,7 @@ class RestriccionAcceso(models.Model):
     name = fields.Char(string="Matricula", required=True, help="Dame la matrícula del vehiculo.")
     fInicio = fields.Datetime('Inicio', required=True, autodate = True, help="Dame la fecha de inicio de la restriccion.")
     fFin = fields.Datetime('Fin', required=True, autodate = True, help="Dame la fecha de fin de la restriccion.")
+    bActivo = fields.Boolean('Activa',compute='_compute_bActivo')
 
     #atributos complejos
     vehiculo_id = fields.Many2one('upopark.vehiculo',string='Vehículo',required=True,help='Dame el vehículo al que se le aplica la restriccion.')
@@ -18,4 +19,15 @@ class RestriccionAcceso(models.Model):
 
     #sql constraints no tiene
 
-    
+    #metodo bActivo
+    @api.depends('fInicio', 'fFin')
+    def _compute_bActivo(self):
+        for record in self:
+            if record.fInicio and record.fFin:
+                current_time = fields.Datetime.now()
+                if record.fInicio <= current_time <= record.fFin:
+                    record.bActivo = True
+                else:
+                    record.bActivo = False
+            else:
+                record.bActivo = False
