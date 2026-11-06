@@ -18,3 +18,8 @@ class TipoVehiculo(models.Model):
 
     #atributos complejos
     vehiculo_ids = fields.One2many('upopark.vehiculo','tipo_vehiculo_id','Vehiculos Registrados')
+
+    #sql constraints
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'El tipo de vehículo ya está registrado.')
+    ]

@@ -19,3 +19,8 @@ class Vehiculo(models.Model):
 
      restriccion_ids = fields.One2many('upopark.restriccion_acceso','vehiculo_id','Historial de Restricciones')
      reserva_ids = fields.One2many('upopark.reserva','vehiculo_id','Historial de Reservas')
+
+     #sql constraints
+     _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'La matrícula del vehículo ya está registrada.')
+    ]

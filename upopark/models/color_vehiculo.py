@@ -21,3 +21,8 @@ class ColorVehiculo(models.Model):
 
     #atributos complejos
     vehiculo_ids = fields.One2many('upopark.vehiculo','color_vehiculo_id','Vehiculos Registrados')
+
+    #sql constraints
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'El color ya está registrado.')
+    ]
