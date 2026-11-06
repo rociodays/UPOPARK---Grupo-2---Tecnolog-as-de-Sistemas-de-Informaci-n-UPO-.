@@ -9,3 +9,8 @@ class CancelacionReserva(models.Model):
     #atributos simples
     fFechaCancelacion = fields.Datetime('Fecha de Cancelacion', required=True, autodate = True, help="Dame la fecha de cancelacion de la reserva.")
     cNota = fields.Text(string='Nota', help='Observaciones sobre el motivo del cambio de estado.')
+
+    #sql constraints
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Esta reserva ya ha sido cancelada.')
+    ]

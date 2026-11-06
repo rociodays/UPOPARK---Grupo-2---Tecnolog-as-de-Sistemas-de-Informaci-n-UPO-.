@@ -18,3 +18,8 @@ class EstadoReserva(models.Model):
 
     #atributos complejos
     reserva_ids = fields.One2many('upopark.reserva','estado_reserva_id','Reservas en este Estado')
+
+    #sql constraints
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'El estado de reserva ya esta registrado.')
+    ]
