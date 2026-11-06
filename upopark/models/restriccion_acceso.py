@@ -15,3 +15,7 @@ class RestriccionAcceso(models.Model):
     #atributos complejos
     vehiculo_id = fields.Many2one('upopark.vehiculo',string='Vehículo',required=True,help='Dame el vehículo al que se le aplica la restriccion.')
     motivo_restriccion_id = fields.Many2one('upopark.motivo_restriccion', string='Motivo de Restricción',required=True, help='Dame el motivo de la restriccion.')
+
+    #sql constraints no tiene
+
+    

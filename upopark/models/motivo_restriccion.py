@@ -18,3 +18,8 @@ class MotivoRestriccion(models.Model):
 
     #atributos complejos
     restriccion_ids = fields.One2many('upopark.restriccion_acceso','motivo_restriccion_id','Restricciones Aplicadas')
+
+    #sql constraints
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'El motivo de restriccion ya esta registrado.')
+    ]
