@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields
+from odoo.exceptions import ValidationError
 
 class HistorialReserva(models.Model):
     _name = 'upopark.historial_reserva'
@@ -16,3 +17,27 @@ class HistorialReserva(models.Model):
 
     #sql constraints no tiene
 
+    #validaciones
+    #fecha cambio
+    @api.onchange('fFechaCambio')
+    def _onchange_fecha_cambio(self):
+        resultado = {}
+        if self.fFechaCambio:
+            ahora = fields.Datetime.now()
+            if self.fFechaCambio > ahora:
+                self.fFechaCambio = ahora
+                resultado = {
+                    'warning': {
+                        'title': 'Fecha de historial invalida',
+                        'message': 'El registro historico no puede estar en el futuro.'
+                    }
+                }
+                return resultado
+
+    #estados
+    @api.constrains('estado_anterior_id', 'estado_nuevo_id')
+    def _check_cambio_estado_real(self):
+        for record in self:
+            if record.estado_anterior_id and record.estado_nuevo_id:
+                if record.estado_anterior_id.id == record.estado_nuevo_id.id:
+                    raise ValidationError('Operacion rechazada: El estado nuevo debe ser diferente al estado anterior.')
