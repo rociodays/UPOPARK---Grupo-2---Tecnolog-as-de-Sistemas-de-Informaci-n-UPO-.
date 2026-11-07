@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-
+from odoo.exceptions import ValidationError
 
 class Reserva(models.Model):
     _name = 'upopark.reserva'
@@ -24,3 +24,45 @@ class Reserva(models.Model):
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'La referencia de la reserva ya esta registrada.')
     ]
+
+    #validaciones
+    #referencia
+    @api.constrains('name')
+    def _check_formato_referencia(self):
+        for record in self:
+            if record.name:
+                # Exige el formato RES-YYYY-XXXX (ej. RES-2026-0015)
+                if not re.match(r'^RES-\d{4}-\d{3,6}$', record.name):
+                    raise ValidationError('La referencia debe seguir el formato RES-YYYY-XXXX (ej. RES-2026-001).')
+
+    #fecha inicio
+    @api.onchange('fInicio')
+    def _onchange_fecha_inicio_reserva(self):
+        resultado = {}
+        if self.fInicio:
+            ahora = fields.Datetime.now()
+            if self.fInicio < ahora:
+                self.fInicio = ahora
+                resultado = {
+                    'warning': {
+                        'title': 'Fecha invalida',
+                        'message': 'No puedes crear una reserva en el pasado.'
+                    }
+                }
+                return resultado
+
+    #rangos de fechas y duracion maxima
+    @api.constrains('fInicio', 'fFin', 'politica_reserva_id')
+    def _check_logica_fechas_y_politica(self):
+        for record in self:
+            if record.fInicio and record.fFin:
+                if record.fFin <= record.fInicio:
+                    raise ValidationError('La fecha de fin debe ser posterior a la de inicio.')
+                
+                if record.politica_reserva_id and record.politica_reserva_id.iDuracionMaxima:
+                    diferencia = record.fFin - record.fInicio
+                    if diferencia.days > record.politica_reserva_id.iDuracionMaxima:
+                        raise ValidationError(
+                            f'Operacion rechazada: La reserva de {diferencia.days} dias excede el limite de '
+                            f'{record.politica_reserva_id.iDuracionMaxima} dias establecido en su politica.'
+                        )
