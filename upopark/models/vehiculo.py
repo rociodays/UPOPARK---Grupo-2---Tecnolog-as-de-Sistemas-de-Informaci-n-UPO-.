@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-
+from odoo.exceptions import ValidationError
+import re
 
 class Vehiculo(models.Model):
      _name = 'upopark.vehiculo'
@@ -23,4 +24,28 @@ class Vehiculo(models.Model):
      #sql constraints
      _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'La matrícula del vehículo ya está registrada.')
-    ]
+     ]
+
+     #validaciones
+     #matricula formato
+     @api.constrains('name')
+     def _check_formato_matricula(self):
+        for record in self:
+            if record.name:
+                if not re.match(r'^[A-Z0-9]{4,10}$', record.name):
+                    raise ValidationError('El formato de la matricula es incorrecto.')
+
+    #numero de puertas rango
+     @api.onchange('iNumeroPuertas')
+     def _onchange_rango_puertas(self):
+        resultado = {}
+        if self.iNumeroPuertas and (self.iNumeroPuertas < 0 or self.iNumeroPuertas > 5):
+            resultado = {
+                'value': {'iNumeroPuertas': 5},
+                'warning': {
+                    'title': 'Rango de puertas excedido',
+                    'message': 'Un vehiculo estandar no puede tener menos de 0 ni mas de 5 puertas.'
+                }
+            }
+            return resultado
+
