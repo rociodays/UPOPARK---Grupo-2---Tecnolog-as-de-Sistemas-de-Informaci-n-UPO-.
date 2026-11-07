@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields
+from odoo.exceptions import ValidationError
 
 class PoliticaReserva(models.Model):
     _name = 'upopark.politica_reserva'
@@ -20,3 +21,39 @@ class PoliticaReserva(models.Model):
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'El codigo de la politica ya esta registrado.'),
     ]
+
+    #validaciones
+    #nombre longitud
+    @api.constrains('cNombre')
+    def _check_longitud_nombre(self):
+        for record in self:
+            if record.cNombre:
+                if len(record.cNombre) < 3 or len(record.cNombre) > 100:
+                    raise ValidationError('El nombre de la politica debe tener entre 3 y 100 caracteres.')
+
+    #rangos numeros
+    @api.onchange('iDuracionMaxima', 'iDiasAntelacion', 'iAntelacionCancel')
+    def _onchange_ajustar_valores_numericos(self):
+        resultado = {}
+        mensajes = []
+        
+        if self.iDuracionMaxima and self.iDuracionMaxima < 1:
+            self.iDuracionMaxima = 1
+            mensajes.append('La duracion maxima no pude ser negativa.')
+            
+        if self.iDiasAntelacion and self.iDiasAntelacion < 0:
+            self.iDiasAntelacion = 0
+            mensajes.append('Los dias de antelacion no pueden ser negativos.')
+            
+        if self.iAntelacionCancel and self.iAntelacionCancel < 0:
+            self.iAntelacionCancel = 0
+            mensajes.append('La antelacion de cancelacion no puede ser negativa.')
+
+        if mensajes:
+            resultado = {
+                'warning': {
+                    'title': 'Errores de politica',
+                    'message': ' '.join(mensajes)
+                }
+            }
+            return resultado
