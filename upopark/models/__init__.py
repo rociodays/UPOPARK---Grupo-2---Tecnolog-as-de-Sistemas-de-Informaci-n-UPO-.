@@ -18,3 +18,13 @@ from . import tipo_descuento
 from . import tipo_infraccion
 from . import tipo_sancion
 from . import usuario
+from . import estadoconector
+from . import estadoestacionrecarga
+from . import estadoestancia
+from . import estadopuntoacceso
+from . import etiquetaambiental
+from . import marcavehiculo
+from . import moneda
+from . import tipocombustible
+from . import tipoconector
+from . import tiporecurso

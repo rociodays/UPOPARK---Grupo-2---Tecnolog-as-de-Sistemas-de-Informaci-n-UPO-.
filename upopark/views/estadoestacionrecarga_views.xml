@@ -1,0 +1,36 @@
+<odoo>
+    <record id="upopark_estado_estacion_recarga_form_view" model="ir.ui.view">
+        <field name="name">upopark.estado_estacion_recarga.form</field>
+        <field name="model">upopark.estado_estacion_recarga</field>
+        <field name="arch" type="xml">
+            <form string="Estado Estación de Recarga">
+                <sheet layout="auto">
+                    <group>
+                        <field name="name" />
+                        <field name="descripcion" />
+                    </group>
+                    <notebook>
+                        <page string="Estaciones de Recarga">
+                            <field name="estacion_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="upopark_estado_estacion_recarga_list_view" model="ir.ui.view">
+        <field name="name">upopark.estado_estacion_recarga.list</field>
+        <field name="model">upopark.estado_estacion_recarga</field>
+        <field name="arch" type="xml">
+            <list string="Estados Estaciones Recarga">
+                <field name="name" />
+                <field name="descripcion" />
+            </list>
+        </field>
+    </record>
+    <record id="estado_estacion_recarga_list_action" model="ir.actions.act_window">
+        <field name="name">Estados Estaciones Recarga</field>
+        <field name="res_model">upopark.estado_estacion_recarga</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

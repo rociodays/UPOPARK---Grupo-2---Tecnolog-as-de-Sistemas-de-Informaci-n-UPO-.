@@ -1,0 +1,37 @@
+<odoo>
+    <record id="upopark_tipo_recurso_form_view" model="ir.ui.view">
+        <field name="name">upopark.tipo_recurso.form</field>
+        <field name="model">upopark.tipo_recurso</field>
+        <field name="arch" type="xml">
+            <form string="Tipo de Recurso">
+                <sheet layout="auto">
+                    <group>
+                        <field name="name" />
+                        <field name="nombre" />
+                        <field name="descripcion" />
+                    </group>
+                    <notebook>
+                        <page string="Recursos">
+                            <field name="recurso_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="upopark_tipo_recurso_list_view" model="ir.ui.view">
+        <field name="name">upopark.tipo_recurso.list</field>
+        <field name="model">upopark.tipo_recurso</field>
+        <field name="arch" type="xml">
+            <list string="Tipos de Recurso">
+                <field name="name" />
+                <field name="nombre" />
+            </list>
+        </field>
+    </record>
+    <record id="tipo_recurso_list_action" model="ir.actions.act_window">
+        <field name="name">Tipos de Recurso</field>
+        <field name="res_model">upopark.tipo_recurso</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

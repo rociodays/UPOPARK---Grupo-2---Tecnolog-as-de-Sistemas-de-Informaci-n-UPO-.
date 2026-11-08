@@ -1,0 +1,36 @@
+<odoo>
+    <record id="upopark_estado_estancia_form_view" model="ir.ui.view">
+        <field name="name">upopark.estado_estancia.form</field>
+        <field name="model">upopark.estado_estancia</field>
+        <field name="arch" type="xml">
+            <form string="Estado de Estancia">
+                <sheet layout="auto">
+                    <group>
+                        <field name="name" />
+                        <field name="descripcion" />
+                    </group>
+                    <notebook>
+                        <page string="Estancias">
+                            <field name="estancia_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="upopark_estado_estancia_list_view" model="ir.ui.view">
+        <field name="name">upopark.estado_estancia.list</field>
+        <field name="model">upopark.estado_estancia</field>
+        <field name="arch" type="xml">
+            <list string="Estados de Estancia">
+                <field name="name" />
+                <field name="descripcion" />
+            </list>
+        </field>
+    </record>
+    <record id="estado_estancia_list_action" model="ir.actions.act_window">
+        <field name="name">Estados de Estancia</field>
+        <field name="res_model">upopark.estado_estancia</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

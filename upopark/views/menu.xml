@@ -8,6 +8,7 @@
     <menuitem id="menu_entidad_bancaria" name="Entidades Bancarias" parent="menu_financiero" action="action_entidad_bancaria" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_metodo_pago" name="Métodos de Pago" parent="menu_financiero" action="action_metodo_pago" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_plazo_pago" name="Plazos de Pago" parent="menu_financiero" action="action_plazo_pago" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_moneda" name="Monedas" parent="menu_financiero" action="moneda_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_tarifas" name="Tarifas y Facturación" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_tipo_descuento" name="Tipos de Descuento" parent="menu_tarifas" action="action_tipo_descuento" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_descuento_asignado" name="Descuentos Asignados" parent="menu_tarifas" action="action_descuento_asignado" groups="upopark.group_upopark_user"/>
@@ -19,13 +20,23 @@
     <menuitem id="organizacion_menu" name="Organizaciones" parent="menu_accesos" action="organizacion_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="usuario_menu" name="Usuarios" parent="menu_accesos" action="usuario_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="puntodeacceso_menu" name="Puntos de Acceso" parent="menu_accesos" action="puntodeacceso_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="estado_punto_acceso_menu" name="Estados de Puntos de Acceso" parent="menu_accesos" action="estado_punto_acceso_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="permisodeacceso_menu" name="Permisos de Acceso" parent="menu_accesos" action="permisodeacceso_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="alegacion_menu" name="Alegaciones" parent="menu_accesos" action="alegacion_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_infraestructura" name="Infraestructura y Recargas" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
     <menuitem id="estacionrecarga_menu" name="Estaciones" parent="menu_infraestructura" action="estacionrecarga_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="estado_estacion_recarga_menu" name="Estados de Estaciones" parent="menu_infraestructura" action="estado_estacion_recarga_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="conector_menu" name="Conectores" parent="menu_infraestructura" action="conector_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="tipo_conector_menu" name="Tipos de Conectores" parent="menu_infraestructura" action="tipo_conector_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="estado_conector_menu" name="Estados de Conectores" parent="menu_infraestructura" action="estado_conector_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="tipo_recurso_menu" name="Tipos de Recurso" parent="menu_infraestructura" action="tipo_recurso_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="sesionrecarga_menu" name="Sesiones" parent="menu_infraestructura" action="sesionrecarga_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="tarifa_menu" name="Tarifas" parent="menu_infraestructura" action="tarifa_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="lineacargo_menu" name="Cargos" parent="menu_infraestructura" action="lineacargo_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_vehiculos" name="Vehículos y Estancias" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="marca_vehiculo_menu" name="Marcas de Vehículos" parent="menu_vehiculos" action="marca_vehiculo_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="tipo_combustible_menu" name="Tipos de Combustible" parent="menu_vehiculos" action="tipo_combustible_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="etiqueta_ambiental_menu" name="Etiquetas Ambientales" parent="menu_vehiculos" action="etiqueta_ambiental_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="estado_estancia_menu" name="Estados de Estancia" parent="menu_vehiculos" action="estado_estancia_list_action" groups="upopark.group_upopark_user"/>
   </data>
 </odoo>
