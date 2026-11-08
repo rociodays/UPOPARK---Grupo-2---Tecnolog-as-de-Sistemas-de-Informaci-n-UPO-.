@@ -6,13 +6,11 @@
       <form string="Restriccion de Acceso">
         <sheet layout="auto">
           <group>
-            <!-- Columna izquierda: Datos basicos y relaciones -->
             <group>
               <field name="name" />
               <field name="vehiculo_id" widget="many2one" />
               <field name="motivo_restriccion_id" widget="many2one" />
             </group>
-            <!-- Columna derecha: Tiempos y Estado -->
             <group>
               <field name="fInicio" />
               <field name="fFin" />

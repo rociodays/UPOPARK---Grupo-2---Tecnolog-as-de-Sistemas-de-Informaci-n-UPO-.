@@ -11,12 +11,10 @@
             </h1>
           </div>
           <group>
-            <!-- Columna izquierda: Datos basicos y de creacion -->
             <group>
               <field name="cNombre" />
               <field name="iDiasAntelacion" />
             </group>
-            <!-- Columna derecha: Limites y Cancelaciones -->
             <group>
               <field name="iDuracionMaxima" />
               <field name="iAntelacionCancel" />
