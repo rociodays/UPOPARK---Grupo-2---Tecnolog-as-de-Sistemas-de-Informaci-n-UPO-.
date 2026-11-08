@@ -1,0 +1,43 @@
+<odoo>
+  <record id="upopark_estado_reserva_form_view" model="ir.ui.view">
+    <field name="name">upopark.estado_reserva.form</field>
+    <field name="model">upopark.estado_reserva</field>
+    <field name="arch" type="xml">
+      <form string="Estado de Reserva">
+        <sheet layout="auto">
+          <group>
+            <field name="name" />
+            <field name="cDescripcion" />
+          </group>
+          <notebook>
+            <page name="reservas_vinculadas" string="Reservas en este Estado">
+              <group>
+                <field name="reserva_ids" widget="one2many" />
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_estado_reserva_list_view" model="ir.ui.view">
+    <field name="name">upopark.estado_reserva.list</field>
+    <field name="model">upopark.estado_reserva</field>
+    <field name="arch" type="xml">
+      <list string="Estados de Reserva">
+        <field name="name" />
+        <field name="cDescripcion" />
+      </list>
+    </field>
+  </record>
+
+  <record id="estado_reserva_list_action" model="ir.actions.act_window">
+    <field name="name">Estados de Reserva</field>
+    <field name="res_model">upopark.estado_reserva</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p>Crea el primer estado de reserva en el sistema</p>
+    </field>
+  </record>
+</odoo>
