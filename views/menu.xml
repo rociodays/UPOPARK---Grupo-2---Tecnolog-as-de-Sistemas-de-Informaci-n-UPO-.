@@ -1,0 +1,18 @@
+<odoo>
+  <data><menuitem id="main_upopark_menu" name="UpoPark" groups="group_upopark_manager"/>
+    <menuitem id="menu_operaciones" name="Operaciones y Calendario" parent="main_upopark_menu" groups="group_upopark_manager"/>
+    <menuitem id="menu_festivo" name="Festivos" parent="menu_operaciones" action="action_festivo" groups="group_upopark_manager"/>
+    <menuitem id="menu_evento_campus" name="Eventos Campus" parent="menu_operaciones" action="action_evento_campus" groups="group_upopark_manager"/>
+    <menuitem id="menu_financiero" name="Financiero y Burocrático" parent="main_upopark_menu" groups="group_upopark_manager"/>
+    <menuitem id="menu_entidad_bancaria" name="Entidades Bancarias" parent="menu_financiero" action="action_entidad_bancaria" groups="group_upopark_manager"/>
+    <menuitem id="menu_metodo_pago" name="Métodos de Pago" parent="menu_financiero" action="action_metodo_pago" groups="group_upopark_manager"/>
+    <menuitem id="menu_plazo_pago" name="Plazos de Pago" parent="menu_financiero" action="action_plazo_pago" groups="group_upopark_manager"/>
+    <menuitem id="menu_tarifas" name="Tarifas y Facturación" parent="main_upopark_menu" groups="group_upopark_manager"/>
+    <menuitem id="menu_tipo_descuento" name="Tipos de Descuento" parent="menu_tarifas" action="action_tipo_descuento" groups="group_upopark_manager"/>
+    <menuitem id="menu_descuento_asignado" name="Descuentos Asignados" parent="menu_tarifas" action="action_descuento_asignado" groups="group_upopark_manager"/>
+    <menuitem id="menu_sanciones" name="Control, Vigilancia y Sanciones" parent="main_upopark_menu" groups="group_upopark_manager"/>
+    <menuitem id="menu_tipo_sancion" name="Tipos de Sanción" parent="menu_sanciones" action="action_tipo_sancion" groups="group_upopark_manager"/>
+    <menuitem id="menu_sancion" name="Sanciones" parent="menu_sanciones" action="action_sancion" groups="group_upopark_manager"/>
+    <menuitem id="menu_tipo_infraccion" name="Tipos de Infracción" parent="menu_sanciones" action="action_tipo_infraccion" groups="group_upopark_manager"/>
+  </data>
+</odoo>

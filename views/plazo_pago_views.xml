@@ -1,0 +1,32 @@
+<odoo>
+  <data><record id="view_plazo_pago_list" model="ir.ui.view">
+      <field name="name">upopark.plazo_pago.list</field>
+      <field name="model">upopark.plazo_pago</field>
+      <field name="arch" type="xml">
+        <list string="Plazos de Pago">
+          <field name="scategoria"/>
+          <field name="idias"/>
+        </list>
+      </field>
+    </record>
+    <record id="view_plazo_pago_form" model="ir.ui.view">
+      <field name="name">upopark.plazo_pago.form</field>
+      <field name="model">upopark.plazo_pago</field>
+      <field name="arch" type="xml">
+        <form string="Plazo de Pago">
+          <sheet>
+            <group>
+              <field name="scategoria"/>
+              <field name="idias"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    <record id="action_plazo_pago" model="ir.actions.act_window">
+      <field name="name">Plazos de Pago</field>
+      <field name="res_model">upopark.plazo_pago</field>
+      <field name="view_mode">list,form</field>
+    </record>
+    </data>
+</odoo>
