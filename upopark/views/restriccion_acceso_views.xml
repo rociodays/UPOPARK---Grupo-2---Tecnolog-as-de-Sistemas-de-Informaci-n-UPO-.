@@ -1,0 +1,50 @@
+<odoo>
+  <record id="upopark_restriccion_acceso_form_view" model="ir.ui.view">
+    <field name="name">upopark.restriccion_acceso.form</field>
+    <field name="model">upopark.restriccion_acceso</field>
+    <field name="arch" type="xml">
+      <form string="Restriccion de Acceso">
+        <sheet layout="auto">
+          <group>
+            <!-- Columna izquierda: Datos basicos y relaciones -->
+            <group>
+              <field name="name" />
+              <field name="vehiculo_id" widget="many2one" />
+              <field name="motivo_restriccion_id" widget="many2one" />
+            </group>
+            <!-- Columna derecha: Tiempos y Estado -->
+            <group>
+              <field name="fInicio" />
+              <field name="fFin" />
+              <field name="bActivo" readonly="1" />
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_restriccion_acceso_list_view" model="ir.ui.view">
+    <field name="name">upopark.restriccion_acceso.list</field>
+    <field name="model">upopark.restriccion_acceso</field>
+    <field name="arch" type="xml">
+      <list string="Restricciones de Acceso">
+        <field name="name" />
+        <field name="vehiculo_id" />
+        <field name="motivo_restriccion_id" />
+        <field name="fInicio" />
+        <field name="fFin" />
+        <field name="bActivo" />
+      </list>
+    </field>
+  </record>
+
+  <record id="restriccion_acceso_list_action" model="ir.actions.act_window">
+    <field name="name">Restricciones de Acceso</field>
+    <field name="res_model">upopark.restriccion_acceso</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p>Crea la primera restriccion de acceso</p>
+    </field>
+  </record>
+</odoo>
