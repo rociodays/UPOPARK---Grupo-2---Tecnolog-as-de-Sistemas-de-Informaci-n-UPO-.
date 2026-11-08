@@ -1,0 +1,39 @@
+<odoo>
+  <record id="upopark_conector_form_view" model="ir.ui.view">
+    <field name="name">upopark.conector.form</field>
+    <field name="model">upopark.conector</field>
+    <field name="arch" type="xml">
+      <form string="Conector">
+        <sheet layout="auto">
+          <group>
+            <field name="name" />
+            <field name="potencia_kw" />
+            <field name="estacion_id" widget="many2one" />
+            <field name="sesion_ids" widget="one2many" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_conector_list_view" model="ir.ui.view">
+    <field name="name">upopark.conector.list</field>
+    <field name="model">upopark.conector</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+        <field name="name" />
+        <field name="potencia_kw" />
+        <field name="estacion_id" widget="many2one" />
+      </list>
+    </field>
+  </record>
+
+  <record id="conector_list_action" model="ir.actions.act_window">
+    <field name="name">Conectores</field>
+    <field name="res_model">upopark.conector</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first connector</p>
+    </field>
+  </record>
+</odoo>

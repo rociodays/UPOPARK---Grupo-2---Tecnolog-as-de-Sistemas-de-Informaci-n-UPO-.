@@ -1,5 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="group_upopark_manager" model="res.groups">
-        <field name="name">UpoPark / Manager</field>
-    </record>
+    <data>
+        <record id="module_category_upopark" model="ir.module.category">
+            <field name="name">UpoPark</field>
+            <field name="description">Gestión de parking</field>
+        </record>
+        <record id="group_upopark_user" model="res.groups">
+            <field name="name">Usuario UpoPark</field>
+            <field name="category_id" ref="module_category_upopark"/>
+        </record>
+    </data>
 </odoo>

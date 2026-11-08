@@ -1,18 +1,31 @@
 <odoo>
-  <data><menuitem id="main_upopark_menu" name="UpoPark" groups="group_upopark_manager"/>
-    <menuitem id="menu_operaciones" name="Operaciones y Calendario" parent="main_upopark_menu" groups="group_upopark_manager"/>
-    <menuitem id="menu_festivo" name="Festivos" parent="menu_operaciones" action="action_festivo" groups="group_upopark_manager"/>
-    <menuitem id="menu_evento_campus" name="Eventos Campus" parent="menu_operaciones" action="action_evento_campus" groups="group_upopark_manager"/>
-    <menuitem id="menu_financiero" name="Financiero y Burocrático" parent="main_upopark_menu" groups="group_upopark_manager"/>
-    <menuitem id="menu_entidad_bancaria" name="Entidades Bancarias" parent="menu_financiero" action="action_entidad_bancaria" groups="group_upopark_manager"/>
-    <menuitem id="menu_metodo_pago" name="Métodos de Pago" parent="menu_financiero" action="action_metodo_pago" groups="group_upopark_manager"/>
-    <menuitem id="menu_plazo_pago" name="Plazos de Pago" parent="menu_financiero" action="action_plazo_pago" groups="group_upopark_manager"/>
-    <menuitem id="menu_tarifas" name="Tarifas y Facturación" parent="main_upopark_menu" groups="group_upopark_manager"/>
-    <menuitem id="menu_tipo_descuento" name="Tipos de Descuento" parent="menu_tarifas" action="action_tipo_descuento" groups="group_upopark_manager"/>
-    <menuitem id="menu_descuento_asignado" name="Descuentos Asignados" parent="menu_tarifas" action="action_descuento_asignado" groups="group_upopark_manager"/>
-    <menuitem id="menu_sanciones" name="Control, Vigilancia y Sanciones" parent="main_upopark_menu" groups="group_upopark_manager"/>
-    <menuitem id="menu_tipo_sancion" name="Tipos de Sanción" parent="menu_sanciones" action="action_tipo_sancion" groups="group_upopark_manager"/>
-    <menuitem id="menu_sancion" name="Sanciones" parent="menu_sanciones" action="action_sancion" groups="group_upopark_manager"/>
-    <menuitem id="menu_tipo_infraccion" name="Tipos de Infracción" parent="menu_sanciones" action="action_tipo_infraccion" groups="group_upopark_manager"/>
+  <data>
+    <menuitem id="main_upopark_menu" name="UpoPark" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_operaciones" name="Operaciones y Calendario" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_festivo" name="Festivos" parent="menu_operaciones" action="action_festivo" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_evento_campus" name="Eventos Campus" parent="menu_operaciones" action="action_evento_campus" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_financiero" name="Financiero y Burocrático" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_entidad_bancaria" name="Entidades Bancarias" parent="menu_financiero" action="action_entidad_bancaria" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_metodo_pago" name="Métodos de Pago" parent="menu_financiero" action="action_metodo_pago" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_plazo_pago" name="Plazos de Pago" parent="menu_financiero" action="action_plazo_pago" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_tarifas" name="Tarifas y Facturación" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_tipo_descuento" name="Tipos de Descuento" parent="menu_tarifas" action="action_tipo_descuento" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_descuento_asignado" name="Descuentos Asignados" parent="menu_tarifas" action="action_descuento_asignado" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_sanciones" name="Control, Vigilancia y Sanciones" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_tipo_sancion" name="Tipos de Sanción" parent="menu_sanciones" action="action_tipo_sancion" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_sancion" name="Sanciones" parent="menu_sanciones" action="action_sancion" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_tipo_infraccion" name="Tipos de Infracción" parent="menu_sanciones" action="action_tipo_infraccion" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_accesos" name="Gestión de Accesos" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="organizacion_menu" name="Organizaciones" parent="menu_accesos" action="organizacion_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="usuario_menu" name="Usuarios" parent="menu_accesos" action="usuario_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="puntodeacceso_menu" name="Puntos de Acceso" parent="menu_accesos" action="puntodeacceso_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="permisodeacceso_menu" name="Permisos de Acceso" parent="menu_accesos" action="permisodeacceso_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="alegacion_menu" name="Alegaciones" parent="menu_accesos" action="alegacion_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_infraestructura" name="Infraestructura y Recargas" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="estacionrecarga_menu" name="Estaciones" parent="menu_infraestructura" action="estacionrecarga_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="conector_menu" name="Conectores" parent="menu_infraestructura" action="conector_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="sesionrecarga_menu" name="Sesiones" parent="menu_infraestructura" action="sesionrecarga_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="tarifa_menu" name="Tarifas" parent="menu_infraestructura" action="tarifa_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="lineacargo_menu" name="Cargos" parent="menu_infraestructura" action="lineacargo_list_action" groups="upopark.group_upopark_user"/>
   </data>
 </odoo>

@@ -1,33 +1,39 @@
 {
-    'name': "upopark",
-
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
-
-    'description': """
-Long description of module's purpose
-    """,
-
-    'author': "My Company",
-    'website': "https://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/20.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
+    'name': 'UpoPark',
+    'summary': 'Gestión de entidades asignadas del modelo entidad-relación',
+    'description': 'Modelos y vistas organizados por entidad.',
+    'author': 'TSI - UPO',
+    'website': 'https://www.upo.es',
     'category': 'Uncategorized',
-    'version': '0.1',
-
-    # any module necessary for this one to work correctly
+    'version': '18.0.1.1.0',
     'depends': ['base'],
-
-    # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'views/festivo_views.xml',
+        'views/evento_campus_views.xml',
+        'views/entidad_bancaria_views.xml',
+        'views/metodo_pago_views.xml',
+        'views/plazo_pago_views.xml',
+        'views/tipo_descuento_views.xml',
+        'views/descuento_asignado_views.xml',
+        'views/tipo_sancion_views.xml',
+        'views/sancion_views.xml',
+        'views/tipo_infraccion_views.xml',
+        'views/organizacion_views.xml',
+        'views/usuario_views.xml',
+        'views/puntodeacceso_views.xml',
+        'views/permisodeacceso_views.xml',
+        'views/estacionrecarga_views.xml',
+        'views/conector_views.xml',
+        'views/sesionrecarga_views.xml',
+        'views/tarifa_views.xml',
+        'views/lineacargo_views.xml',
+        'views/alegacion_views.xml',
+        'views/menu.xml',
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+    'application': True,
+    'installable': True,
+    'license': 'LGPL-3'
 }
 

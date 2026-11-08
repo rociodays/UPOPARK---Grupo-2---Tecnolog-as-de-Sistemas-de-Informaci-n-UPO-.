@@ -1,0 +1,39 @@
+<odoo>
+  <record id="upopark_tarifa_form_view" model="ir.ui.view">
+    <field name="name">upopark.tarifa.form</field>
+    <field name="model">upopark.tarifa</field>
+    <field name="arch" type="xml">
+      <form string="Tarifa">
+        <sheet layout="auto">
+          <group>
+            <field name="name" />
+            <field name="precio_kw" />
+            <field name="precio_minuto" />
+            <field name="linea_cargo_ids" widget="one2many" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_tarifa_list_view" model="ir.ui.view">
+    <field name="name">upopark.tarifa.list</field>
+    <field name="model">upopark.tarifa</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+        <field name="name" />
+        <field name="precio_kw" />
+        <field name="precio_minuto" />
+      </list>
+    </field>
+  </record>
+
+  <record id="tarifa_list_action" model="ir.actions.act_window">
+    <field name="name">Tarifas</field>
+    <field name="res_model">upopark.tarifa</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first tariff</p>
+    </field>
+  </record>
+</odoo>

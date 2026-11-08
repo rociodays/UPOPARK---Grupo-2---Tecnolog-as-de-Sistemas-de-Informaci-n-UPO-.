@@ -1,11 +1,21 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_upopark_festivo,upopark.festivo manager,model_upopark_festivo,group_upopark_manager,1,1,1,1
-access_upopark_evento_campus,upopark.evento_campus manager,model_upopark_evento_campus,group_upopark_manager,1,1,1,1
-access_upopark_entidad_bancaria,upopark.entidad_bancaria manager,model_upopark_entidad_bancaria,group_upopark_manager,1,1,1,1
-access_upopark_metodo_pago,upopark.metodo_pago manager,model_upopark_metodo_pago,group_upopark_manager,1,1,1,1
-access_upopark_plazo_pago,upopark.plazo_pago manager,model_upopark_plazo_pago,group_upopark_manager,1,1,1,1
-access_upopark_tipo_descuento,upopark.tipo_descuento manager,model_upopark_tipo_descuento,group_upopark_manager,1,1,1,1
-access_upopark_descuento_asignado,upopark.descuento_asignado manager,model_upopark_descuento_asignado,group_upopark_manager,1,1,1,1
-access_upopark_tipo_sancion,upopark.tipo_sancion manager,model_upopark_tipo_sancion,group_upopark_manager,1,1,1,1
-access_upopark_sancion,upopark.sancion manager,model_upopark_sancion,group_upopark_manager,1,1,1,1
-access_upopark_tipo_infraccion,upopark.tipo_infraccion manager,model_upopark_tipo_infraccion,group_upopark_manager,1,1,1,1
+access_upopark_festivo,upopark.festivo,model_upopark_festivo,group_upopark_user,1,1,1,1
+access_upopark_evento_campus,upopark.evento_campus,model_upopark_evento_campus,group_upopark_user,1,1,1,1
+access_upopark_entidad_bancaria,upopark.entidad_bancaria,model_upopark_entidad_bancaria,group_upopark_user,1,1,1,1
+access_upopark_metodo_pago,upopark.metodo_pago,model_upopark_metodo_pago,group_upopark_user,1,1,1,1
+access_upopark_plazo_pago,upopark.plazo_pago,model_upopark_plazo_pago,group_upopark_user,1,1,1,1
+access_upopark_tipo_descuento,upopark.tipo_descuento,model_upopark_tipo_descuento,group_upopark_user,1,1,1,1
+access_upopark_descuento_asignado,upopark.descuento_asignado,model_upopark_descuento_asignado,group_upopark_user,1,1,1,1
+access_upopark_tipo_sancion,upopark.tipo_sancion,model_upopark_tipo_sancion,group_upopark_user,1,1,1,1
+access_upopark_sancion,upopark.sancion,model_upopark_sancion,group_upopark_user,1,1,1,1
+access_upopark_tipo_infraccion,upopark.tipo_infraccion,model_upopark_tipo_infraccion,group_upopark_user,1,1,1,1
+access_upopark_organizacion,upopark.organizacion,model_upopark_organizacion,group_upopark_user,1,1,1,1
+access_upopark_usuario,upopark.usuario,model_upopark_usuario,group_upopark_user,1,1,1,1
+access_upopark_punto_acceso,upopark.punto_acceso,model_upopark_punto_acceso,group_upopark_user,1,1,1,1
+access_upopark_permiso_acceso,upopark.permiso_acceso,model_upopark_permiso_acceso,group_upopark_user,1,1,1,1
+access_upopark_estacion_recarga,upopark.estacion_recarga,model_upopark_estacion_recarga,group_upopark_user,1,1,1,1
+access_upopark_conector,upopark.conector,model_upopark_conector,group_upopark_user,1,1,1,1
+access_upopark_sesion_recarga,upopark.sesion_recarga,model_upopark_sesion_recarga,group_upopark_user,1,1,1,1
+access_upopark_tarifa,upopark.tarifa,model_upopark_tarifa,group_upopark_user,1,1,1,1
+access_upopark_linea_cargo,upopark.linea_cargo,model_upopark_linea_cargo,group_upopark_user,1,1,1,1
+access_upopark_alegacion,upopark.alegacion,model_upopark_alegacion,group_upopark_user,1,1,1,1

@@ -1,0 +1,39 @@
+<odoo>
+  <record id="upopark_punto_acceso_form_view" model="ir.ui.view">
+    <field name="name">upopark.punto_acceso.form</field>
+    <field name="model">upopark.punto_acceso</field>
+    <field name="arch" type="xml">
+      <form string="Punto de Acceso">
+        <sheet layout="auto">
+          <group>
+            <field name="name" />
+            <field name="ubicacion" />
+            <field name="tipo" />
+            <field name="permiso_ids" widget="one2many" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_punto_acceso_list_view" model="ir.ui.view">
+    <field name="name">upopark.punto_acceso.list</field>
+    <field name="model">upopark.punto_acceso</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+        <field name="name" />
+        <field name="ubicacion" />
+        <field name="tipo" />
+      </list>
+    </field>
+  </record>
+
+  <record id="puntodeacceso_list_action" model="ir.actions.act_window">
+    <field name="name">Puntos de Acceso</field>
+    <field name="res_model">upopark.punto_acceso</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first access point</p>
+    </field>
+  </record>
+</odoo>

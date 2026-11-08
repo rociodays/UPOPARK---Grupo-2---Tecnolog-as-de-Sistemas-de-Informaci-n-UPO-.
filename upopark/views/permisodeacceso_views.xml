@@ -1,0 +1,55 @@
+<odoo>
+  <record id="upopark_permiso_acceso_form_view" model="ir.ui.view">
+    <field name="name">upopark.permiso_acceso.form</field>
+    <field name="model">upopark.permiso_acceso</field>
+    <field name="arch" type="xml">
+      <form string="Permiso de Acceso">
+        <sheet layout="auto">
+          <group>
+            <field name="name" />
+            <field name="fecha_inicio" />
+            <field name="fecha_fin" />
+            <field name="usuario_id" widget="many2one" />
+            <field name="punto_acceso_id" widget="many2one" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_permiso_acceso_list_view" model="ir.ui.view">
+    <field name="name">upopark.permiso_acceso.list</field>
+    <field name="model">upopark.permiso_acceso</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+        <field name="name" />
+        <field name="fecha_inicio" />
+        <field name="fecha_fin" />
+        <field name="usuario_id" widget="many2one" />
+        <field name="punto_acceso_id" widget="many2one" />
+      </list>
+    </field>
+  </record>
+
+
+  <record id="upopark_permiso_acceso_calendar_view" model="ir.ui.view">
+    <field name="name">upopark.permiso_acceso.calendar</field>
+    <field name="model">upopark.permiso_acceso</field>
+    <field name="arch" type="xml">
+      <calendar string="Calendario de Accesos" date_start="fecha_inicio" date_stop="fecha_fin" color="usuario_id">
+        <field name="name" />
+        <field name="usuario_id" />
+        <field name="punto_acceso_id" />
+      </calendar>
+    </field>
+  </record>
+
+  <record id="permisodeacceso_list_action" model="ir.actions.act_window">
+    <field name="name">Permisos de Acceso</field>
+    <field name="res_model">upopark.permiso_acceso</field>
+    <field name="view_mode">list,form,calendar</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first permission</p>
+    </field>
+  </record>
+</odoo>
