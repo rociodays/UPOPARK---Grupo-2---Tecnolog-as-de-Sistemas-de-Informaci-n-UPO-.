@@ -1,0 +1,42 @@
+<odoo>
+  <record id="upopark_resumen_diario_form_view" model="ir.ui.view">
+    <field name="name">upopark.resumen_diario.form</field>
+    <field name="model">upopark.resumen_diario</field>
+    <field name="arch" type="xml">
+      <form string="Resumen Diario">
+        <sheet layout="auto">
+          <group>
+            <field name="dia" />
+            <field name="min_ocup" />
+            <field name="pico_ocup" />
+            <field name="ratio_med" />
+            <field name="estancia_id" widget="many2one" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_resumen_diario_list_view" model="ir.ui.view">
+    <field name="name">upopark.resumen_diario.list</field>
+    <field name="model">upopark.resumen_diario</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+        <field name="dia" />
+        <field name="min_ocup" />
+        <field name="pico_ocup" />
+        <field name="ratio_med" />
+        <field name="estancia_id" widget="many2one" />
+      </list>
+    </field>
+  </record>
+
+  <record id="resumen_diario_list_action" model="ir.actions.act_window">
+    <field name="name">Resúmenes Diarios</field>
+    <field name="res_model">upopark.resumen_diario</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first summary</p>
+    </field>
+  </record>
+</odoo>
