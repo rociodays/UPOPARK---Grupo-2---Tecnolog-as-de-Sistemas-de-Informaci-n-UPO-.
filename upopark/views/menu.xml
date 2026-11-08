@@ -50,5 +50,16 @@
     <menuitem id="plaza_menu" name="Plazas" parent="menu_aparcamientos" action="plaza_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="tipoPlaza_menu" name="Tipos de Plaza" parent="menu_aparcamientos" action="tipoPlaza_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="zona_menu" name="Zonas" parent="menu_aparcamientos" action="zona_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_soporte_usuario" name="Soporte al Usuario" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_tipo_doc" name="Tipos de Documento" parent="menu_accesos" action="tipo_doc_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_contacto" name="Contactos" parent="menu_accesos" action="contacto_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_calendario" name="Calendarios" parent="menu_operaciones" action="calendario_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_franja_calendario" name="Franjas de Calendario" parent="menu_operaciones" action="franja_calendario_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_prioridad" name="Prioridades" parent="menu_soporte_usuario" action="prioridad_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_ticket_soporte" name="Tickets" parent="menu_soporte_usuario" action="ticket_soporte_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_mensaje_ticket" name="Mensajes de Ticket" parent="menu_soporte_usuario" action="mensaje_ticket_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_estado_sensor" name="Estados de Sensor" parent="menu_aparcamientos" action="estado_sensor_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_sensor_ocupacion" name="Sensores de Ocupación" parent="menu_aparcamientos" action="sensor_ocupacion_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_resumen_diario" name="Resúmenes Diarios" parent="menu_aparcamientos" action="resumen_diario_list_action" groups="upopark.group_upopark_user"/>
  </data>
 </odoo>
