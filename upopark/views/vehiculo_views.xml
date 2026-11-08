@@ -1,0 +1,54 @@
+<odoo>
+  <record id="upopark_vehiculo_form_view" model="ir.ui.view">
+    <field name="name">upopark.vehiculo.form</field>
+    <field name="model">upopark.vehiculo</field>
+    <field name="arch" type="xml">
+      <form string="Vehiculo">
+        <sheet layout="auto">
+          <group>
+            <field name="name" />
+            <field name="cPaisMatricula" />
+            <field name="iNumeroPuertas" />
+            <field name="bTieneRemolque" />
+            <field name="tipo_vehiculo_id" widget="many2one" />
+            <field name="color_vehiculo_id" widget="many2one" />
+          </group>
+          <notebook>
+            <page name="historial_reservas" string="Historial de Reservas">
+              <group>
+                <field name="reserva_ids" widget="one2many" />
+              </group>
+            </page>
+            <page name="historial_restricciones" string="Historial de Restricciones">
+              <group>
+                <field name="restriccion_ids" widget="one2many" />
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_vehiculo_list_view" model="ir.ui.view">
+    <field name="name">upopark.vehiculo.list</field>
+    <field name="model">upopark.vehiculo</field>
+    <field name="arch" type="xml">
+      <list string="Vehiculos">
+        <field name="name" />
+        <field name="tipo_vehiculo_id" />
+        <field name="cPaisMatricula" />
+        <field name="bTieneRemolque" />
+      </list>
+    </field> 
+  </record>
+
+  <record id="vehiculo_list_action" model="ir.actions.act_window">
+    <field name="name">Vehiculos</field>
+    <field name="res_model">upopark.vehiculo</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p>Crea el primer vehiculo</p>
+    </field>
+  </record>
+</odoo>
