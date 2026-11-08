@@ -6,5 +6,5 @@ class Conector(models.Model):
     name = fields.Char(string='ID Conector (ej. CCS2-01)', required=True)
     potencia_kw = fields.Float(string='Potencia Máxima (kW)')
 
-    estacion_id = fields.Many2one('upopark.estacion_recarga', string='Estación Base', required=True)
+    estado_conector_id = fields.Many2one('upopark.estado_conector', string="Estado del Conector")
     sesion_ids = fields.One2many('upopark.sesion_recarga', 'conector_id', string='Historial de Sesiones')
