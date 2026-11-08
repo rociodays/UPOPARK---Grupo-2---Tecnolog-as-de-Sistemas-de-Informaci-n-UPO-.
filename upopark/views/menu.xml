@@ -38,5 +38,17 @@
     <menuitem id="tipo_combustible_menu" name="Tipos de Combustible" parent="menu_vehiculos" action="tipo_combustible_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="etiqueta_ambiental_menu" name="Etiquetas Ambientales" parent="menu_vehiculos" action="etiqueta_ambiental_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="estado_estancia_menu" name="Estados de Estancia" parent="menu_vehiculos" action="estado_estancia_list_action" groups="upopark.group_upopark_user"/>
-  </data>
+    <menuitem id="menu_aparcamientos" name="Aparcamientos y Plazas" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="aparcamiento_menu" name="Aparcamientos" parent="menu_aparcamientos" action="aparcamiento_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="bloqueoPlaza_menu" name="Bloqueos de Plaza" parent="menu_aparcamientos" action="bloqueoPlaza_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="campus_menu" name="Campus" parent="menu_aparcamientos" action="campus_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="estadoConservacionPlaza_menu" name="Estados de Conservación de Plaza" parent="menu_aparcamientos" action="estadoConservacionPlaza_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="estadoPlaza_menu" name="Estados de Plaza" parent="menu_aparcamientos" action="estadoPlaza_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="materialPavimento_menu" name="Material de Pavimentos" parent="menu_aparcamientos" action="materialPavimento_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="motivoBloqueo_menu" name="Motivos de Bloqueo" parent="menu_aparcamientos" action="motivoBloqueo_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="nivelAcceso_menu" name="Niveles de Acceso" parent="menu_aparcamientos" action="nivelAcceso_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="plaza_menu" name="Plazas" parent="menu_aparcamientos" action="plaza_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="tipoPlaza_menu" name="Tipos de Plaza" parent="menu_aparcamientos" action="tipoPlaza_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="zona_menu" name="Zonas" parent="menu_aparcamientos" action="zona_list_action" groups="upopark.group_upopark_user"/>
+ </data>
 </odoo>

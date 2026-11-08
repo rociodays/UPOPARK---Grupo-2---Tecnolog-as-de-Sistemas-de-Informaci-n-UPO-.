@@ -1,0 +1,32 @@
+<odoo>
+  <record id="upoPark_estadoConservacionPlaza_form_view" model="ir.ui.view">
+    <field name="name">upoPark.estadoConservacionPlaza.form</field>
+    <field name="model">upoPark.estadoConservacionPlaza</field>
+    <field name="arch" type="xml">
+      <form string="Instructor">
+        <sheet layout="auto">
+          <group>
+            <field name="activo" />
+            <field name="estadoPlaza_plaza" widget="one2many" />
+            <field name="estadoPlaza_indisponibilidad" widget="one2one">
+            <field name="estadoPlaza_incidencia widget="one2one">
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upoPark_estadoConservacionPlaza_list_view" model="ir.ui.view">
+    <field name="name">upoPark.estadoConservacionPlaza.list</field>
+    <field name="model">upoPark.estadoConservacionPlaza</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+            <field name="activo" />
+            <field name="estadoPlaza_plaza" widget="one2many" />
+            <field name="estadoPlaza_indisponibilidad" widget="one2one">
+            <field name="estadoPlaza_incidencia widget="one2one">
+      </list>
+    </field>
+  </record>
+
+</odoo>

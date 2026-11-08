@@ -1,0 +1,26 @@
+<odoo>
+  <record id="upoPark_motivoBloqueo_form_view" model="ir.ui.view">
+    <field name="name">upoPark.motivoBloqueo.form</field>
+    <field name="model">upoPark.motivoBloqueo</field>
+    <field name="arch" type="xml">
+      <form string="Instructor">
+        <sheet layout="auto">
+          <group>
+            <field name="motivoBloqueo_bloqueoPlaza" widget="one2many">
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upoPark_motivoBloqueo_list_view" model="ir.ui.view">
+    <field name="name">upoPark.motivoBloqueo.list</field>
+    <field name="model">upoPark.motivoBloqueo</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+            <field name="motivoBloqueo_bloqueoPlaza" widget="one2many">
+      </list>
+    </field>
+  </record>
+
+</odoo>

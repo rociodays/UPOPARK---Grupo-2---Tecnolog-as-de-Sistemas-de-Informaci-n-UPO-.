@@ -1,0 +1,32 @@
+<odoo>
+  <record id="upoPark_tipoPlaza_form_view" model="ir.ui.view">
+    <field name="name">upoPark.tipoPlaza.form</field>
+    <field name="model">upoPark.tipoPlaza</field>
+    <field name="arch" type="xml">
+      <form string="Instructor">
+        <sheet layout="auto">
+          <group>
+            <field name="requiere_vehiculo_electrico" />
+            <field name="accesible" />
+            <field name="tipoPlaza_plaza" widget="many2one" />
+            <field name="tipoPlaza_organizacion" widget="one2one">
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upoPark_tipoPlaza_list_view" model="ir.ui.view">
+    <field name="name">upoPark.tipoPlaza.list</field>
+    <field name="model">upoPark.tipoPlaza</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+            <field name="requiere_vehiculo_electrico" />
+            <field name="accesible" />
+            <field name="tipoPlaza_plaza" widget="many2one" />
+            <field name="tipoPlaza_organizacion" widget="one2one">
+      </list>
+    </field>
+  </record>
+
+</odoo>

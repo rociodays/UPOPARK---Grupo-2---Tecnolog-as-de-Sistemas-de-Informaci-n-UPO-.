@@ -1,0 +1,36 @@
+<odoo>
+  <record id="upoPark_aparcamiento_form_view" model="ir.ui.view">
+    <field name="name">upoPark.aparcamiento.form</field>
+    <field name="model">upoPark.aparcamiento</field>
+    <field name="arch" type="xml">
+      <form string="Instructor">
+        <sheet layout="auto">
+          <group>
+            <field name="nombre" />
+            <field name="codigo" />
+            <field name="capacidad" />
+            <field name="activo" />
+            <field name="aparcamiento_campus" widget="many2one" />
+            <field name="aparcamiento_zona" widget="many2many">
+            <field name="aparcamiento_plaza" widget="one2many">
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upoPark_aparcamiento_list_view" model="ir.ui.view">
+    <field name="name">upoPark.aparcamiento.list</field>
+    <field name="model">upoPark.aparcamiento</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+            <field name="nombre" />
+            <field name="codigo" />
+            <field name="capacidad" />
+            <field name="activo" />
+            <field name="aparcamiento_campus" widget="many2one" />
+            <field name="aparcamiento_zona" widget="many2many">
+            <field name="aparcamiento_plaza" widget="one2many">
+      </list>
+    </field>
+  </record>

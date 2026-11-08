@@ -1,0 +1,32 @@
+<odoo>
+  <record id="upoPark_zona_form_view" model="ir.ui.view">
+    <field name="name">upoPark.zona.form</field>
+    <field name="model">upoPark.zona</field>
+    <field name="arch" type="xml">
+      <form string="Instructor">
+        <sheet layout="auto">
+          <group>
+            <field name="nombre" />
+            <field name="codigo" />
+            <field name="zona_nivelAcceso" widget="many2one" />
+            <field name="zona_aparcamiento" widget="one2many">
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upoPark_zona_list_view" model="ir.ui.view">
+    <field name="name">upoPark.zona.list</field>
+    <field name="model">upoPark.zona</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+            <field name="nombre" />
+            <field name="codigo" />
+            <field name="zona_nivelAcceso" widget="many2one" />
+            <field name="zona_aparcamiento" widget="one2many">
+      </list>
+    </field>
+  </record>
+
+</odoo>

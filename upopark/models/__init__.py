@@ -28,3 +28,15 @@ from . import moneda
 from . import tipocombustible
 from . import tipoconector
 from . import tiporecurso
+
+from . import aparcamiento
+from . import bloqueoPlaza
+from . import campus
+from . import estadoConservacionPlaza
+from . import estadoPlaza
+from . import materialPavimento
+from . import motivoBloqueo
+from . import nivelAcceso
+from . import plaza
+from . import tipoPlaza
+from . import zona

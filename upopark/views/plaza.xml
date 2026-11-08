@@ -1,0 +1,38 @@
+<odoo>
+  <record id="upoPark_plaza_form_view" model="ir.ui.view">
+    <field name="name">upoPark.plaza.form</field>
+    <field name="model">upoPark.plaza</field>
+    <field name="arch" type="xml">
+      <form string="Instructor">
+        <sheet layout="auto">
+          <group>
+            <field name="longitud" />
+            <field name="anchura" />
+            <field name="plaza_bloqueoPlaza" widget="many2one" />
+            <field name="plaza_aparcamiento" widget="many2one">
+            <field name="plaza_estadoPlaza" widget="one2one" />
+            <field name="plaza_conector" widget="one2one">
+            <field name="plaza_sensorOcupacion" widget="one2one">
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upoPark_plaza_list_view" model="ir.ui.view">
+    <field name="name">upoPark.plaza.list</field>
+    <field name="model">upoPark.plaza</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+            <field name="longitud" />
+            <field name="anchura" />
+            <field name="plaza_bloqueoPlaza" widget="many2one" />
+            <field name="plaza_aparcamiento" widget="many2one">
+            <field name="plaza_estadoPlaza" widget="one2one" />
+            <field name="plaza_conector" widget="one2one">
+            <field name="plaza_sensorOcupacion" widget="one2one">
+      </list>
+    </field>
+  </record>
+
+</odoo>
