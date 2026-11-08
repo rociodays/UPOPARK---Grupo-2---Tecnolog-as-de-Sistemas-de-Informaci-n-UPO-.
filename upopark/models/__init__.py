@@ -28,7 +28,6 @@ from . import moneda
 from . import tipocombustible
 from . import tipoconector
 from . import tiporecurso
-
 from . import aparcamiento
 from . import bloqueoPlaza
 from . import campus
