@@ -6,5 +6,4 @@ class Alegacion(models.Model):
     name = fields.Char(string='Nº Registro Alegación', required=True)
     argumento = fields.Text(string='Cuerpo de la Alegación')
     estado = fields.Selection([('pendiente', 'Pendiente'), ('resuelta', 'Resuelta')], string='Estado', default='pendiente')
-
     usuario_id = fields.Many2one('upopark.usuario', string='Usuario que alega', required=True)
