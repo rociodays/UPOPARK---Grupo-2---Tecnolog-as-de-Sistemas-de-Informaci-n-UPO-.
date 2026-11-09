@@ -6,7 +6,8 @@ class BloqueoPlaza(models.Model):
     
     _name = 'upoPark.bloqueoPlaza'
     _description = 'Situación de bloqueo de una plaza'
-    
+
+    referencia = fields.Char('Referencia', size=9, required=True)
     inicio = fields.Datetime('Comienzo', required=True, autodate = True)
     fin = fields.Datetime('Final', required=True, autodate = True)
     

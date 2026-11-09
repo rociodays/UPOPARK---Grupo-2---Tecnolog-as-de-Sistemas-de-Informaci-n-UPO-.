@@ -7,6 +7,7 @@ class Plaza(models.Model):
     _name = 'upoPark.plaza'
     _description = 'Una de las plazas existentes'
     
+    codigo = fields.Char('Código', size=9, required=True)
     longitud = fields.Integer("Longitud en metros")
     anchura = fields.Integer("Anchura en metros")
         

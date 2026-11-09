@@ -6,10 +6,11 @@
       <form string="Instructor">
         <sheet layout="auto">
           <group>
+            <field name="estado" />
             <field name="activo" />
             <field name="estadoPlaza_plaza" widget="one2many" />
-            <field name="estadoPlaza_indisponibilidad" widget="one2one">
-            <field name="estadoPlaza_incidencia widget="one2one">
+            <field name="estadoPlaza_indisponibilidad" widget="one2one" />
+            <field name="estadoPlaza_incidencia" widget="one2one" />
           </group>
         </sheet>
       </form>
@@ -21,12 +22,21 @@
     <field name="model">upoPark.estadoConservacionPlaza</field>
     <field name="arch" type="xml">
       <list string="list_string">
+            <field name="estado" />
             <field name="activo" />
             <field name="estadoPlaza_plaza" widget="one2many" />
-            <field name="estadoPlaza_indisponibilidad" widget="one2one">
-            <field name="estadoPlaza_incidencia widget="one2one">
+            <field name="estadoPlaza_indisponibilidad" widget="one2one" />
+            <field name="estadoPlaza_incidencia" widget="one2one" />
       </list>
     </field>
   </record>
 
+  <record id="estadoConservacionPlaza_list_action" model="ir.actions.act_window">
+    <field name="name">Estado de Conservacions de plaza</field>
+    <field name="res_model">upopark.estadoConservacionPlaza</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crea el primer Estado de Conservacion de plaza</p>
+    </field>
+  </record>
 </odoo>

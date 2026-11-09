@@ -7,6 +7,9 @@ class TipoPlaza(models.Model):
     _name = 'upoPark.tipoPlaza'
     _description = 'Tipo de plaza'
         
+    codigo = fields.Char('Código', size=9, required=True)
+    nombre = fields.Char('Nombre', size=9, required=True)
+
     requiere_vehiculo_electrico = fields.Boolean(
             string='¿Requiere vehículo eléctrico?',
             default=False

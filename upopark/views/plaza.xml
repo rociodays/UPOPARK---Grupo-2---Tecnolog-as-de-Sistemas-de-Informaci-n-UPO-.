@@ -6,13 +6,14 @@
       <form string="Instructor">
         <sheet layout="auto">
           <group>
+            <field name="codigo" />
             <field name="longitud" />
             <field name="anchura" />
             <field name="plaza_bloqueoPlaza" widget="many2one" />
-            <field name="plaza_aparcamiento" widget="many2one">
+            <field name="plaza_aparcamiento" widget="many2one" />
             <field name="plaza_estadoPlaza" widget="one2one" />
-            <field name="plaza_conector" widget="one2one">
-            <field name="plaza_sensorOcupacion" widget="one2one">
+            <field name="plaza_conector" widget="one2one" />
+            <field name="plaza_sensorOcupacion" widget="one2one" />
           </group>
         </sheet>
       </form>
@@ -24,14 +25,24 @@
     <field name="model">upoPark.plaza</field>
     <field name="arch" type="xml">
       <list string="list_string">
+            <field name="codigo" />
             <field name="longitud" />
             <field name="anchura" />
             <field name="plaza_bloqueoPlaza" widget="many2one" />
-            <field name="plaza_aparcamiento" widget="many2one">
+            <field name="plaza_aparcamiento" widget="many2one" />
             <field name="plaza_estadoPlaza" widget="one2one" />
-            <field name="plaza_conector" widget="one2one">
-            <field name="plaza_sensorOcupacion" widget="one2one">
+            <field name="plaza_conector" widget="one2one" />
+            <field name="plaza_sensorOcupacion" widget="one2one" />
       </list>
+    </field>
+  </record>
+
+  <record id="plaza_list_action" model="ir.actions.act_window">
+    <field name="name">Plazas</field>
+    <field name="res_model">upopark.plaza</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crea la primera plaza</p>
     </field>
   </record>
 

@@ -7,6 +7,7 @@ class EstadoConservacionPlaza(models.Model):
     _name = 'upoPark.estadoConservacionPlaza'
     _description = 'Estado de conservacion de una plaza'
 
+    estado = fields.Char('Estado', size=9, required=True)
     activo = fields.Boolean(
             string='¿Estado activo?',
             default=True

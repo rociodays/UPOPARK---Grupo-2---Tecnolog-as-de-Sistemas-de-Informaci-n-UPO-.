@@ -11,8 +11,8 @@
             <field name="capacidad" />
             <field name="activo" />
             <field name="aparcamiento_campus" widget="many2one" />
-            <field name="aparcamiento_zona" widget="many2many">
-            <field name="aparcamiento_plaza" widget="one2many">
+            <field name="aparcamiento_zona" widget="many2many" />
+            <field name="aparcamiento_plaza" widget="one2many" />
           </group>
         </sheet>
       </form>
@@ -29,8 +29,19 @@
             <field name="capacidad" />
             <field name="activo" />
             <field name="aparcamiento_campus" widget="many2one" />
-            <field name="aparcamiento_zona" widget="many2many">
-            <field name="aparcamiento_plaza" widget="one2many">
+            <field name="aparcamiento_zona" widget="many2many" />
+            <field name="aparcamiento_plaza" widget="one2many" />
       </list>
     </field>
   </record>
+
+  <record id="aparcamiento_list_action" model="ir.actions.act_window">
+    <field name="name">Aparcamientos</field>
+    <field name="res_model">upopark.aparcamiento</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crea el primer aparcamiento</p>
+    </field>
+  </record>
+
+</odoo>

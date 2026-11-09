@@ -6,7 +6,9 @@
       <form string="Instructor">
         <sheet layout="auto">
           <group>
-            <field name="nivelAcceso_zona" widget="one2many">
+            <field name="nivel" />
+            <field name="descripcion" />
+            <field name="nivelAcceso_zona" widget="one2many" />
           </group>
         </sheet>
       </form>
@@ -18,9 +20,19 @@
     <field name="model">upoPark.nivelAcceso</field>
     <field name="arch" type="xml">
       <list string="list_string">
-            <field name="nivelAcceso_zona" widget="one2many">
+            <field name="nivel" />
+            <field name="descripcion" />
+            <field name="nivelAcceso_zona" widget="one2many" />
       </list>
     </field>
   </record>
 
+  <record id="nivelAcceso_list_action" model="ir.actions.act_window">
+    <field name="name">Niveles de acceso</field>
+    <field name="res_model">upopark.nivelAcceso</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Crea el primer nivel de acceso</p>
+    </field>
+  </record>
 </odoo>
