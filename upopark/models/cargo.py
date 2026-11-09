@@ -10,9 +10,9 @@ class Cargo(models.Model):
 
     tipo_servicio_cargo_id = fields.Many2one('upopark.tipo_servicio_cargo', string='Tipo de Servicio', required=True)
     linea_cargo_id = fields.Many2one('upopark.linea_cargo', string='Linea', required=True)
-    estado_cargo_id = fields.Many2one('upopark.estado_cargo', string='Estado', required=True)
+    estado_cargo_id = fields.Many2one('upopark.estado_cargo', string='Estado', required=True)   
     contacto_id = fields.Many2one('upopark.contacto', string='Contacto', required=True)
-    estancia_id = fields.One2Many('upopark.estancia', string='Estancia')
+    estancia_id = fields.Many2one('upopark.estancia', string='Estancia', required=True)
     metodo_pago_id = fields.One2Many('upopark.metodo_pago', string='Metodos de Pago')
     plazo_pago_id = fields.Many2one('upopark.plazo_pago', string='Plazo de Pago')
-    sesion_carga_id = fields.One2Many('upopark.sesion_carga', string='Sesiones de Carga')
+    sesion_carga_id = fields.Many2one('upopark.sesion_carga', string='Sesiones de Carga', required=True)
