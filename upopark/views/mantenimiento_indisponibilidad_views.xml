@@ -1,0 +1,100 @@
+<odoo>
+    <record id="view_mantenimiento_indisponibilidad_list" model="ir.ui.view">
+        <field name="name">upopark.mantenimiento.indisponibilidad.list</field>
+        <field name="model">upopark.mantenimiento.indisponibilidad</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="strReferencia"/>
+                <field name="m2oRecursoId"/>
+                <field name="strMotivo"/>
+                <field name="dtInicio"/>
+                <field name="dtFin"/>
+                <field name="m2oIncidenciaId"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_mantenimiento_indisponibilidad_form" model="ir.ui.view">
+        <field name="name">upopark.mantenimiento.indisponibilidad.form</field>
+        <field name="model">upopark.mantenimiento.indisponibilidad</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="%(action_mantenimiento_inspeccion_new)d" type="action"
+                            string="Documentar con inspección" invisible="not id"
+                            context="{'default_m2oIndisponibilidadId': id}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="strReferencia" invisible="not id"/>
+                        <field name="m2oRecursoId" options="{'no_create': True, 'no_open': True}"/>
+                        <field name="m2oIncidenciaId" options="{'no_create': True}"/>
+                        <field name="dtInicio"/>
+                        <field name="dtFin"/>
+                        <field name="strMotivo"/>
+                    </group>
+                    <separator string="Inspecciones que documentan esta indisponibilidad"/>
+                    <field name="o2mInspeccionesIds" readonly="1">
+                        <list>
+                            <field name="strReferencia"/>
+                            <field name="m2oOrdenTrabajoId"/>
+                            <field name="dateFechaInspeccion"/>
+                            <field name="m2oResultadoId"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_mantenimiento_indisponibilidad_search" model="ir.ui.view">
+        <field name="name">upopark.mantenimiento.indisponibilidad.search</field>
+        <field name="model">upopark.mantenimiento.indisponibilidad</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="strReferencia"/>
+                <field name="strMotivo"/>
+                <field name="m2oRecursoId"/>
+                <field name="m2oIncidenciaId"/>
+                <filter name="sin_fin" string="Sin fecha de fin" domain="[('dtFin', '=', False)]"/>
+                <separator/>
+                <filter name="con_incidencia" string="Con incidencia" domain="[('m2oIncidenciaId', '!=', False)]"/>
+                <filter name="sin_incidencia" string="Sin incidencia" domain="[('m2oIncidenciaId', '=', False)]"/>
+                <group expand="0" string="Agrupar por">
+                    <filter name="por_recurso" string="Recurso" context="{'group_by': 'm2oRecursoId'}"/>
+                    <filter name="por_incidencia" string="Incidencia" context="{'group_by': 'm2oIncidenciaId'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="view_mantenimiento_indisponibilidad_calendar" model="ir.ui.view">
+        <field name="name">upopark.mantenimiento.indisponibilidad.calendar</field>
+        <field name="model">upopark.mantenimiento.indisponibilidad</field>
+        <field name="arch" type="xml">
+            <calendar string="Indisponibilidades" date_start="dtInicio" date_stop="dtFin"
+                      color="m2oRecursoId" quick_create="false" delete="false">
+                <field name="m2oRecursoId"/>
+                <field name="strMotivo"/>
+            </calendar>
+        </field>
+    </record>
+    <record id="view_mantenimiento_indisponibilidad_graph" model="ir.ui.view">
+        <field name="name">upopark.mantenimiento.indisponibilidad.graph</field>
+        <field name="model">upopark.mantenimiento.indisponibilidad</field>
+        <field name="arch" type="xml">
+            <graph string="Indisponibilidades por recurso" type="bar">
+                <field name="m2oRecursoId"/>
+            </graph>
+        </field>
+    </record>
+    <record id="action_mantenimiento_indisponibilidad" model="ir.actions.act_window">
+        <field name="name">Indisponibilidades</field>
+        <field name="res_model">upopark.mantenimiento.indisponibilidad</field>
+        <field name="view_mode">list,form,calendar,graph</field>
+        <field name="search_view_id" ref="view_mantenimiento_indisponibilidad_search"/>
+    </record>
+    <record id="action_mantenimiento_indisponibilidad_new" model="ir.actions.act_window">
+        <field name="name">Registrar indisponibilidad</field>
+        <field name="res_model">upopark.mantenimiento.indisponibilidad</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

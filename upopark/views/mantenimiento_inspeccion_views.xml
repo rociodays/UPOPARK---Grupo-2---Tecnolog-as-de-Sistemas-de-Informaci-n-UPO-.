@@ -1,0 +1,66 @@
+<odoo>
+    <record id="view_mantenimiento_inspeccion_list" model="ir.ui.view">
+        <field name="name">upopark.mantenimiento.inspeccion.list</field>
+        <field name="model">upopark.mantenimiento.inspeccion</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="strReferencia"/>
+                <field name="m2oOrdenTrabajoId"/>
+                <field name="m2oIndisponibilidadId" optional="hide"/>
+                <field name="m2oInspectorId"/>
+                <field name="dateFechaInspeccion"/>
+                <field name="m2oResultadoId"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_mantenimiento_inspeccion_form" model="ir.ui.view">
+        <field name="name">upopark.mantenimiento.inspeccion.form</field>
+        <field name="model">upopark.mantenimiento.inspeccion</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="strReferencia" invisible="not id"/>
+                        <field name="m2oOrdenTrabajoId" options="{'no_create': True}"/>
+                        <field name="m2oIndisponibilidadId" options="{'no_create': True}"/>
+                        <field name="m2oInspectorId" required="m2oResultadoId" options="{'no_create': True}"/>
+                        <field name="dateFechaInspeccion" required="m2oResultadoId"/>
+                        <field name="m2oResultadoId" options="{'no_create': True}"/>
+                        <field name="strObservaciones"/>
+                    </group>
+                    <field name="o2mPuntosComprobacionIds">
+                        <list editable="bottom" delete="0">
+                            <field name="iSecuencia"/>
+                            <field name="strNombre"/>
+                            <field name="selResultado"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_mantenimiento_inspeccion_graph" model="ir.ui.view">
+        <field name="name">upopark.mantenimiento.inspeccion.graph</field>
+        <field name="model">upopark.mantenimiento.inspeccion</field>
+        <field name="arch" type="xml">
+            <graph string="Inspecciones por persona" type="bar">
+                <field name="m2oInspectorId"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_mantenimiento_inspeccion" model="ir.actions.act_window">
+        <field name="name">Inspecciones</field>
+        <field name="res_model">upopark.mantenimiento.inspeccion</field>
+        <field name="view_mode">list,form,graph</field>
+    </record>
+
+    <record id="action_mantenimiento_inspeccion_new" model="ir.actions.act_window">
+        <field name="name">Abrir inspección</field>
+        <field name="res_model">upopark.mantenimiento.inspeccion</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

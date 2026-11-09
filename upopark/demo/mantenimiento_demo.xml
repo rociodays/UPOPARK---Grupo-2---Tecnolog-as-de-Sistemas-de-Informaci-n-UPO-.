@@ -1,0 +1,70 @@
+<odoo noupdate="1">
+    <record id="demo_mantenimiento_type_charging" model="upopark.mantenimiento.tipo_incidencia">
+        <field name="strNombre">Fallo de recarga</field>
+        <field name="strDescripcion">Avería que impide iniciar o completar una sesión de carga.</field>
+    </record>
+    <record id="demo_mantenimiento_state_open" model="upopark.mantenimiento.estado_incidencia">
+        <field name="strNombre">Abierta</field>
+    </record>
+    <record id="demo_mantenimiento_state_review" model="upopark.mantenimiento.estado_incidencia">
+        <field name="strNombre">En revisión</field>
+    </record>
+    <record id="demo_mantenimiento_state_resolved" model="upopark.mantenimiento.estado_incidencia">
+        <field name="strNombre">Resuelta</field>
+    </record>
+    <record id="demo_mantenimiento_result_passed" model="upopark.mantenimiento.resultado">
+        <field name="strNombre">Conforme</field>
+    </record>
+    <record id="demo_mantenimiento_result_failed" model="upopark.mantenimiento.resultado">
+        <field name="strNombre">No conforme</field>
+    </record>
+
+    <record id="demo_mantenimiento_incidencia_c12" model="upopark.mantenimiento.incidencia">
+        <field name="strAsunto">Conector C-12 fuera de servicio</field>
+        <field name="m2oTipoIncidenciaId" ref="demo_mantenimiento_type_charging"/>
+        <field name="m2oEstadoIncidenciaId" ref="demo_mantenimiento_state_review"/>
+        <field name="m2oContactoReportaId" ref="base.partner_admin"/>
+        <field name="strDescripcion">La sesión de prueba se detiene al iniciar la recarga.</field>
+    </record>
+    <record id="demo_mantenimiento_orden_trabajo_c12" model="upopark.mantenimiento.orden_trabajo">
+        <field name="strAsunto">Revisar el conector C-12</field>
+        <field name="m2oIncidenciaId" ref="demo_mantenimiento_incidencia_c12"/>
+        <field name="m2oResponsableId" ref="base.partner_admin"/>
+        <field name="dtInicioPrevisto" eval="datetime.now().strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+    <record id="demo_mantenimiento_tarea_c12_diagnosis" model="upopark.mantenimiento.tarea">
+        <field name="m2oOrdenTrabajoId" ref="demo_mantenimiento_orden_trabajo_c12"/>
+        <field name="iSecuencia" eval="10"/>
+        <field name="strNombre">Comprobar el error del conector</field>
+    </record>
+    <record id="demo_mantenimiento_tarea_c12_test" model="upopark.mantenimiento.tarea">
+        <field name="m2oOrdenTrabajoId" ref="demo_mantenimiento_orden_trabajo_c12"/>
+        <field name="iSecuencia" eval="20"/>
+        <field name="strNombre">Verificar el inicio de una sesión de carga de prueba</field>
+    </record>
+    <record id="demo_mantenimiento_orden_trabajo_routine" model="upopark.mantenimiento.orden_trabajo">
+        <field name="strAsunto">Revisión rutinaria de señalización</field>
+        <field name="m2oResponsableId" ref="base.partner_admin"/>
+        <field name="dtInicioPrevisto" eval="(datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+
+    <record id="demo_mantenimiento_inspeccion_c12" model="upopark.mantenimiento.inspeccion">
+        <field name="m2oOrdenTrabajoId" ref="demo_mantenimiento_orden_trabajo_c12"/>
+        <field name="m2oInspectorId" ref="base.partner_admin"/>
+        <field name="dateFechaInspeccion" eval="datetime.now().date().isoformat()"/>
+        <field name="m2oResultadoId" ref="demo_mantenimiento_result_failed"/>
+        <field name="strObservaciones">El cable está en buen estado. El conector no inicia la sesión de prueba.</field>
+    </record>
+    <record id="demo_mantenimiento_elemento_inspeccionado_c12_cable" model="upopark.mantenimiento.elemento_inspeccionado">
+        <field name="m2oInspeccionId" ref="demo_mantenimiento_inspeccion_c12"/>
+        <field name="iSecuencia" eval="10"/>
+        <field name="strNombre">Revisar el cable y su aislamiento</field>
+        <field name="selResultado">passed</field>
+    </record>
+    <record id="demo_mantenimiento_elemento_inspeccionado_c12_start" model="upopark.mantenimiento.elemento_inspeccionado">
+        <field name="m2oInspeccionId" ref="demo_mantenimiento_inspeccion_c12"/>
+        <field name="iSecuencia" eval="20"/>
+        <field name="strNombre">Iniciar una sesión de carga de prueba</field>
+        <field name="selResultado">failed</field>
+    </record>
+</odoo>
