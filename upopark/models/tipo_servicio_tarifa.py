@@ -7,4 +7,4 @@ class TipoServicioTarifa(models.Model):
     tipo = fields.Char(string='Tipo', required=True)
     descripcion = fields.Char(string='Descripcion')
 
-    tarifa_id = fields.One2Many('upopark.tarifa', string='Tarifas')
+    tarifa_ids = fields.One2Many('upopark.tarifa', 'tipo_servicio_tarifa_id', string='Tarifas')

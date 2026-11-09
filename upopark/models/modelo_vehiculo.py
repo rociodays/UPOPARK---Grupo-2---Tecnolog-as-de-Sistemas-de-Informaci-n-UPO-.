@@ -1,4 +1,4 @@
-﻿from odoo import models, field, api
+﻿from odoo import models, fields, api
 
 class ModeloVehiculo(models.Model):
     _name = 'upopark.modelo_vehiculo'
@@ -7,4 +7,4 @@ class ModeloVehiculo(models.Model):
     nombre_modelo = fields.Char(string='Nombre del modelo', required=True)
     descripcion = fields.Char(string='Descripcion')
 
-    vehiculo_id = fields.Many2one('upopark.vehiculo', string='Vehiculo', required=True)
+    vehiculo_ids = fields.One2many('upopark.vehiculo', 'modelo_vehiculo_id', string='Vehiculos')

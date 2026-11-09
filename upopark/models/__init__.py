@@ -49,3 +49,14 @@ from . import mensaje_ticket
 from . import estado_sensor
 from . import sensor_ocupacion
 from . import resumen_diario
+from . import cargo
+from . import estancia
+from . import infraccion
+from . import estado_permiso
+from . import fabricante_hardware
+from . import modelo_vehiculo
+from . import resolucion_alegacion
+from . import tipo_servicio_cargo
+from . import tipo_servicio_tarifa
+from . import estado_cargo
+from . import recurso

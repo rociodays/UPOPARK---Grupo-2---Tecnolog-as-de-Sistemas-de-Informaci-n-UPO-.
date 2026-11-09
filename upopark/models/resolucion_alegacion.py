@@ -2,7 +2,7 @@
 
 class ResolucionAlegacion(models.Model):
     _name = 'upopark.resolucion_alegacion'
-    _descripcion = 'Resolución de Alegación'
+    _description = 'Resolución de Alegación'
 
     fecha_resolucion = fields.Datetime(string='Fecha de resolucion', required=True)
     dictamen_final = fields.Selection(
