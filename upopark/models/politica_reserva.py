@@ -34,26 +34,15 @@ class PoliticaReserva(models.Model):
     #rangos numeros
     @api.onchange('iDuracionMaxima', 'iDiasAntelacion', 'iAntelacionCancel')
     def _onchange_ajustar_valores_numericos(self):
-        resultado = {}
-        mensajes = []
         
         if self.iDuracionMaxima and self.iDuracionMaxima < 1:
             self.iDuracionMaxima = 1
-            mensajes.append('La duracion maxima no pude ser negativa.')
-            
+            raise ValidationError('La duracion maxima no puede ser negativa.')
+
         if self.iDiasAntelacion and self.iDiasAntelacion < 0:
             self.iDiasAntelacion = 0
-            mensajes.append('Los dias de antelacion no pueden ser negativos.')
+            raise ValidationError('Los dias de antelacion no pueden ser negativos.')
             
         if self.iAntelacionCancel and self.iAntelacionCancel < 0:
             self.iAntelacionCancel = 0
-            mensajes.append('La antelacion de cancelacion no puede ser negativa.')
-
-        if mensajes:
-            resultado = {
-                'warning': {
-                    'title': 'Errores de politica',
-                    'message': ' '.join(mensajes)
-                }
-            }
-            return resultado
+            raise ValidationError('La antelacion de cancelacion no puede ser negativa.')
