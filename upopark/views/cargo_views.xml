@@ -1,0 +1,94 @@
+﻿<odoo>
+    <record id="view_cargo_list" model="ir.ui.view">
+        <field name="name">upopark.cargo.list</field>
+        <field name="model">upopark.cargo</field>
+        <field name="arch" type="xml">
+            <list string="Cargos">
+                <field name="referencia"/>
+                <field name="emision"/>
+                <field name="contacto_id"/>
+                <field name="tipo_servicio_cargo_id"/>
+                <field name="linea_cargo_id"/>
+                <field name="estado_cargo_id"/>
+                <field name="plazo_pago_id"/>
+                <field name="importe" widget="monetary" sum="Total"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_cargo_form" model="ir.ui.view">
+        <field name="name">upopark.cargo.form</field>
+        <field name="model">upopark.cargo</field>
+        <field name="arch" type="xml">
+            <form string="Cargo">
+                <header>
+                    <field name="estado_cargo_id" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="referencia"/>
+                            <field name="emision"/>
+                            <field name="contacto_id"/>
+                        </group>
+                        <group>
+                            <field name="tipo_servicio_cargo_id"/>
+                            <field name="linea_cargo_id"/>
+                            <field name="plazo_pago_id"/>
+                            <field name="importe" widget="monetary"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Estancias">
+                            <field name="estancia_id">
+                                <list>
+                                    <field name="referencia"/>
+                                    <field name="entrada"/>
+                                    <field name="salida"/>
+                                    <field name="estado_estancia_id"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Métodos de Pago">
+                            <field name="metodo_pago_id">
+                                <list/>
+                            </field>
+                        </page>
+                        <page string="Sesiones de Carga">
+                            <field name="sesion_carga_id">
+                                <list/>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_cargo_search" model="ir.ui.view">
+        <field name="name">upopark.cargo.search</field>
+        <field name="model">upopark.cargo</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="referencia"/>
+                <field name="contacto_id"/>
+                <field name="estado_cargo_id"/>
+                <field name="tipo_servicio_cargo_id"/>
+                <filter name="filter_pendiente" string="Pendientes"
+                        domain="[('estado_cargo_id','!=',False)]"/>
+                <group expand="0" string="Agrupar por">
+                    <filter name="group_estado" string="Estado" context="{'group_by': 'estado_cargo_id'}"/>
+                    <filter name="group_contacto" string="Contacto" context="{'group_by': 'contacto_id'}"/>
+                    <filter name="group_tipo" string="Tipo de Servicio" context="{'group_by': 'tipo_servicio_cargo_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_cargo" model="ir.actions.act_window">
+        <field name="name">Cargos</field>
+        <field name="res_model">upopark.cargo</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

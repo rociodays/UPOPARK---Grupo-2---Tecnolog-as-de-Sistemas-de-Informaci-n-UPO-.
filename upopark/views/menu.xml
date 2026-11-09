@@ -1,29 +1,57 @@
 <odoo>
   <data>
+    <!-- Menus principales -->
     <menuitem id="main_upopark_menu" name="UpoPark" groups="upopark.group_upopark_user"/>
+
     <menuitem id="menu_operaciones" name="Operaciones y Calendario" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_financiero" name="Financiero y Burocrático" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_tarifas" name="Tarifas y Facturación" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_sanciones" name="Control, Vigilancia y Sanciones" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_accesos" name="Gestión de Accesos" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_infraestructura" name="Infraestructura y Recargas" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_vehiculos" name="Vehículos y Estancias" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_aparcamientos" name="Aparcamientos y Plazas" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_soporte_usuario" name="Soporte al Usuario" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+
+    <!-- Operaciones y calendario -->
     <menuitem id="menu_festivo" name="Festivos" parent="menu_operaciones" action="action_festivo" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_evento_campus" name="Eventos Campus" parent="menu_operaciones" action="action_evento_campus" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_financiero" name="Financiero y Burocrático" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_calendario" name="Calendarios" parent="menu_operaciones" action="calendario_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_franja_calendario" name="Franjas de Calendario" parent="menu_operaciones" action="franja_calendario_list_action" groups="upopark.group_upopark_user"/>
+
+    <!-- Financiero -->
     <menuitem id="menu_entidad_bancaria" name="Entidades Bancarias" parent="menu_financiero" action="action_entidad_bancaria" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_metodo_pago" name="Métodos de Pago" parent="menu_financiero" action="action_metodo_pago" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_plazo_pago" name="Plazos de Pago" parent="menu_financiero" action="action_plazo_pago" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_moneda" name="Monedas" parent="menu_financiero" action="moneda_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_tarifas" name="Tarifas y Facturación" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_cargo" name="Cargos" parent="menu_financiero" action="action_cargo" groups="upopark.group_upopark_user"/>
+
+    <!-- Tarifas y facturacion -->
     <menuitem id="menu_tipo_descuento" name="Tipos de Descuento" parent="menu_tarifas" action="action_tipo_descuento" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_descuento_asignado" name="Descuentos Asignados" parent="menu_tarifas" action="action_descuento_asignado" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_sanciones" name="Control, Vigilancia y Sanciones" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_tipo_servicio_cargo" name="Tipos de Servicio" parent="menu_tarifas" action="action_tipo_servicio_cargo" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_tipo_servicio_tarifa" name="Tipos de Servicio (Tarifa)" parent="menu_tarifas" action="action_tipo_servicio_tarifa" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_estado_cargo" name="Estados de Cargo" parent="menu_tarifas" action="action_estado_cargo" groups="upopark.group_upopark_user"/>
+
+    <!-- Control, Vigilancia y sanciones -->
     <menuitem id="menu_tipo_sancion" name="Tipos de Sanción" parent="menu_sanciones" action="action_tipo_sancion" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_sancion" name="Sanciones" parent="menu_sanciones" action="action_sancion" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_tipo_infraccion" name="Tipos de Infracción" parent="menu_sanciones" action="action_tipo_infraccion" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_accesos" name="Gestión de Accesos" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_infraccion" name="Infracciones" parent="menu_sanciones" action="action_infraccion" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_alegacion" name="Alegaciones" parent="menu_sanciones" action="alegacion_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_resolucion_alegacion" name="Resoluciones de Alegación" parent="menu_sanciones" action="action_resolucion_alegacion" groups="upopark.group_upopark_user"/>
+
+    <!-- Gestion de accesos -->
     <menuitem id="organizacion_menu" name="Organizaciones" parent="menu_accesos" action="organizacion_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="usuario_menu" name="Usuarios" parent="menu_accesos" action="usuario_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="puntodeacceso_menu" name="Puntos de Acceso" parent="menu_accesos" action="puntodeacceso_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="estado_punto_acceso_menu" name="Estados de Puntos de Acceso" parent="menu_accesos" action="estado_punto_acceso_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="permisodeacceso_menu" name="Permisos de Acceso" parent="menu_accesos" action="permisodeacceso_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="alegacion_menu" name="Alegaciones" parent="menu_accesos" action="alegacion_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_infraestructura" name="Infraestructura y Recargas" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_tipo_doc" name="Tipos de Documento" parent="menu_accesos" action="tipo_doc_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_contacto" name="Contactos" parent="menu_accesos" action="contacto_list_action" groups="upopark.group_upopark_user"/>
+
+    <!-- Infraestructura y recargas -->
     <menuitem id="estacionrecarga_menu" name="Estaciones" parent="menu_infraestructura" action="estacionrecarga_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="estado_estacion_recarga_menu" name="Estados de Estaciones" parent="menu_infraestructura" action="estado_estacion_recarga_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="conector_menu" name="Conectores" parent="menu_infraestructura" action="conector_list_action" groups="upopark.group_upopark_user"/>
@@ -33,12 +61,18 @@
     <menuitem id="sesionrecarga_menu" name="Sesiones" parent="menu_infraestructura" action="sesionrecarga_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="tarifa_menu" name="Tarifas" parent="menu_infraestructura" action="tarifa_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="lineacargo_menu" name="Cargos" parent="menu_infraestructura" action="lineacargo_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_vehiculos" name="Vehículos y Estancias" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_fabricante_hardware" name="Fabricantes de Hardware" parent="menu_infraestructura" action="action_fabricante_hardware" groups="upopark.group_upopark_user"/>
+
+    <!-- Vehiculos y estancias -->
     <menuitem id="marca_vehiculo_menu" name="Marcas de Vehículos" parent="menu_vehiculos" action="marca_vehiculo_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="tipo_combustible_menu" name="Tipos de Combustible" parent="menu_vehiculos" action="tipo_combustible_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="etiqueta_ambiental_menu" name="Etiquetas Ambientales" parent="menu_vehiculos" action="etiqueta_ambiental_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="estado_estancia_menu" name="Estados de Estancia" parent="menu_vehiculos" action="estado_estancia_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_aparcamientos" name="Aparcamientos y Plazas" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_vehiculo" name="Vehículos" parent="menu_vehiculos" action="action_vehiculo" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_estancia" name="Estancias" parent="menu_vehiculos" action="action_estancia" groups="upopark.group_upopark_user"/>
+    <menuitem id="modelo_vehiculo_menu" name="Modelos de Vehículo" parent="menu_vehiculos" action="action_modelo_vehiculo" groups="upopark.group_upopark_user"/>
+
+    <!-- Aparcamientos y plazas -->
     <menuitem id="aparcamiento_menu" name="Aparcamientos" parent="menu_aparcamientos" action="aparcamiento_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="bloqueoPlaza_menu" name="Bloqueos de Plaza" parent="menu_aparcamientos" action="bloqueoPlaza_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="campus_menu" name="Campus" parent="menu_aparcamientos" action="campus_list_action" groups="upopark.group_upopark_user"/>
@@ -50,16 +84,13 @@
     <menuitem id="plaza_menu" name="Plazas" parent="menu_aparcamientos" action="plaza_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="tipoPlaza_menu" name="Tipos de Plaza" parent="menu_aparcamientos" action="tipoPlaza_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="zona_menu" name="Zonas" parent="menu_aparcamientos" action="zona_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_soporte_usuario" name="Soporte al Usuario" parent="main_upopark_menu" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_tipo_doc" name="Tipos de Documento" parent="menu_accesos" action="tipo_doc_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_contacto" name="Contactos" parent="menu_accesos" action="contacto_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_calendario" name="Calendarios" parent="menu_operaciones" action="calendario_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_franja_calendario" name="Franjas de Calendario" parent="menu_operaciones" action="franja_calendario_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_prioridad" name="Prioridades" parent="menu_soporte_usuario" action="prioridad_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_ticket_soporte" name="Tickets" parent="menu_soporte_usuario" action="ticket_soporte_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_mensaje_ticket" name="Mensajes de Ticket" parent="menu_soporte_usuario" action="mensaje_ticket_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_estado_sensor" name="Estados de Sensor" parent="menu_aparcamientos" action="estado_sensor_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_sensor_ocupacion" name="Sensores de Ocupación" parent="menu_aparcamientos" action="sensor_ocupacion_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_resumen_diario" name="Resúmenes Diarios" parent="menu_aparcamientos" action="resumen_diario_list_action" groups="upopark.group_upopark_user"/>
+
+    <!-- Soporte al usuario -->
+    <menuitem id="menu_prioridad" name="Prioridades" parent="menu_soporte_usuario" action="prioridad_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_ticket_soporte" name="Tickets" parent="menu_soporte_usuario" action="ticket_soporte_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_mensaje_ticket" name="Mensajes de Ticket" parent="menu_soporte_usuario" action="mensaje_ticket_list_action" groups="upopark.group_upopark_user"/>
  </data>
 </odoo>

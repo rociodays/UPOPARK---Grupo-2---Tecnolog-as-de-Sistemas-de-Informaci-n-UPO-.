@@ -1,0 +1,81 @@
+﻿<odoo>
+    <record id="view_infraccion_list" model="ir.ui.view">
+        <field name="name">upopark.infraccion.list</field>
+        <field name="model">upopark.infraccion</field>
+        <field name="arch" type="xml">
+            <list string="Infracciones">
+                <field name="fecha"/>
+                <field name="descripcion"/>
+                <field name="aparcamiento_id"/>
+                <field name="vehiculo_id"/>
+                <field name="tipo_infraccion_id"/>
+                <field name="alegacion_id"/>
+                <field name="importe" widget="monetary" sum="Total"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_infraccion_form" model="ir.ui.view">
+        <field name="name">upopark.infraccion.form</field>
+        <field name="model">upopark.infraccion</field>
+        <field name="arch" type="xml">
+            <form string="Infracción">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="fecha"/>
+                            <field name="alegacion_id"/>
+                        </group>
+                        <group>
+                            <field name="importe" widget="monetary"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Descripción">
+                        <field name="descripcion" nolabel="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Tipos de Infracción">
+                            <field name="tipo_infraccion_id">
+                                <list/>
+                            </field>
+                        </page>
+                        <page string="Aparcamientos">
+                            <field name="aparcamiento_id">
+                                <list/>
+                            </field>
+                        </page>
+                        <page string="Vehículos">
+                            <field name="vehiculo_id">
+                                <list/>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_infraccion_search" model="ir.ui.view">
+        <field name="name">upopark.infraccion.search</field>
+        <field name="model">upopark.infraccion</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="descripcion"/>
+                <field name="vehiculo_id"/>
+                <field name="aparcamiento_id"/>
+                <filter name="filter_con_alegacion" string="Con Alegacion" domain="[('alegacion_id','!=',False)]"/>
+                <group expand="0" string="Agrupar por">
+                    <filter name="group_fecha" string="Fecha" context="{'group_by': 'fecha'}"/>
+                    <filter name="group_vehiculo" string="Vehículo" context="{'group_by': 'vehiculo_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_infraccion" model="ir.actions.act_window">
+        <field name="name">Infracciones</field>
+        <field name="res_model">upopark.infraccion</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

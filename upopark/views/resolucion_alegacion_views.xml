@@ -1,0 +1,56 @@
+﻿<odoo>
+    <record id="view_resolucion_alegacion_list" model="ir.ui.view">
+        <field name="name">upopark.resolucion_alegacion.list</field>
+        <field name="model">upopark.resolucion_alegacion</field>
+        <field name="arch" type="xml">
+            <list string="Resoluciones de Alegación">
+                <field name="fecha_resolucion"/>
+                <field name="alegacion_id"/>
+                <field name="dictamen_final" widget="badge"
+                       decoration-success="dictamen_final == 'estimada'"
+                       decoration-danger="dictamen_final == 'desestimada'"/>
+                <field name="administrador_responsable"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_resolucion_alegacion_form" model="ir.ui.view">
+        <field name="name">upopark.resolucion_alegacion.form</field>
+        <field name="model">upopark.resolucion_alegacion</field>
+        <field name="arch" type="xml">
+            <form string="Resolución de Alegación">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="fecha_resolucion"/>
+                            <field name="alegacion_id"/>
+                        </group>
+                        <group>
+                            <field name="dictamen_final"/>
+                            <field name="administrador_responsable"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_resolucion_alegacion_search" model="ir.ui.view">
+        <field name="name">upopark.resolucion_alegacion.search</field>
+        <field name="model">upopark.resolucion_alegacion</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="alegacion_id"/>
+                <field name="administrador_responsable"/>
+                <filter name="filter_estimada" string="Estimadas" domain="[('dictamen_final','=','estimada')]"/>
+                <filter name="filter_desestimada" string="Desestimadas" domain="[('dictamen_final','=','desestimada')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_resolucion_alegacion" model="ir.actions.act_window">
+        <field name="name">Resoluciones de Alegación</field>
+        <field name="res_model">upopark.resolucion_alegacion</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

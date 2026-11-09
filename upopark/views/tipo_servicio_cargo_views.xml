@@ -1,0 +1,55 @@
+﻿<odoo>
+    <record id="view_tipo_servicio_cargo_list" model="ir.ui.view">
+        <field name="name">upopark.tipo_servicio_cargo.list</field>
+        <field name="model">upopark.tipo_servicio_cargo</field>
+        <field name="arch" type="xml">
+            <list string="Tipos de Servicio de Cargo">
+                <field name="tipo"/>
+                <field name="descripcion"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_tipo_servicio_cargo_form" model="ir.ui.view">
+        <field name="name">upopark.tipo_servicio_cargo.form</field>
+        <field name="model">upopark.tipo_servicio_cargo</field>
+        <field name="arch" type="xml">
+            <form string="Tipo de Servicio de Cargo">
+                <sheet>
+                    <group>
+                        <field name="tipo"/>
+                        <field name="descripcion"/>
+                    </group>
+                    <notebook>
+                        <page string="Cargos">
+                            <field name="cargo_id">
+                                <list>
+                                    <field name="referencia"/>
+                                    <field name="emision"/>
+                                    <field name="importe" widget="monetary"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tipo_servicio_cargo_search" model="ir.ui.view">
+        <field name="name">upopark.tipo_servicio_cargo.search</field>
+        <field name="model">upopark.tipo_servicio_cargo</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="tipo"/>
+                <field name="descripcion"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_tipo_servicio_cargo" model="ir.actions.act_window">
+        <field name="name">Tipos de Servicio de Cargo</field>
+        <field name="res_model">upopark.tipo_servicio_cargo</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

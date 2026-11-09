@@ -1,0 +1,51 @@
+﻿<odoo>
+    <record id="view_tipo_servicio_tarifa_list" model="ir.ui.view">
+        <field name="name">upopark.tipo_servicio_tarifa.list</field>
+        <field name="model">upopark.tipo_servicio_tarifa</field>
+        <field name="arch" type="xml">
+            <list string="Tipos de Servicio de Tarifa">
+                <field name="tipo"/>
+                <field name="descripcion"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_tipo_servicio_tarifa_form" model="ir.ui.view">
+        <field name="name">upopark.tipo_servicio_tarifa.form</field>
+        <field name="model">upopark.tipo_servicio_tarifa</field>
+        <field name="arch" type="xml">
+            <form string="Tipo de Servicio de Tarifa">
+                <sheet>
+                    <group>
+                        <field name="tipo"/>
+                        <field name="descripcion"/>
+                    </group>
+                    <notebook>
+                        <page string="Tarifas">
+                            <field name="tarifa_id">
+                                <list/>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tipo_servicio_tarifa_search" model="ir.ui.view">
+        <field name="name">upopark.tipo_servicio_tarifa.search</field>
+        <field name="model">upopark.tipo_servicio_tarifa</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="tipo"/>
+                <field name="descripcion"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_tipo_servicio_tarifa" model="ir.actions.act_window">
+        <field name="name">Tipos de Servicio de Tarifa</field>
+        <field name="res_model">upopark.tipo_servicio_tarifa</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
