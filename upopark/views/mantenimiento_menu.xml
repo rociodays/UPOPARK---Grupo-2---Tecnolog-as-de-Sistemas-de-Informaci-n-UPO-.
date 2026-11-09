@@ -1,0 +1,25 @@
+<odoo>
+    <menuitem id="menu_mantenimiento_root" name="UPOPARK Mantenimiento" sequence="35"
+              groups="upopark.group_mantenimiento_agent"/>
+    <menuitem id="menu_mantenimiento_incidencia" name="Incidencias" parent="menu_mantenimiento_root"
+              action="action_mantenimiento_incidencia" sequence="10"/>
+    <menuitem id="menu_mantenimiento_orden_trabajo" name="Órdenes de trabajo" parent="menu_mantenimiento_root"
+              action="action_mantenimiento_orden_trabajo" sequence="20"/>
+    <menuitem id="menu_mantenimiento_inspeccion" name="Inspecciones" parent="menu_mantenimiento_root"
+              action="action_mantenimiento_inspeccion" sequence="30"/>
+    <menuitem id="menu_mantenimiento_tarea" name="Tareas de mantenimiento" parent="menu_mantenimiento_root"
+              action="action_mantenimiento_tarea" sequence="40"/>
+    <menuitem id="menu_mantenimiento_elemento_inspeccionado" name="Puntos de comprobación" parent="menu_mantenimiento_root"
+              action="action_mantenimiento_elemento_inspeccionado" sequence="50"/>
+    <menuitem id="menu_mantenimiento_plan_preventivo" name="Planes preventivos" parent="menu_mantenimiento_root"
+              action="action_mantenimiento_plan_preventivo" sequence="60"/>
+    <menuitem id="menu_mantenimiento_indisponibilidad" name="Indisponibilidades" parent="menu_mantenimiento_root"
+              action="action_mantenimiento_indisponibilidad" sequence="70"/>
+    <menuitem id="menu_mantenimiento_catalogs" name="Catálogos" parent="menu_mantenimiento_root" sequence="80"/>
+    <menuitem id="menu_mantenimiento_tipo_incidencia" name="Tipos de incidencia" parent="menu_mantenimiento_catalogs"
+              action="action_mantenimiento_tipo_incidencia" sequence="10"/>
+    <menuitem id="menu_mantenimiento_estado_incidencia" name="Estados de incidencia" parent="menu_mantenimiento_catalogs"
+              action="action_mantenimiento_estado_incidencia" sequence="20"/>
+    <menuitem id="menu_mantenimiento_resultado" name="Resultados de inspección" parent="menu_mantenimiento_catalogs"
+              action="action_mantenimiento_resultado" sequence="30"/>
+</odoo>

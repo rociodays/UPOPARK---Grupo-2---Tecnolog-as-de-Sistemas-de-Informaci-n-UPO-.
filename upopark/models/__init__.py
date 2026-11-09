@@ -60,3 +60,13 @@ from . import tipo_servicio_cargo
 from . import tipo_servicio_tarifa
 from . import estado_cargo
 from . import recurso
+from . import mantenimiento_tipo_incidencia
+from . import mantenimiento_estado_incidencia
+from . import mantenimiento_incidencia
+from . import mantenimiento_orden_trabajo
+from . import mantenimiento_tarea
+from . import mantenimiento_resultado
+from . import mantenimiento_inspeccion
+from . import mantenimiento_elemento_inspeccionado
+from . import mantenimiento_plan_preventivo
+from . import mantenimiento_indisponibilidad
