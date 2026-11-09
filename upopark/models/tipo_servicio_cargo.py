@@ -7,4 +7,4 @@ class TipoServicioCargo(models.Model):
     tipo = fields.Char(string='Tipo', required=True)
     descripcion = fields.Char(string='Descripcion')
 
-    cargo_id = fields.One2Many('upopark.cargo', string='Cargos')
+    cargo_id = fields.One2many('upopark.cargo', string='Cargos')
