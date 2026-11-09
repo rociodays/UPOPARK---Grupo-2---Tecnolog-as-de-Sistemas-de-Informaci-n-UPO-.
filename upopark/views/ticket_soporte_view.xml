@@ -1,0 +1,43 @@
+<odoo>
+  <record id="upopark_ticket_soporte_form_view" model="ir.ui.view">
+    <field name="name">upopark.ticket_soporte.form</field>
+    <field name="model">upopark.ticket_soporte</field>
+    <field name="arch" type="xml">
+      <form string="Ticket Soporte">
+        <sheet layout="auto">
+          <group>
+            <field name="referencia" />
+            <field name="asunto" />
+            <field name="descripcion" />
+            <field name="fecha_creacion" />
+            <field name="prioridad_id" widget="many2one" />
+            <field name="contacto_id" widget="many2one" />
+            <field name="mensaje_ids" widget="one2many" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_ticket_soporte_list_view" model="ir.ui.view">
+    <field name="name">upopark.ticket_soporte.list</field>
+    <field name="model">upopark.ticket_soporte</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+        <field name="referencia" />
+        <field name="asunto" />
+        <field name="fecha_creacion" />
+        <field name="prioridad_id" widget="many2one" />
+      </list>
+    </field>
+  </record>
+
+  <record id="ticket_soporte_list_action" model="ir.actions.act_window">
+    <field name="name">Tickets de Soporte</field>
+    <field name="res_model">upopark.ticket_soporte</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first ticket</p>
+    </field>
+  </record>
+</odoo>

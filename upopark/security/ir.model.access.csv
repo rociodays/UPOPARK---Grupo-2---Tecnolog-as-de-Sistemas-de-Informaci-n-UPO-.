@@ -40,3 +40,13 @@ access_upopark_nivelAcceso,upopark.nivelAcceso,model_upopark_nivelAcceso,group_u
 access_upopark_plaza,upopark.plaza,model_upopark_plaza,group_upopark_user,1,1,1,1
 access_upopark_tipoPlaza,upopark.tipoPlaza,model_upopark_tipoPlaza,group_upopark_user,1,1,1,1
 access_upopark_zona,upopark.zona,model_upopark_zona,group_upopark_user,1,1,1,1
+access_upopark_contacto,upopark.contacto,model_upopark_contacto,group_upopark_user,1,1,1,1
+access_upopark_tipo_doc,upopark.tipo_doc,model_upopark_tipo_doc,group_upopark_user,1,1,1,1
+access_upopark_calendario,upopark.calendario,model_upopark_calendario,group_upopark_user,1,1,1,1
+access_upopark_franja_calendario,upopark.franja_calendario,model_upopark_franja_calendario,group_upopark_user,1,1,1,1
+access_upopark_prioridad,upopark.prioridad,model_upopark_prioridad,group_upopark_user,1,1,1,1
+access_upopark_ticket_soporte,upopark.ticket_soporte,model_upopark_ticket_soporte,group_upopark_user,1,1,1,1
+access_upopark_mensaje_ticket,upopark.mensaje_ticket,model_upopark_mensaje_ticket,group_upopark_user,1,1,1,1
+access_upopark_estado_sensor,upopark.estado_sensor,model_upopark_estado_sensor,group_upopark_user,1,1,1,1
+access_upopark_sensor_ocupacion,upopark.sensor_ocupacion,model_upopark_sensor_ocupacion,group_upopark_user,1,1,1,1
+access_upopark_resumen_diario,upopark.resumen_diario,model_upopark_resumen_diario,group_upopark_user,1,1,1,1

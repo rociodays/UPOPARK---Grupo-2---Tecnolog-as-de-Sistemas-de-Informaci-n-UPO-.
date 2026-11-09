@@ -1,0 +1,36 @@
+<odoo>
+  <record id="upopark_estado_sensor_form_view" model="ir.ui.view">
+    <field name="name">upopark.estado_sensor.form</field>
+    <field name="model">upopark.estado_sensor</field>
+    <field name="arch" type="xml">
+      <form string="Estado Sensor">
+        <sheet layout="auto">
+          <group>
+            <field name="nombre" />
+            <field name="descripcion" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_estado_sensor_list_view" model="ir.ui.view">
+    <field name="name">upopark.estado_sensor.list</field>
+    <field name="model">upopark.estado_sensor</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+        <field name="nombre" />
+        <field name="descripcion" />
+      </list>
+    </field>
+  </record>
+
+  <record id="estado_sensor_list_action" model="ir.actions.act_window">
+    <field name="name">Estados de Sensor</field>
+    <field name="res_model">upopark.estado_sensor</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first sensor status</p>
+    </field>
+  </record>
+</odoo>

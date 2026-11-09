@@ -28,7 +28,6 @@ from . import moneda
 from . import tipocombustible
 from . import tipoconector
 from . import tiporecurso
-
 from . import aparcamiento
 from . import bloqueoPlaza
 from . import campus
@@ -40,3 +39,13 @@ from . import nivelAcceso
 from . import plaza
 from . import tipoPlaza
 from . import zona
+from . import contacto
+from . import tipo_doc
+from . import calendario
+from . import franja_calendario
+from . import prioridad
+from . import ticket_soporte
+from . import mensaje_ticket
+from . import estado_sensor
+from . import sensor_ocupacion
+from . import resumen_diario

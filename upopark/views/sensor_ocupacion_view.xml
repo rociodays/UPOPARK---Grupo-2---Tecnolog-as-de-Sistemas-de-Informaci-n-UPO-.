@@ -1,0 +1,39 @@
+<odoo>
+  <record id="upopark_sensor_ocupacion_form_view" model="ir.ui.view">
+    <field name="name">upopark.sensor_ocupacion.form</field>
+    <field name="model">upopark.sensor_ocupacion</field>
+    <field name="arch" type="xml">
+      <form string="Sensor Ocupación">
+        <sheet layout="auto">
+          <group>
+            <field name="cod_ext" />
+            <field name="ult_conex" />
+            <field name="estado_sensor_id" widget="many2one" />
+            <field name="estancia_id" widget="many2one" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_sensor_ocupacion_list_view" model="ir.ui.view">
+    <field name="name">upopark.sensor_ocupacion.list</field>
+    <field name="model">upopark.sensor_ocupacion</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+        <field name="cod_ext" />
+        <field name="ult_conex" />
+        <field name="estado_sensor_id" widget="many2one" />
+      </list>
+    </field>
+  </record>
+
+  <record id="sensor_ocupacion_list_action" model="ir.actions.act_window">
+    <field name="name">Sensores de Ocupación</field>
+    <field name="res_model">upopark.sensor_ocupacion</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first sensor</p>
+    </field>
+  </record>
+</odoo>

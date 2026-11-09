@@ -1,0 +1,43 @@
+<odoo>
+  <record id="upopark_contacto_form_view" model="ir.ui.view">
+    <field name="name">upopark.contacto.form</field>
+    <field name="model">upopark.contacto</field>
+    <field name="arch" type="xml">
+      <form string="Contacto">
+        <sheet layout="auto">
+          <group>
+            <field name="nombre" />
+            <field name="num_doc" />
+            <field name="telefono" />
+            <field name="correo" />
+            <field name="tipo_doc_id" widget="many2one" />
+            <field name="usuario_id" widget="many2one" />
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_contacto_list_view" model="ir.ui.view">
+    <field name="name">upopark.contacto.list</field>
+    <field name="model">upopark.contacto</field>
+    <field name="arch" type="xml">
+      <list string="list_string">
+        <field name="nombre" />
+        <field name="num_doc" />
+        <field name="telefono" />
+        <field name="correo" />
+        <field name="tipo_doc_id" widget="many2one" />
+      </list>
+    </field>
+  </record>
+
+  <record id="contacto_list_action" model="ir.actions.act_window">
+    <field name="name">Contactos</field>
+    <field name="res_model">upopark.contacto</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">Create the first contact</p>
+    </field>
+  </record>
+</odoo>
