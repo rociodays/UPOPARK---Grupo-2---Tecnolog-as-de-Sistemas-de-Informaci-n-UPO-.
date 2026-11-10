@@ -9,3 +9,4 @@ class MensajeTicket(models.Model):
     comentario = fields.Char(string='Comentario')
     
     ticket_id = fields.Many2one('upopark.ticket_soporte', string='Ticket', required=True)
+    contacto_id = fields.Many2one('upopark.contacto', string='Entregado a')
