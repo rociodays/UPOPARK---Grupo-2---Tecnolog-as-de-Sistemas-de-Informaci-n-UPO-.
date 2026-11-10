@@ -16,5 +16,6 @@ class Reserva(models.Model):
     vehiculo_id = fields.Many2one('upopark.vehiculo',string='Vehículo',required=True,help='Dame el vehiculo para esta reserva.')
     estado_reserva_id = fields.Many2one('upopark.estado_reserva',string='Estado Actual',required=True,help='Dame el estado actual de la reserva.')
     politica_reserva_id = fields.Many2one('upopark.politica_reserva',string='Política Aplicada',required=True,help='Dame la politica aplicada a esta reserva.')
-
     
+    historial_ids = fields.One2many('upopark.historial_reserva','reserva_id','Historial de Cambios')
+    cancelacion_ids = fields.One2many('upopark.cancelacion_reserva','reserva_id','Registros de Cancelación')
