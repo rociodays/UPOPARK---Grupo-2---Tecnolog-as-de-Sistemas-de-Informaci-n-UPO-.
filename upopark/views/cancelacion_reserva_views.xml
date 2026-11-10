@@ -35,10 +35,31 @@
     </field>
   </record>
 
+  <record id="upopark_cancelacion_reserva_calendar_view" model="ir.ui.view">
+    <field name="name">upopark.cancelacion_reserva.calendar</field>
+    <field name="model">upopark.cancelacion_reserva</field>
+    <field name="arch" type="xml">
+      <calendar string="Cancelaciones de Reserva" color="usuario_id" date_start="fFechaCancelacion" mode="month">
+        <field name="name" />
+        <field name="usuario_id" />
+      </calendar>
+    </field>
+  </record>
+
+  <record id="upopark_cancelacion_reserva_graph_view" model="ir.ui.view">
+    <field name="name">upopark.cancelacion_reserva.graph</field>
+    <field name="model">upopark.cancelacion_reserva</field>
+    <field name="arch" type="xml">
+      <graph string="Cancelaciones por Usuario" type="bar">
+        <field name="usuario_id" type="row" />
+      </graph>
+    </field>
+  </record>
+
   <record id="cancelacion_reserva_list_action" model="ir.actions.act_window">
     <field name="name">Cancelaciones de Reserva</field>
     <field name="res_model">upopark.cancelacion_reserva</field>
-    <field name="view_mode">list,form</field>
+    <field name="view_mode">list,form,calendar,graph</field>
     <field name="help" type="html">
       <p>Registra la primera cancelacion de reserva en el sistema</p>
     </field>
