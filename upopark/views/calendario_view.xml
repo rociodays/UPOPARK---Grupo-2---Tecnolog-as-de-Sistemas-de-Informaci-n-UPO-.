@@ -11,8 +11,13 @@
             <field name="zona_horaria" />
             <field name="activo" />
             <field name="organizacion_id" widget="many2one" />
-            <field name="franja_ids" widget="one2many" />
           </group>
+          <notebook>
+            <page string="Franjas"><field name="franja_ids"/></page>
+            <page string="Recursos"><field name="recurso_ids"/></page>
+            <page string="Eventos"><field name="evento_ids"/></page>
+            <page string="Festivos"><field name="festivo_ids"/></page>
+          </notebook>
         </sheet>
       </form>
     </field>
