@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-from odoo.exceptions import ValidationError
 import re
 
 class Vehiculo(models.Model):
@@ -33,11 +32,11 @@ class Vehiculo(models.Model):
        for record in self:
            if record.name:
                if not re.match(r'^[A-Z0-9]{4,10}$', record.name):
-                   raise ValidationError('El formato de la matricula es incorrecto.')
+                   raise models.ValidationError('El formato de la matricula es incorrecto.')
 
     #numero de puertas rango
     @api.onchange('iNumeroPuertas')
     def _onchange_rango_puertas(self):
        if self.iNumeroPuertas and (self.iNumeroPuertas < 0 or self.iNumeroPuertas > 5):
-           raise ValidationError('Un vehiculo estandar no puede tener menos de 0 ni mas de 5 puertas.')
+           raise models.ValidationError('Un vehiculo estandar no puede tener menos de 0 ni mas de 5 puertas.')
 

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-from odoo.exceptions import ValidationError
 
 class ColorVehiculo(models.Model):
     _name = 'upopark.color_vehiculo'
@@ -33,4 +32,4 @@ class ColorVehiculo(models.Model):
         for record in self:
             if record.cDescripcion:
                 if len(record.cDescripcion) < 5 or len(record.cDescripcion) > 250:
-                    raise ValidationError('La descripcion del color debe tener entre 5 y 250 caracteres.')
+                    raise models.ValidationError('La descripcion del color debe tener entre 5 y 250 caracteres.')

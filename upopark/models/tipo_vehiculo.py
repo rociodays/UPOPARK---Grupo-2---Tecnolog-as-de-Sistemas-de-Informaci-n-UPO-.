@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-from odoo.exceptions import ValidationError
 
 class TipoVehiculo(models.Model):
     _name = 'upopark.tipo_vehiculo'
@@ -31,4 +30,4 @@ class TipoVehiculo(models.Model):
         for record in self:
             if record.cDescripcion:
                 if len(record.cDescripcion) < 5 or len(record.cDescripcion) > 250:
-                    raise ValidationError('La descripcion del tipo de vehiculo debe tener entre 5 y 250 caracteres.')
+                    raise models.ValidationError('La descripcion del tipo de vehiculo debe tener entre 5 y 250 caracteres.')
