@@ -10,5 +10,5 @@ class Zona(models.Model):
     nombre = fields.Char(string="Nombre Zona", size=60, required=True, help="El nombre del zona")
     codigo = fields.Char('Código', size=9, required=True)
         
-    zona_nivelAcceso = fields.Many2one('upoPark.nivelAcceso', 'Zona requiere NivelAcceso')
+    zona_nivel_acceso = fields.Many2one('upoPark.nivel_acceso', 'Zona requiere NivelAcceso')
     zona_aparcamiento = fields.One2many('upoPark.aparcamiento', 'Zona posee Aparcamientos')

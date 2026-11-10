@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 class EstadoConservacionPlaza(models.Model):
     
-    _name = 'upoPark.estadoConservacionPlaza'
+    _name = 'upoPark.estado_conservacion_plaza'
     _description = 'Estado de conservacion de una plaza'
 
     estado = fields.Char('Estado', size=9, required=True)

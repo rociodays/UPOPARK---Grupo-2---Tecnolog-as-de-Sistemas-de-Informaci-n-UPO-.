@@ -1,7 +1,7 @@
 <odoo>
-  <record id="upoPark_estadoConservacionPlaza_form_view" model="ir.ui.view">
-    <field name="name">upoPark.estadoConservacionPlaza.form</field>
-    <field name="model">upoPark.estadoConservacionPlaza</field>
+  <record id="upoPark_estado_conservacion_plaza_form_view" model="ir.ui.view">
+    <field name="name">upoPark.estado_conservacion_plaza.form</field>
+    <field name="model">upoPark.estado_conservacion_plaza</field>
     <field name="arch" type="xml">
       <form string="Instructor">
         <sheet layout="auto">
@@ -17,9 +17,9 @@
     </field>
   </record>
 
-  <record id="upoPark_estadoConservacionPlaza_list_view" model="ir.ui.view">
-    <field name="name">upoPark.estadoConservacionPlaza.list</field>
-    <field name="model">upoPark.estadoConservacionPlaza</field>
+  <record id="upoPark_estado_conservacion_plaza_list_view" model="ir.ui.view">
+    <field name="name">upoPark.estado_conservacion_plaza.list</field>
+    <field name="model">upoPark.estado_conservacion_plaza</field>
     <field name="arch" type="xml">
       <list string="list_string">
             <field name="estado" />
@@ -31,9 +31,9 @@
     </field>
   </record>
 
-  <record id="estadoConservacionPlaza_list_action" model="ir.actions.act_window">
+  <record id="estado_conservacion_plaza_list_action" model="ir.actions.act_window">
     <field name="name">Estado de Conservacions de plaza</field>
-    <field name="res_model">upopark.estadoConservacionPlaza</field>
+    <field name="res_model">upopark.estado_conservacion_plaza</field>
     <field name="view_mode">list,form</field>
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face">Crea el primer Estado de Conservacion de plaza</p>

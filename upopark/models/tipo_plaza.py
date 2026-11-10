@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 class TipoPlaza(models.Model):
     
-    _name = 'upoPark.tipoPlaza'
+    _name = 'upoPark.tipo_plaza'
     _description = 'Tipo de plaza'
         
     codigo = fields.Char('Código', size=9, required=True)
@@ -20,5 +20,5 @@ class TipoPlaza(models.Model):
             default=False
         )
         
-    tipoPlaza_plaza = fields.Many2one('upoPark.plaza', 'TipoPlaza define Plaza')
-    tipoPlaza_organizacion = fields.One2one('upoPark.organizacion', 'TipoPlaza pertenece a Organizacion')
+    tipo_plaza_plaza = fields.Many2one('upoPark.plaza', 'TipoPlaza define Plaza')
+    tipo_plaza_organizacion = fields.One2one('upoPark.organizacion', 'TipoPlaza pertenece a Organizacion')

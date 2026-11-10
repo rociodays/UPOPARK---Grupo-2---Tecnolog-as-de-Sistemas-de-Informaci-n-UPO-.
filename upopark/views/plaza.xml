@@ -9,7 +9,7 @@
             <field name="codigo" />
             <field name="longitud" />
             <field name="anchura" />
-            <field name="plaza_bloqueoPlaza" widget="many2one" />
+            <field name="plaza_bloqueo_plaza" widget="many2one" />
             <field name="plaza_aparcamiento" widget="many2one" />
             <field name="plaza_estadoPlaza" widget="one2one" />
             <field name="plaza_conector" widget="one2one" />
@@ -28,7 +28,7 @@
             <field name="codigo" />
             <field name="longitud" />
             <field name="anchura" />
-            <field name="plaza_bloqueoPlaza" widget="many2one" />
+            <field name="plaza_bloqueo_plaza" widget="many2one" />
             <field name="plaza_aparcamiento" widget="many2one" />
             <field name="plaza_estadoPlaza" widget="one2one" />
             <field name="plaza_conector" widget="one2one" />

@@ -74,15 +74,15 @@
 
     <!-- Aparcamientos y plazas -->
     <menuitem id="aparcamiento_menu" name="Aparcamientos" parent="menu_aparcamientos" action="aparcamiento_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="bloqueoPlaza_menu" name="Bloqueos de Plaza" parent="menu_aparcamientos" action="bloqueoPlaza_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="bloqueo_plaza_menu" name="Bloqueos de Plaza" parent="menu_aparcamientos" action="bloqueo_plaza_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="campus_menu" name="Campus" parent="menu_aparcamientos" action="campus_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="estadoConservacionPlaza_menu" name="Estados de Conservación de Plaza" parent="menu_aparcamientos" action="estadoConservacionPlaza_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="estado_conservacion_plaza_menu" name="Estados de Conservación de Plaza" parent="menu_aparcamientos" action="estado_conservacion_plaza_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="estadoPlaza_menu" name="Estados de Plaza" parent="menu_aparcamientos" action="estadoPlaza_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="materialPavimento_menu" name="Material de Pavimentos" parent="menu_aparcamientos" action="materialPavimento_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="motivoBloqueo_menu" name="Motivos de Bloqueo" parent="menu_aparcamientos" action="motivoBloqueo_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="nivelAcceso_menu" name="Niveles de Acceso" parent="menu_aparcamientos" action="nivelAcceso_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="material_pavimento_menu" name="Material de Pavimentos" parent="menu_aparcamientos" action="material_pavimento_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="motivo_bloqueo_menu" name="Motivos de Bloqueo" parent="menu_aparcamientos" action="motivo_bloqueo_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="nivel_acceso_menu" name="Niveles de Acceso" parent="menu_aparcamientos" action="nivel_acceso_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="plaza_menu" name="Plazas" parent="menu_aparcamientos" action="plaza_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="tipoPlaza_menu" name="Tipos de Plaza" parent="menu_aparcamientos" action="tipoPlaza_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="tipo_plaza_menu" name="Tipos de Plaza" parent="menu_aparcamientos" action="tipo_plaza_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="zona_menu" name="Zonas" parent="menu_aparcamientos" action="zona_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_estado_sensor" name="Estados de Sensor" parent="menu_aparcamientos" action="estado_sensor_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_sensor_ocupacion" name="Sensores de Ocupación" parent="menu_aparcamientos" action="sensor_ocupacion_list_action" groups="upopark.group_upopark_user"/>

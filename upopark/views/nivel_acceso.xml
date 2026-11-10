@@ -1,35 +1,35 @@
 <odoo>
-  <record id="upoPark_nivelAcceso_form_view" model="ir.ui.view">
-    <field name="name">upoPark.nivelAcceso.form</field>
-    <field name="model">upoPark.nivelAcceso</field>
+  <record id="upoPark_nivel_acceso_form_view" model="ir.ui.view">
+    <field name="name">upoPark.nivel_acceso.form</field>
+    <field name="model">upoPark.nivel_acceso</field>
     <field name="arch" type="xml">
       <form string="Instructor">
         <sheet layout="auto">
           <group>
             <field name="nivel" />
             <field name="descripcion" />
-            <field name="nivelAcceso_zona" widget="one2many" />
+            <field name="nivel_acceso_zona" widget="one2many" />
           </group>
         </sheet>
       </form>
     </field>
   </record>
 
-  <record id="upoPark_nivelAcceso_list_view" model="ir.ui.view">
-    <field name="name">upoPark.nivelAcceso.list</field>
-    <field name="model">upoPark.nivelAcceso</field>
+  <record id="upoPark_nivel_acceso_list_view" model="ir.ui.view">
+    <field name="name">upoPark.nivel_acceso.list</field>
+    <field name="model">upoPark.nivel_acceso</field>
     <field name="arch" type="xml">
       <list string="list_string">
             <field name="nivel" />
             <field name="descripcion" />
-            <field name="nivelAcceso_zona" widget="one2many" />
+            <field name="nivel_acceso_zona" widget="one2many" />
       </list>
     </field>
   </record>
 
-  <record id="nivelAcceso_list_action" model="ir.actions.act_window">
+  <record id="nivel_acceso_list_action" model="ir.actions.act_window">
     <field name="name">Niveles de acceso</field>
-    <field name="res_model">upopark.nivelAcceso</field>
+    <field name="res_model">upopark.nivel_acceso</field>
     <field name="view_mode">list,form</field>
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face">Crea el primer nivel de acceso</p>
