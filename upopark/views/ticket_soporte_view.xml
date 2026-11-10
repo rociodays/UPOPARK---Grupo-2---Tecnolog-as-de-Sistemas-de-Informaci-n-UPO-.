@@ -12,8 +12,12 @@
             <field name="fecha_creacion" />
             <field name="prioridad_id" widget="many2one" />
             <field name="contacto_id" widget="many2one" />
-            <field name="mensaje_ids" widget="one2many" />
           </group>
+          <notebook>
+            <page string="Mensajes">
+              <field name="mensaje_ids"/>
+            </page>
+          </notebook>
         </sheet>
       </form>
     </field>
