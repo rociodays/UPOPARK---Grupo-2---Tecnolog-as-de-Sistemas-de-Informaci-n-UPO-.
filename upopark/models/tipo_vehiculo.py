@@ -12,5 +12,5 @@ class TipoVehiculo(models.Model):
             ('moto', 'Moto'),
             ('furgoneta', 'Furgoneta'),
             ('camion', 'Camion'),
-            ('autobus', 'Autobus')], string='Tipo de Vehículo', required=True)
-    cDescription = fields.Text(string='Descripcion')
+            ('autobus', 'Autobus')], string='Tipo de Vehiculo', required=True)
+    cDescripcion = fields.Text(string='Descripcion')

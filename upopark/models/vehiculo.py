@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 
 
-class vehiculo(models.Model):
+class Vehiculo(models.Model):
      _name = 'upopark.vehiculo'
      _description = 'Vehiculo'
 
