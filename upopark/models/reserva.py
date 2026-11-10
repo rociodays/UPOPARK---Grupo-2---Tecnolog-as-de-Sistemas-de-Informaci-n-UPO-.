@@ -60,3 +60,11 @@ class Reserva(models.Model):
                         raise models.ValidationError(f'La reserva de {diferencia.days} dias excede el limite de '
                             f'{record.politica_reserva_id.iDuracionMaxima} dias establecido en su politica.'
                         )
+
+    #propiedad del vehiculo
+    @api.constrains('contacto_id', 'vehiculo_id')
+    def _check_propietario_vehiculo(self):
+        for record in self:
+            if record.contacto_id and record.vehiculo_id:
+                if record.vehiculo_id.contacto_id.id != record.contacto_id.id:
+                    raise models.ValidationError('El contacto que solicita la reserva debe ser el propietario del vehiculo.')
