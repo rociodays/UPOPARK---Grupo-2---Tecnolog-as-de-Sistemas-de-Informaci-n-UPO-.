@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from . import alegacion
 from . import conector
 from . import descuento_asignado
@@ -70,3 +72,14 @@ from . import mantenimiento_inspeccion
 from . import mantenimiento_elemento_inspeccionado
 from . import mantenimiento_plan_preventivo
 from . import mantenimiento_indisponibilidad
+from . import vehiculo
+from . import tipo_vehiculo
+from . import color_vehiculo
+from . import restriccion_acceso
+from . import motivo_restriccion
+from . import reserva
+from . import estado_reserva
+from . import politica_reserva
+from . import historial_reserva
+from . import cancelacion_reserva
+
