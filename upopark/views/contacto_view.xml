@@ -12,7 +12,13 @@
             <field name="correo" />
             <field name="tipo_doc_id" widget="many2one" />
             <field name="usuario_id" widget="many2one" />
+            <field name="organizacion_id" widget="many2one" />
           </group>
+          <notebook>
+            <page string="Cargos"><field name="cargo_ids"/></page>
+            <page string="Tickets"><field name="ticket_ids"/></page>
+            <page string="Sanciones"><field name="sancion_ids"/></page>
+          </notebook>
         </sheet>
       </form>
     </field>
@@ -26,8 +32,7 @@
         <field name="nombre" />
         <field name="num_doc" />
         <field name="telefono" />
-        <field name="correo" />
-        <field name="tipo_doc_id" widget="many2one" />
+        <field name="organizacion_id" widget="many2one" />
       </list>
     </field>
   </record>
