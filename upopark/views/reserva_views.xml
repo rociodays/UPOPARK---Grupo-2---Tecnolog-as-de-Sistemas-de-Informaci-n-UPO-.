@@ -12,7 +12,9 @@
           </div>
           <group>
             <group>
+              <field name="contacto_id" widget="many2one" />
               <field name="vehiculo_id" widget="many2one" />
+              <field name="plaza_id" widget="many2one" />
               <field name="politica_reserva_id" widget="many2one" />
               <field name="estado_reserva_id" widget="many2one" />
             </group>
@@ -44,10 +46,11 @@
     <field name="arch" type="xml">
       <list string="Reservas">
         <field name="name" />
+        <field name="contacto_id" />
         <field name="vehiculo_id" />
+        <field name="plaza_id" />
         <field name="fInicio" />
         <field name="fFin" />
-        <field name="politica_reserva_id" />
         <field name="estado_reserva_id" />
       </list>
     </field>

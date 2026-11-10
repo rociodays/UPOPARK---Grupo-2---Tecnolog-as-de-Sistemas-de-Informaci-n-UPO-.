@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+import re
 
 class Reserva(models.Model):
     _name = 'upopark.reserva'
@@ -18,6 +19,8 @@ class Reserva(models.Model):
     
     historial_ids = fields.One2many('upopark.historial_reserva','reserva_id','Historial de Cambios')
     cancelacion_ids = fields.One2many('upopark.cancelacion_reserva','reserva_id','Registros de Cancelación')
+    contacto_id = fields.Many2one('upopark.contacto', string='Contacto', required=True, help='Dame el contacto que solicita la reserva.')
+    plaza_id = fields.Many2one('upopark.plaza', string='Plaza', required=True, help='Dame la plaza asignada a esta reserva.')
     
     #sql constraints
     _sql_constraints = [
