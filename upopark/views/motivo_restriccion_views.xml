@@ -32,10 +32,20 @@
     </field>
   </record>
 
+  <record id="upopark_motivo_restriccion_graph_view" model="ir.ui.view">
+    <field name="name">upopark.motivo_restriccion.graph</field>
+    <field name="model">upopark.motivo_restriccion</field>
+    <field name="arch" type="xml">
+      <graph string="Motivos de Restriccion" type="bar">
+        <field name="name" type="row" />
+      </graph>
+    </field>
+  </record>
+
   <record id="motivo_restriccion_list_action" model="ir.actions.act_window">
     <field name="name">Motivos de Restriccion</field>
     <field name="res_model">upopark.motivo_restriccion</field>
-    <field name="view_mode">list,form</field>
+    <field name="view_mode">list,form,graph</field>
     <field name="help" type="html">
       <p>Crea el primer motivo de restriccion en el sistema</p>
     </field>
