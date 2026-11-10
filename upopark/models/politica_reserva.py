@@ -41,7 +41,7 @@ class PoliticaReserva(models.Model):
 
         if self.iDiasAntelacion and self.iDiasAntelacion < 0:
             self.iDiasAntelacion = 0
-            raise ValidationError('Los dias de antelacion no pueden ser negativos.')
+            raise models.ValidationError('Los dias de antelacion no pueden ser negativos.')
             
         if self.iAntelacionCancel and self.iAntelacionCancel < 0:
             self.iAntelacionCancel = 0

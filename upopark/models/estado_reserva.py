@@ -32,4 +32,4 @@ class EstadoReserva(models.Model):
         for record in self:
             if record.cDescripcion:
                 if len(record.cDescripcion) < 5 or len(record.cDescripcion) > 250:
-                    raise ValidationError('La descripcion del estado debe tener entre 5 y 250 caracteres.')
+                    raise models.ValidationError('La descripcion del estado debe tener entre 5 y 250 caracteres.')

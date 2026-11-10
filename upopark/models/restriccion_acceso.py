@@ -36,19 +36,12 @@ class RestriccionAcceso(models.Model):
     #fecha inicio
     @api.onchange('fInicio')
     def _onchange_fecha_inicio(self):
-        resultado = {}
         if self.fInicio:
             ahora = fields.Datetime.now()
             # Si la fecha introducida es anterior a este mismo instante, es un error
             if self.fInicio < ahora:
                 self.fInicio = ahora
-                resultado = {
-                    'warning': {
-                        'title': 'Fecha invalida',
-                        'message': 'La restriccion no puede empezar en el pasado.'
-                    }
-                }
-                return resultado
+                raise models.ValidationError('La restriccion no puede empezar en el pasado.')
 
     #fecha final
     @api.constrains('fInicio', 'fFin')
@@ -56,4 +49,4 @@ class RestriccionAcceso(models.Model):
         for record in self:
             if record.fInicio and record.fFin:
                 if record.fFin < record.fInicio:
-                    raise ValidationError('La fecha de finalizacion no puede ser anterior a la fecha de inicio.')
+                    raise models.ValidationError('La fecha de finalizacion no puede ser anterior a la fecha de inicio.')

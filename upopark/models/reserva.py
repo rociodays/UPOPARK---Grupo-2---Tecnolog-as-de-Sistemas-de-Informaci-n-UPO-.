@@ -19,7 +19,7 @@ class Reserva(models.Model):
     
     historial_ids = fields.One2many('upopark.historial_reserva','reserva_id','Historial de Cambios')
     cancelacion_ids = fields.One2many('upopark.cancelacion_reserva','reserva_id','Registros de Cancelación')
-
+    
     #sql constraints
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'La referencia de la reserva ya esta registrada.')
@@ -33,23 +33,16 @@ class Reserva(models.Model):
             if record.name:
                 # Exige el formato RES-YYYY-XXXX (ej. RES-2026-0015)
                 if not re.match(r'^RES-\d{4}-\d{3,6}$', record.name):
-                    raise ValidationError('La referencia debe seguir el formato RES-YYYY-XXXX (ej. RES-2026-001).')
+                    raise models.ValidationError('La referencia debe seguir el formato RES-YYYY-XXXX (ej. RES-2026-001).')
 
     #fecha inicio
     @api.onchange('fInicio')
     def _onchange_fecha_inicio_reserva(self):
-        resultado = {}
         if self.fInicio:
             ahora = fields.Datetime.now()
             if self.fInicio < ahora:
                 self.fInicio = ahora
-                resultado = {
-                    'warning': {
-                        'title': 'Fecha invalida',
-                        'message': 'No puedes crear una reserva en el pasado.'
-                    }
-                }
-                return resultado
+                raise models.ValidationError('No puedes crear una reserva en el pasado.')
 
     #rangos de fechas y duracion maxima
     @api.constrains('fInicio', 'fFin', 'politica_reserva_id')
@@ -57,12 +50,11 @@ class Reserva(models.Model):
         for record in self:
             if record.fInicio and record.fFin:
                 if record.fFin <= record.fInicio:
-                    raise ValidationError('La fecha de fin debe ser posterior a la de inicio.')
+                    raise models.ValidationError('La fecha de fin debe ser posterior a la de inicio.')
                 
                 if record.politica_reserva_id and record.politica_reserva_id.iDuracionMaxima:
                     diferencia = record.fFin - record.fInicio
                     if diferencia.days > record.politica_reserva_id.iDuracionMaxima:
-                        raise ValidationError(
-                            f'Operacion rechazada: La reserva de {diferencia.days} dias excede el limite de '
+                        raise models.ValidationError(f'La reserva de {diferencia.days} dias excede el limite de '
                             f'{record.politica_reserva_id.iDuracionMaxima} dias establecido en su politica.'
                         )
