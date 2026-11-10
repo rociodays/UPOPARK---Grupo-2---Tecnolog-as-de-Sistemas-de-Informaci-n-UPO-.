@@ -6,3 +6,5 @@ class TipoDoc(models.Model):
 
     nombre = fields.Char(string='Tipo de Documento', required=True)
     descripcion = fields.Char(string='Descripción')
+    
+    contacto_ids = fields.One2many('upopark.contacto', 'tipo_doc_id', string='Contactos')
