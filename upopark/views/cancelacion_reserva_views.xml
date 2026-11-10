@@ -1,29 +1,26 @@
 <odoo>
   <record id="upopark_cancelacion_reserva_form_view" model="ir.ui.view">
-    <field name="name">upopark.cancelacion_reserva.form</field>
-    <field name="model">upopark.cancelacion_reserva</field>
-    <field name="arch" type="xml">
-      <form string="Cancelacion de Reserva">
-        <sheet layout="auto">
+  <field name="name">upopark.cancelacion_reserva.form</field>
+  <field name="model">upopark.cancelacion_reserva</field>
+  <field name="arch" type="xml">
+    <form string="Cancelacion de Reserva">
+      <sheet layout="auto">
+        <group>
           <group>
-            <group>
-              <field name="name" widget="many2one" />
-            </group>
-            <group>
-              <field name="fFechaCancelacion" />
-            </group>
-            <group>
-              <field name="name" widget="many2one" />
-              <field name="usuario_id" widget="many2one" />
-            </group>
+            <field name="name" widget="many2one" />
+            <field name="usuario_id" widget="many2one" />
           </group>
-          <group string="Justificacion Obligatoria">
-            <field name="cNota" nolabel="1" placeholder="Detalla el motivo exacto de la cancelacion (minimo 10 caracteres)..." />
+          <group>
+            <field name="fFechaCancelacion" />
           </group>
-        </sheet>
-      </form>
-    </field>
-  </record>
+        </group>
+        <group string="Justificacion Obligatoria">
+          <field name="cNota" nolabel="1" placeholder="Detalla el motivo exacto de la cancelacion (minimo 10 caracteres)..." />
+        </group>
+      </sheet>
+    </form>
+  </field>
+</record>
 
   <record id="upopark_cancelacion_reserva_list_view" model="ir.ui.view">
     <field name="name">upopark.cancelacion_reserva.list</field>
