@@ -64,6 +64,7 @@
     <field name="arch" type="xml">
       <search>
         <filter name="restricciones_activas" string="En Vigor" domain="[('bActivo', '=', True)]" />
+        <separator orientation="vertical" />
         <group expand="0" string="Agrupar por...">
           <filter name="group_by_motivo" string="Motivo" context="{'group_by':'motivo_restriccion_id'}" />
         </group>
