@@ -17,7 +17,7 @@ class Vehiculo(models.Model):
     color_vehiculo_id = fields.Many2one('upopark.color_vehiculo',string='Color', help="Dame el color del vehiculo.")
     tipo_vehiculo_id = fields.Many2one('upopark.tipo_vehiculo',string='Tipo de Vehículo',required=True, help="Dame el tipo de vehiculo.")
     modelo_vehiculo_id = fields.Many2one('upopark.modelo_vehiculo', string='Modelo', help='Dame el modelo del vehiculo.')
-    etiqueta_medioambiental_id = fields.Many2one('upopark.etiqueta_medioambiental', string='Etiqueta Medioambiental', help='Dame la etiqueta medioambiental del vehiculo.')
+    etiqueta_ambiental_id = fields.Many2one('upopark.etiqueta_ambiental', string='Etiqueta Ambiental',help='Dame la etiqueta ambiental del vehículo.')
     tipo_combustible_id = fields.Many2one('upopark.tipo_combustible', string='Tipo de Combustible', required=True, help='Dame el tipo de combustible.')
     contacto_id = fields.Many2one('upopark.contacto', string='Contacto', required=True, help='Dame el contacto propietario del vehiculo.')
     marca_vehiculo_id = fields.Many2one('upopark.marca_vehiculo', string='Marca', help='Dame la marca del vehiculo.')

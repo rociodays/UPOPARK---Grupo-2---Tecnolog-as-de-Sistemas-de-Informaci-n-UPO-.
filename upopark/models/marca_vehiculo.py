@@ -6,4 +6,4 @@ class MarcaVehiculo(models.Model):
 
     name = fields.Char(string='Nombre de la Marca', required=True)
     pais_origen = fields.Char(string='País de Origen')
-    vehiculo_ids = fields.One2many('upopark.vehiculo', 'marca_id', string='Vehículos')
+    vehiculo_ids = fields.One2many('upopark.vehiculo', 'marca_vehiculo_id', string='Vehículos')
