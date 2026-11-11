@@ -32,6 +32,7 @@
     <menuitem id="menu_tipo_servicio_cargo" name="Tipos de Servicio" parent="menu_tarifas" action="action_tipo_servicio_cargo" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_tipo_servicio_tarifa" name="Tipos de Servicio (Tarifa)" parent="menu_tarifas" action="action_tipo_servicio_tarifa" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_estado_cargo" name="Estados de Cargo" parent="menu_tarifas" action="action_estado_cargo" groups="upopark.group_upopark_user"/>
+    <menuitem id="politica_reserva_menu" name="Políticas de Reserva" parent="menu_tarifas" action="politica_reserva_list_action" groups="upopark.group_upopark_user"/>
 
     <!-- Control, Vigilancia y sanciones -->
     <menuitem id="menu_tipo_sancion" name="Tipos de Sanción" parent="menu_sanciones" action="action_tipo_sancion" groups="upopark.group_upopark_user"/>
@@ -40,6 +41,8 @@
     <menuitem id="menu_infraccion" name="Infracciones" parent="menu_sanciones" action="action_infraccion" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_alegacion" name="Alegaciones" parent="menu_sanciones" action="alegacion_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="menu_resolucion_alegacion" name="Resoluciones de Alegación" parent="menu_sanciones" action="action_resolucion_alegacion" groups="upopark.group_upopark_user"/>
+    <menuitem id="motivo_restriccion_menu" name="Motivos de Restricción" parent="menu_sanciones" action="motivo_restriccion_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="restriccion_acceso_menu" name="Restricciones de Acceso" parent="menu_sanciones" action="restriccion_acceso_list_action" groups="upopark.group_upopark_user"/>
 
     <!-- Gestion de accesos -->
     <menuitem id="organizacion_menu" name="Organizaciones" parent="menu_accesos" action="organizacion_list_action" groups="upopark.group_upopark_user"/>
@@ -68,9 +71,15 @@
     <menuitem id="tipo_combustible_menu" name="Tipos de Combustible" parent="menu_vehiculos" action="tipo_combustible_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="etiqueta_ambiental_menu" name="Etiquetas Ambientales" parent="menu_vehiculos" action="etiqueta_ambiental_list_action" groups="upopark.group_upopark_user"/>
     <menuitem id="estado_estancia_menu" name="Estados de Estancia" parent="menu_vehiculos" action="estado_estancia_list_action" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_vehiculo" name="Vehículos" parent="menu_vehiculos" action="action_vehiculo" groups="upopark.group_upopark_user"/>
-    <menuitem id="menu_estancia" name="Estancias" parent="menu_vehiculos" action="action_estancia" groups="upopark.group_upopark_user"/>
     <menuitem id="modelo_vehiculo_menu" name="Modelos de Vehículo" parent="menu_vehiculos" action="action_modelo_vehiculo" groups="upopark.group_upopark_user"/>
+    <menuitem id="menu_estancia" name="Estancias" parent="menu_vehiculos" action="action_estancia" groups="upopark.group_upopark_user"/>
+    <menuitem id="tipo_vehiculo_menu" name="Tipos de Vehículo" parent="menu_vehiculos" action="tipo_vehiculo_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="color_vehiculo_menu" name="Colores de Vehículo" parent="menu_vehiculos" action="color_vehiculo_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="vehiculo_menu" name="Vehículos" parent="menu_vehiculos" action="vehiculo_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="reserva_menu" name="Reservas" parent="menu_vehiculos" action="reserva_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="cancelacion_reserva_menu" name="Cancelaciones de Reserva" parent="menu_vehiculos" action="cancelacion_reserva_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="historial_reserva_menu" name="Historial de Reservas" parent="menu_vehiculos" action="historial_reserva_list_action" groups="upopark.group_upopark_user"/>
+    <menuitem id="estado_reserva_menu" name="Estados de Reserva" parent="menu_vehiculos" action="estado_reserva_list_action" groups="upopark.group_upopark_user"/>
 
     <!-- Aparcamientos y plazas -->
     <menuitem id="aparcamiento_menu" name="Aparcamientos" parent="menu_aparcamientos" action="aparcamiento_list_action" groups="upopark.group_upopark_user"/>
