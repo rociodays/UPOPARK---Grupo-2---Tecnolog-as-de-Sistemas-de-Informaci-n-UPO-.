@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from . import alegacion
 from . import conector
 from . import descuento_asignado
