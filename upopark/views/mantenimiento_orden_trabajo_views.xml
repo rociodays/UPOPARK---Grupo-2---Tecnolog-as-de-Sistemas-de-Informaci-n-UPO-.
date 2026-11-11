@@ -1,26 +1,26 @@
 <odoo>
     <record id="view_mantenimiento_orden_trabajo_list" model="ir.ui.view">
-        <field name="name">upopark.mantenimiento.orden_trabajo.list</field>
-        <field name="model">upopark.mantenimiento.orden_trabajo</field>
+        <field name="name">upopark.orden_trabajo.list</field>
+        <field name="model">upopark.orden_trabajo</field>
         <field name="arch" type="xml">
             <list>
                 <field name="strReferencia"/>
                 <field name="strAsunto"/>
                 <field name="dtInicioPrevisto"/>
-                <field name="m2oResponsableId"/>
-                <field name="m2oIncidenciaId"/>
+                <field name="responsable_id"/>
+                <field name="incidencia_id"/>
             </list>
         </field>
     </record>
 
     <record id="view_mantenimiento_orden_trabajo_form" model="ir.ui.view">
-        <field name="name">upopark.mantenimiento.orden_trabajo.form</field>
-        <field name="model">upopark.mantenimiento.orden_trabajo</field>
+        <field name="name">upopark.orden_trabajo.form</field>
+        <field name="model">upopark.orden_trabajo</field>
         <field name="arch" type="xml">
             <form>
                 <header>
                     <button name="%(action_mantenimiento_inspeccion_new)d" type="action"
-                            string="Abrir inspección" context="{'default_m2oOrdenTrabajoId': id}"
+                            string="Abrir inspección" context="{'default_orden_trabajo_id': id}"
                             invisible="not id"/>
                 </header>
                 <sheet>
@@ -28,21 +28,21 @@
                         <field name="strReferencia" invisible="not id"/>
                         <field name="strAsunto"/>
                         <field name="dtInicioPrevisto"/>
-                        <field name="m2oResponsableId" options="{'no_create': True}"/>
-                        <field name="m2oIncidenciaId" options="{'no_create': True}"/>
+                        <field name="responsable_id" options="{'no_create': True}"/>
+                        <field name="incidencia_id" options="{'no_create': True}"/>
                     </group>
-                    <field name="o2mTareasIds">
+                    <field name="tarea_ids">
                         <list editable="bottom" delete="0">
                             <field name="iSecuencia"/>
                             <field name="strNombre"/>
                         </list>
                     </field>
-                    <field name="o2mInspeccionesIds" readonly="1">
+                    <field name="inspeccion_ids" readonly="1">
                         <list>
                             <field name="strReferencia"/>
-                            <field name="m2oInspectorId"/>
+                            <field name="inspector_id"/>
                             <field name="dateFechaInspeccion"/>
-                            <field name="m2oResultadoId"/>
+                            <field name="resultado_id"/>
                         </list>
                     </field>
                 </sheet>
@@ -51,26 +51,26 @@
     </record>
 
     <record id="view_mantenimiento_orden_trabajo_calendar" model="ir.ui.view">
-        <field name="name">upopark.mantenimiento.orden_trabajo.calendar</field>
-        <field name="model">upopark.mantenimiento.orden_trabajo</field>
+        <field name="name">upopark.orden_trabajo.calendar</field>
+        <field name="model">upopark.orden_trabajo</field>
         <field name="arch" type="xml">
             <calendar string="Órdenes programadas" date_start="dtInicioPrevisto"
-                      color="m2oResponsableId" quick_create="false" delete="false">
+                      color="responsable_id" quick_create="false" delete="false">
                 <field name="strAsunto"/>
-                <field name="m2oResponsableId"/>
+                <field name="responsable_id"/>
             </calendar>
         </field>
     </record>
 
     <record id="action_mantenimiento_orden_trabajo" model="ir.actions.act_window">
         <field name="name">Órdenes de trabajo</field>
-        <field name="res_model">upopark.mantenimiento.orden_trabajo</field>
+        <field name="res_model">upopark.orden_trabajo</field>
         <field name="view_mode">list,form,calendar</field>
     </record>
 
     <record id="action_mantenimiento_orden_trabajo_new" model="ir.actions.act_window">
         <field name="name">Abrir orden de trabajo</field>
-        <field name="res_model">upopark.mantenimiento.orden_trabajo</field>
+        <field name="res_model">upopark.orden_trabajo</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
     </record>

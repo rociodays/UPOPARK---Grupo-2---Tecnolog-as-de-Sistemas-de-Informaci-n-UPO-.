@@ -1,53 +1,53 @@
 <odoo>
     <record id="view_mantenimiento_incidencia_list" model="ir.ui.view">
-        <field name="name">upopark.mantenimiento.incidencia.list</field>
-        <field name="model">upopark.mantenimiento.incidencia</field>
+        <field name="name">upopark.incidencia.list</field>
+        <field name="model">upopark.incidencia</field>
         <field name="arch" type="xml">
             <list>
                 <field name="strReferencia"/>
                 <field name="strAsunto"/>
-                <field name="m2oTipoIncidenciaId"/>
-                <field name="m2oEstadoIncidenciaId"/>
-                <field name="m2oContactoReportaId"/>
+                <field name="tipo_incidencia_id"/>
+                <field name="estado_incidencia_id"/>
+                <field name="contacto_reporta_id"/>
                 <field name="create_date"/>
             </list>
         </field>
     </record>
 
     <record id="view_mantenimiento_incidencia_form" model="ir.ui.view">
-        <field name="name">upopark.mantenimiento.incidencia.form</field>
-        <field name="model">upopark.mantenimiento.incidencia</field>
+        <field name="name">upopark.incidencia.form</field>
+        <field name="model">upopark.incidencia</field>
         <field name="arch" type="xml">
             <form>
                 <header>
                     <button name="%(action_mantenimiento_orden_trabajo_new)d" type="action" string="Abrir orden"
-                            context="{'default_m2oIncidenciaId': id}" invisible="not id"/>
+                            context="{'default_incidencia_id': id}" invisible="not id"/>
                     <button name="%(action_mantenimiento_indisponibilidad_new)d" type="action"
                             string="Registrar indisponibilidad"
-                            context="{'default_m2oIncidenciaId': id}" invisible="not id"/>
+                            context="{'default_incidencia_id': id}" invisible="not id"/>
                 </header>
                 <sheet>
                     <group>
                         <field name="strReferencia" invisible="not id"/>
                         <field name="strAsunto"/>
-                        <field name="m2oTipoIncidenciaId" options="{'no_create': True}"/>
-                        <field name="m2oEstadoIncidenciaId" options="{'no_create': True}"/>
-                        <field name="m2oContactoReportaId" options="{'no_create': True}"/>
+                        <field name="tipo_incidencia_id" options="{'no_create': True}"/>
+                        <field name="estado_incidencia_id" options="{'no_create': True}"/>
+                        <field name="contacto_reporta_id" options="{'no_create': True}"/>
                         <field name="strDescripcion"/>
                     </group>
-                    <field name="o2mOrdenesTrabajoIds" readonly="1">
+                    <field name="orden_trabajo_ids" readonly="1">
                         <list>
                             <field name="strReferencia"/>
                             <field name="strAsunto"/>
                             <field name="dtInicioPrevisto"/>
-                            <field name="m2oResponsableId"/>
+                            <field name="responsable_id"/>
                         </list>
                     </field>
                     <separator string="Indisponibilidades relacionadas"/>
-                    <field name="o2mIndisponibilidadesIds" readonly="1">
+                    <field name="indisponibilidad_ids" readonly="1">
                         <list>
                             <field name="strReferencia"/>
-                            <field name="m2oRecursoId"/>
+                            <field name="recurso_id"/>
                             <field name="dtInicio"/>
                             <field name="dtFin"/>
                         </list>
@@ -58,33 +58,33 @@
     </record>
 
     <record id="view_mantenimiento_incidencia_graph" model="ir.ui.view">
-        <field name="name">upopark.mantenimiento.incidencia.graph</field>
-        <field name="model">upopark.mantenimiento.incidencia</field>
+        <field name="name">upopark.incidencia.graph</field>
+        <field name="model">upopark.incidencia</field>
         <field name="arch" type="xml">
             <graph string="Incidencias por tipo y estado" type="bar">
-                <field name="m2oTipoIncidenciaId"/>
-                <field name="m2oEstadoIncidenciaId"/>
+                <field name="tipo_incidencia_id"/>
+                <field name="estado_incidencia_id"/>
             </graph>
         </field>
     </record>
 
     <record id="view_mantenimiento_incidencia_search" model="ir.ui.view">
-        <field name="name">upopark.mantenimiento.incidencia.search</field>
-        <field name="model">upopark.mantenimiento.incidencia</field>
+        <field name="name">upopark.incidencia.search</field>
+        <field name="model">upopark.incidencia</field>
         <field name="arch" type="xml">
             <search>
                 <field name="strReferencia"/>
                 <field name="strAsunto"/>
-                <field name="m2oTipoIncidenciaId"/>
-                <field name="m2oEstadoIncidenciaId"/>
-                <field name="m2oContactoReportaId"/>
+                <field name="tipo_incidencia_id"/>
+                <field name="estado_incidencia_id"/>
+                <field name="contacto_reporta_id"/>
             </search>
         </field>
     </record>
 
     <record id="action_mantenimiento_incidencia" model="ir.actions.act_window">
         <field name="name">Incidencias</field>
-        <field name="res_model">upopark.mantenimiento.incidencia</field>
+        <field name="res_model">upopark.incidencia</field>
         <field name="view_mode">list,form,graph</field>
         <field name="search_view_id" ref="view_mantenimiento_incidencia_search"/>
     </record>
