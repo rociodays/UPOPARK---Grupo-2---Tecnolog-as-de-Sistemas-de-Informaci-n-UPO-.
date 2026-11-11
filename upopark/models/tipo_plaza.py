@@ -21,4 +21,4 @@ class TipoPlaza(models.Model):
         )
         
     tipo_plaza_plaza = fields.Many2one('upopark.plaza', 'TipoPlaza define Plaza')
-    tipo_plaza_organizacion = fields.One2one('upopark.organizacion', 'TipoPlaza pertenece a Organizacion')
+    tipo_plaza_organizacion = fields.Many2one('upopark.organizacion', 'TipoPlaza pertenece a Organizacion')

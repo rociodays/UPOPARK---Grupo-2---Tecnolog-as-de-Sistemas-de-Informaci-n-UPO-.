@@ -14,5 +14,5 @@ class EstadoConservacionPlaza(models.Model):
         )
         
     estadoPlaza_plaza = fields.One2many('upopark.plaza', 'EstadoPlaza muestra condicion de Plaza')
-    estadoPlaza_indisponibilidad = fields.One2one('upopark.indisponibilidad', 'EstadoPlaza puede generar Indisponibilidad')
-    estadoPlaza_incidencia = fields.One2one('upopark.incidencia', 'EstadoPlaza puede generar Incidencia')
+    estadoPlaza_indisponibilidad = fields.Many2one('upopark.indisponibilidad', 'EstadoPlaza puede generar Indisponibilidad')
+    estadoPlaza_incidencia = fields.Many2one('upopark.incidencia', 'EstadoPlaza puede generar Incidencia')

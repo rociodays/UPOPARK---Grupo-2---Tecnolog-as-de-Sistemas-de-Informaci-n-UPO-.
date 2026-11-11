@@ -13,6 +13,6 @@ class Plaza(models.Model):
         
     plaza_bloqueo_plaza = fields.Many2one('upopark.bloqueo_plaza', 'Plaza puede verse afectada por BloqueoPlaza')
     plaza_aparcamiento = fields.Many2one('upopark.aparcamiento', 'Plaza pertenece a Aparcamiento')
-    plaza_estadoPlaza = fields.One2one('upopark.estadoPlaza', 'Plaza está en un EstadoPlaza')
-    plaza_conector = fields.One2one('upopark.conector', 'Plaza puede tener un Conector')
-    plaza_sensorOcupacion = fields.One2one('upopark.sensorOcupacion', 'Plaza puede tener un SensorOcupacion')
+    plaza_estadoPlaza = fields.Many2one('upopark.estadoPlaza', 'Plaza está en un EstadoPlaza')
+    plaza_conector = fields.Many2one('upopark.conector', 'Plaza puede tener un Conector')
+    plaza_sensorOcupacion = fields.Many2one('upopark.sensorOcupacion', 'Plaza puede tener un SensorOcupacion')

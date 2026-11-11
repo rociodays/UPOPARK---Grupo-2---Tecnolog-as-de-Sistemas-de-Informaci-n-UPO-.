@@ -10,4 +10,4 @@ class MotivoBloqueo(models.Model):
     motivo = fields.Char('Motivo', size=60, required=True)
     descripcion = fields.Char('Descripcion', size=60, required=True)
 
-    motivo_bloqueo_bloqueo_plaza = fields.One2one('upopark.bloqueo_plaza', 'MotivoBloqueo resulta en BloqueoPlaza')
+    motivo_bloqueo_bloqueo_plaza = fields.Many2one('upopark.bloqueo_plaza', 'MotivoBloqueo resulta en BloqueoPlaza')

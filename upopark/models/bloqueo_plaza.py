@@ -16,6 +16,6 @@ class BloqueoPlaza(models.Model):
             default=False
         )
 
-    bloqueo_plaza_plaza = fields.One2one('upopark.plaza', 'BloqueoPlaza afecta a Plaza')
-    bloqueo_plaza_motivo_bloqueo = fields.One2one('upopark.motivo_bloqueo', 'BloqueoPlaza se debe a MotivoBloqueo')
-    bloqueo_plaza_incidencia = fields.One2one('upopark.incidencia', 'BloqueoPlaza se debe a Incidencia')
+    bloqueo_plaza_plaza = fields.Many2one('upopark.plaza', 'BloqueoPlaza afecta a Plaza')
+    bloqueo_plaza_motivo_bloqueo = fields.Many2one('upopark.motivo_bloqueo', 'BloqueoPlaza se debe a MotivoBloqueo')
+    bloqueo_plaza_incidencia = fields.Many2one('upopark.incidencia', 'BloqueoPlaza se debe a Incidencia')
