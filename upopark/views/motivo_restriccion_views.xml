@@ -42,9 +42,20 @@
     </field>
   </record>
 
+  <record id="upopark_motivo_restriccion_search_view" model="ir.ui.view">
+    <field name="name">upopark.motivo_restriccion.search</field>
+    <field name="model">upopark.motivo_restriccion</field>
+    <field name="arch" type="xml">
+      <search>
+       <filter name="motivos_sin_uso" string="Sin restricciones asociadas" domain="[('restriccion_ids', '=', False)]" />
+      </search>
+    </field>
+  </record>
+
   <record id="motivo_restriccion_list_action" model="ir.actions.act_window">
     <field name="name">Motivos de Restriccion</field>
     <field name="res_model">upopark.motivo_restriccion</field>
+    <field name="search_view_id" ref="upopark_motivo_restriccion_search_view"/>
     <field name="view_mode">list,form,graph</field>
     <field name="help" type="html">
       <p>Crea el primer motivo de restriccion en el sistema</p>
