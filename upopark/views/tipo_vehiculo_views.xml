@@ -42,10 +42,21 @@
     </field>
   </record>
 
+  <record id="upopark_tipo_vehiculo_search_view" model="ir.ui.view">
+    <field name="name">upopark.tipo_vehiculo.search</field>
+    <field name="model">upopark.tipo_vehiculo</field>
+    <field name="arch" type="xml">
+      <search>
+        <filter name="tipos_vacios" string="Tipos sin Vehiculos registrados" domain="[('vehiculo_ids', '=', False)]" />
+      </search>
+    </field>
+  </record>
+
   <record id="tipo_vehiculo_list_action" model="ir.actions.act_window">
     <field name="name">Tipos de Vehiculo</field>
     <field name="res_model">upopark.tipo_vehiculo</field>
     <field name="view_mode">list,form,graph</field>
+    <field name="search_view_id" ref="upopark_tipo_vehiculo_search_view" />
     <field name="help" type="html">
       <p>Crea el primer tipo de vehiculo en el sistema</p>
     </field>
