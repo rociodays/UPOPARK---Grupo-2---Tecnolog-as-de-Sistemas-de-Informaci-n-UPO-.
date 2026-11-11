@@ -11,7 +11,7 @@
             <field name="requiere_vehiculo_electrico" />
             <field name="accesible" />
             <field name="tipo_plaza_plaza" widget="many2one" />
-            <field name="tipo_plaza_organizacion" widget="one2one" />
+            <field name="tipo_plaza_organizacion" widget="Many2one" />
           </group>
         </sheet>
       </form>
@@ -28,7 +28,7 @@
             <field name="requiere_vehiculo_electrico" />
             <field name="accesible" />
             <field name="tipo_plaza_plaza" widget="many2one" />
-            <field name="tipo_plaza_organizacion" widget="one2one" />
+            <field name="tipo_plaza_organizacion" widget="Many2one" />
       </list>
     </field>
   </record>

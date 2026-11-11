@@ -7,7 +7,7 @@
         <sheet layout="auto">
           <group>
             <field name="estado" />
-            <field name="estadoPlaza_plaza" widget="one2one" />
+            <field name="estadoPlaza_plaza" widget="Many2one" />
           </group>
         </sheet>
       </form>
@@ -19,7 +19,7 @@
     <field name="model">upopark.estadoPlaza</field>
     <field name="arch" type="xml">
       <list string="list_string">
-            <field name="estadoPlaza_plaza" widget="one2one" />
+            <field name="estadoPlaza_plaza" widget="Many2one" />
       </list>
     </field>
   </record>

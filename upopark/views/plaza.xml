@@ -11,9 +11,9 @@
             <field name="anchura" />
             <field name="plaza_bloqueo_plaza" widget="many2one" />
             <field name="plaza_aparcamiento" widget="many2one" />
-            <field name="plaza_estadoPlaza" widget="one2one" />
-            <field name="plaza_conector" widget="one2one" />
-            <field name="plaza_sensorOcupacion" widget="one2one" />
+            <field name="plaza_estadoPlaza" widget="Many2one" />
+            <field name="plaza_conector" widget="Many2one" />
+            <field name="plaza_sensorOcupacion" widget="Many2one" />
           </group>
         </sheet>
       </form>
@@ -30,9 +30,9 @@
             <field name="anchura" />
             <field name="plaza_bloqueo_plaza" widget="many2one" />
             <field name="plaza_aparcamiento" widget="many2one" />
-            <field name="plaza_estadoPlaza" widget="one2one" />
-            <field name="plaza_conector" widget="one2one" />
-            <field name="plaza_sensorOcupacion" widget="one2one" />
+            <field name="plaza_estadoPlaza" widget="Many2one" />
+            <field name="plaza_conector" widget="Many2one" />
+            <field name="plaza_sensorOcupacion" widget="Many2one" />
       </list>
     </field>
   </record>

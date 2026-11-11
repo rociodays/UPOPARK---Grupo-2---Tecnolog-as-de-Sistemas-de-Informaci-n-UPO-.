@@ -9,8 +9,8 @@
             <field name="estado" />
             <field name="activo" />
             <field name="estadoPlaza_plaza" widget="one2many" />
-            <field name="estadoPlaza_indisponibilidad" widget="one2one" />
-            <field name="estadoPlaza_incidencia" widget="one2one" />
+            <field name="estadoPlaza_indisponibilidad" widget="Many2one" />
+            <field name="estadoPlaza_incidencia" widget="Many2one" />
           </group>
         </sheet>
       </form>
@@ -25,8 +25,8 @@
             <field name="estado" />
             <field name="activo" />
             <field name="estadoPlaza_plaza" widget="one2many" />
-            <field name="estadoPlaza_indisponibilidad" widget="one2one" />
-            <field name="estadoPlaza_incidencia" widget="one2one" />
+            <field name="estadoPlaza_indisponibilidad" widget="Many2one" />
+            <field name="estadoPlaza_incidencia" widget="Many2one" />
       </list>
     </field>
   </record>
