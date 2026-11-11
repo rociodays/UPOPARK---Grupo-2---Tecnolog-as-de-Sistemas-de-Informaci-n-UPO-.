@@ -34,7 +34,7 @@ from . import aparcamiento
 from . import bloqueo_plaza
 from . import campus
 from . import estado_conservacion_plaza
-from . import estadoPlaza
+from . import estado_plaza
 from . import material_pavimento
 from . import motivo_bloqueo
 from . import nivel_acceso
