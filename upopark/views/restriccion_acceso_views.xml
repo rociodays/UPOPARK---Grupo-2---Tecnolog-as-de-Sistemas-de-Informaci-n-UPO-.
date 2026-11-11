@@ -58,7 +58,7 @@
     </field>
   </record>
 
-  record id="upopark_restriccion_acceso_search_view" model="ir.ui.view">
+  <record id="upopark_restriccion_acceso_search_view" model="ir.ui.view">
     <field name="name">upopark.restriccion_acceso.search</field>
     <field name="model">upopark.restriccion_acceso</field>
     <field name="arch" type="xml">
