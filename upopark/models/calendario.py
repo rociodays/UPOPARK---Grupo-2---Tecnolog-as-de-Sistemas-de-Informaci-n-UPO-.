@@ -9,5 +9,5 @@ class Calendario(models.Model):
     zona_horaria = fields.Char(string='Zona Horaria')
     activo = fields.Boolean(string='Activo', default=True)
     
-    organizacion_id = fields.Many2one('upoPark.organizacion', string='Organización')
+    organizacion_id = fields.Many2one('upopark.organizacion', string='Organización')
     franja_ids = fields.One2many('upopark.franja_calendario', 'calendario_id', string='Franjas Horarias')

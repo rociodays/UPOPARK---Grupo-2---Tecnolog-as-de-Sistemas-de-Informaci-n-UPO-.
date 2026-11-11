@@ -8,4 +8,4 @@ class SensorOcupacion(models.Model):
     ult_conex = fields.Datetime(string='Última Conexión')
     
     estado_sensor_id = fields.Many2one('upopark.estado_sensor', string='Estado')
-    estancia_id = fields.Many2one('upoPark.estancia', string='Estancia')
+    estancia_id = fields.Many2one('upopark.estancia', string='Estancia')

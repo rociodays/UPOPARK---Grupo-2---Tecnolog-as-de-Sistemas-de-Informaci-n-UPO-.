@@ -1,7 +1,7 @@
 <odoo>
-  <record id="upoPark_estado_conservacion_plaza_form_view" model="ir.ui.view">
-    <field name="name">upoPark.estado_conservacion_plaza.form</field>
-    <field name="model">upoPark.estado_conservacion_plaza</field>
+  <record id="upopark_estado_conservacion_plaza_form_view" model="ir.ui.view">
+    <field name="name">upopark.estado_conservacion_plaza.form</field>
+    <field name="model">upopark.estado_conservacion_plaza</field>
     <field name="arch" type="xml">
       <form string="Instructor">
         <sheet layout="auto">
@@ -17,9 +17,9 @@
     </field>
   </record>
 
-  <record id="upoPark_estado_conservacion_plaza_list_view" model="ir.ui.view">
-    <field name="name">upoPark.estado_conservacion_plaza.list</field>
-    <field name="model">upoPark.estado_conservacion_plaza</field>
+  <record id="upopark_estado_conservacion_plaza_list_view" model="ir.ui.view">
+    <field name="name">upopark.estado_conservacion_plaza.list</field>
+    <field name="model">upopark.estado_conservacion_plaza</field>
     <field name="arch" type="xml">
       <list string="list_string">
             <field name="estado" />

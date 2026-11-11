@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 class BloqueoPlaza(models.Model):
     
-    _name = 'upoPark.bloqueo_plaza'
+    _name = 'upopark.bloqueo_plaza'
     _description = 'Situación de bloqueo de una plaza'
 
     referencia = fields.Char('Referencia', size=9, required=True)
@@ -16,6 +16,6 @@ class BloqueoPlaza(models.Model):
             default=False
         )
 
-    bloqueo_plaza_plaza = fields.One2one('upoPark.plaza', 'BloqueoPlaza afecta a Plaza')
-    bloqueo_plaza_motivo_bloqueo = fields.One2one('upoPark.motivo_bloqueo', 'BloqueoPlaza se debe a MotivoBloqueo')
-    bloqueo_plaza_incidencia = fields.One2one('upoPark.incidencia', 'BloqueoPlaza se debe a Incidencia')
+    bloqueo_plaza_plaza = fields.One2one('upopark.plaza', 'BloqueoPlaza afecta a Plaza')
+    bloqueo_plaza_motivo_bloqueo = fields.One2one('upopark.motivo_bloqueo', 'BloqueoPlaza se debe a MotivoBloqueo')
+    bloqueo_plaza_incidencia = fields.One2one('upopark.incidencia', 'BloqueoPlaza se debe a Incidencia')

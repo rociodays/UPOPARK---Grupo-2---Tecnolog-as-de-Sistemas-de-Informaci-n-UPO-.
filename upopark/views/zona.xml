@@ -1,7 +1,7 @@
 <odoo>
-  <record id="upoPark_zona_form_view" model="ir.ui.view">
-    <field name="name">upoPark.zona.form</field>
-    <field name="model">upoPark.zona</field>
+  <record id="upopark_zona_form_view" model="ir.ui.view">
+    <field name="name">upopark.zona.form</field>
+    <field name="model">upopark.zona</field>
     <field name="arch" type="xml">
       <form string="Instructor">
         <sheet layout="auto">
@@ -16,9 +16,9 @@
     </field>
   </record>
 
-  <record id="upoPark_zona_list_view" model="ir.ui.view">
-    <field name="name">upoPark.zona.list</field>
-    <field name="model">upoPark.zona</field>
+  <record id="upopark_zona_list_view" model="ir.ui.view">
+    <field name="name">upopark.zona.list</field>
+    <field name="model">upopark.zona</field>
     <field name="arch" type="xml">
       <list string="list_string">
             <field name="nombre" />

@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 class Campus(models.Model):
     
-    _name = 'upoPark.campus'
+    _name = 'upopark.campus'
     _description = 'Campus Universitario'
     
     nombre = fields.Char(string="Nombre Campus", size=60, required=True, help="El nombre del campus")
@@ -13,5 +13,5 @@ class Campus(models.Model):
     latitud = fields.Char('Latitud', size=9, required=True)
     longitud = fields.Char('Longitud', size=9, required=True)
     
-    campus_organización = fields.Many2one('upoPark.organizacion', 'Campus pertenece a Organización')
-    campus_aparcamiento = fields.One2many('upoPark.aparcamiento', 'Campus gestiona Aparcamiento')
+    campus_organización = fields.Many2one('upopark.organizacion', 'Campus pertenece a Organización')
+    campus_aparcamiento = fields.One2many('upopark.aparcamiento', 'Campus gestiona Aparcamiento')

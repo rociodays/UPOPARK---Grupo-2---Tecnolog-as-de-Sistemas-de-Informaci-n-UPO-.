@@ -1,7 +1,7 @@
 <odoo>
-  <record id="upoPark_bloqueo_plaza_form_view" model="ir.ui.view">
-    <field name="name">upoPark.bloqueo_plaza.form</field>
-    <field name="model">upoPark.bloqueo_plaza</field>
+  <record id="upopark_bloqueo_plaza_form_view" model="ir.ui.view">
+    <field name="name">upopark.bloqueo_plaza.form</field>
+    <field name="model">upopark.bloqueo_plaza</field>
     <field name="arch" type="xml">
       <form string="Instructor">
         <sheet layout="auto">
@@ -19,9 +19,9 @@
     </field>
   </record>
 
-  <record id="upoPark_bloqueo_plaza_list_view" model="ir.ui.view">
-    <field name="name">upoPark.bloqueo_plaza.list</field>
-    <field name="model">upoPark.bloqueo_plaza</field>
+  <record id="upopark_bloqueo_plaza_list_view" model="ir.ui.view">
+    <field name="name">upopark.bloqueo_plaza.list</field>
+    <field name="model">upopark.bloqueo_plaza</field>
     <field name="arch" type="xml">
       <list string="list_string">
             <field name="referencia" />

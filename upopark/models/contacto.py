@@ -11,4 +11,4 @@ class Contacto(models.Model):
     
     tipo_doc_id = fields.Many2one('upopark.tipo_doc', string='Tipo de Documento')
     usuario_id = fields.Many2one('upopark.usuario', string='Usuario del Sistema')
-    organizacion_id = fields.Many2one('upoPark.organizacion', string='Organización')
+    organizacion_id = fields.Many2one('upopark.organizacion', string='Organización')
