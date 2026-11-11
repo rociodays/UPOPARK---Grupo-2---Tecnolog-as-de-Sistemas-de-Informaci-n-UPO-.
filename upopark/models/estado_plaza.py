@@ -9,4 +9,4 @@ class EstadoPlaza(models.Model):
 
     estado = fields.Char('Estado', size=9, required=True)
 
-    estadoPlaza_plaza = fields.One2one('upopark.plaza', 'EstadoPlaza muestra estado de Plaza')
+    estadoPlaza_plaza = fields.One2many('upopark.plaza', 'EstadoPlaza muestra estado de Plaza') #odoo ya no acepta One2one
