@@ -21,6 +21,7 @@ access_upopark_linea_cargo,upopark.linea_cargo,model_upopark_linea_cargo,group_u
 access_upopark_alegacion,upopark.alegacion,model_upopark_alegacion,group_upopark_user,1,1,1,1
 access_upopark_moneda,upopark.moneda,model_upopark_moneda,group_upopark_user,1,1,1,1
 access_upopark_tipo_recurso,upopark.tipo_recurso,model_upopark_tipo_recurso,group_upopark_user,1,1,1,1
+access_upopark_recurso,upopark.recurso,model_upopark_recurso,group_upopark_user,1,1,1,1
 access_upopark_tipo_combustible,upopark.tipo_combustible,model_upopark_tipo_combustible,group_upopark_user,1,1,1,1
 access_upopark_etiqueta_ambiental,upopark.etiqueta_ambiental,model_upopark_etiqueta_ambiental,group_upopark_user,1,1,1,1
 access_upopark_marca_vehiculo,upopark.marca_vehiculo,model_upopark_marca_vehiculo,group_upopark_user,1,1,1,1
@@ -33,7 +34,7 @@ access_upopark_aparcamiento,upopark.aparcamiento,model_upopark_aparcamiento,grou
 access_upopark_bloqueo_plaza,upopark.bloqueo_plaza,model_upopark_bloqueo_plaza,group_upopark_user,1,1,1,1
 access_upopark_campus,upopark.campus,model_upopark_campus,group_upopark_user,1,1,1,1
 access_upopark_estado_conservacion_plaza,upopark.estado_conservacion_plaza,model_upopark_estado_conservacion_plaza,group_upopark_user,1,1,1,1
-access_upopark_estadoPlaza,upopark.estadoPlaza,model_upopark_estadoPlaza,group_upopark_user,1,1,1,1
+access_upopark_estado_plaza,upopark.estado_plaza,model_upopark_estado_plaza,group_upopark_user,1,1,1,1
 access_upopark_material_pavimento,upopark.material_pavimento,model_upopark_material_pavimento,group_upopark_user,1,1,1,1
 access_upopark_motivo_bloqueo,upopark.motivo_bloqueo,model_upopark_motivo_bloqueo,group_upopark_user,1,1,1,1
 access_upopark_nivel_acceso,upopark.nivel_acceso,model_upopark_nivel_acceso,group_upopark_user,1,1,1,1
