@@ -57,9 +57,20 @@
     </field>
   </record>
 
+  <record id="upopark_politica_reserva_search_view" model="ir.ui.view">
+    <field name="name">upopark.politica_reserva.search</field>
+    <field name="model">upopark.politica_reserva</field>
+    <field name="arch" type="xml">
+      <search>
+        <filter name="politicas_sin_uso" string="Sin reservas asociadas" domain="[('reserva_ids', '=', False)]" />
+      </search>
+    </field>
+  </record>
+
   <record id="politica_reserva_list_action" model="ir.actions.act_window">
     <field name="name">Politicas de Reserva</field>
     <field name="res_model">upopark.politica_reserva</field>
+    <field name="search_view_id" ref="upopark_politica_reserva_search_view"/>
     <field name="view_mode">list,form,graph</field>
     <field name="help" type="html">
       <p>Crea la primera politica de reserva en el sistema</p>
