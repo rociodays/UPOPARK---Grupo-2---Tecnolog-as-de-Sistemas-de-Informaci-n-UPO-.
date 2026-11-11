@@ -60,16 +60,6 @@ from . import tipo_servicio_cargo
 from . import tipo_servicio_tarifa
 from . import estado_cargo
 from . import recurso
-from . import tipo_incidencia
-from . import estado_incidencia
-from . import incidencia
-from . import orden_trabajo
-from . import tarea
-from . import resultado
-from . import inspeccion
-from . import elemento_inspeccionado
-from . import plan_preventivo
-from . import indisponibilidad
 from . import vehiculo
 from . import tipo_vehiculo
 from . import color_vehiculo

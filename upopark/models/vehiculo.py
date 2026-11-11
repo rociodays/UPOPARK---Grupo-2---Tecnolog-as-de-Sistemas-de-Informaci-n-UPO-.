@@ -1,55 +1,47 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 import re
 
 class Vehiculo(models.Model):
     _name = 'upopark.vehiculo'
     _description = 'Vehiculo'
 
-    #atributos simples
-    name = fields.Char(string="Matricula", required=True, help="Dame la matricula del vehiculo.")
-    cPaisMatricula = fields.Char(string="Pais Matricula", required=True,help="Dame el pais de la matricula del vehiculo.")
-    iNumeroPuertas = fields.Integer(string="Numero de Puertas", help="Número de puertas del vehiculo.")
-    bTieneRemolque = fields.Boolean(string="Tiene Remolque", help="Indica si el vehiculo tiene remolque.")
+    name = fields.Char(string='Matrícula', required=True)
+    pais_matricula = fields.Char(string='País Matrícula', required=True)
+    numero_puertas = fields.Integer(string='Número de Puertas')
+    tiene_remolque = fields.Boolean(string='Tiene Remolque')
 
-    #atributos complejos
-    color_vehiculo_id = fields.Many2one('upopark.color_vehiculo',string='Color', help="Dame el color del vehiculo.")
-    tipo_vehiculo_id = fields.Many2one('upopark.tipo_vehiculo',string='Tipo de Vehículo',required=True, help="Dame el tipo de vehiculo.")
-    modelo_vehiculo_id = fields.Many2one('upopark.modelo_vehiculo', string='Modelo', help='Dame el modelo del vehiculo.')
-    etiqueta_ambiental_id = fields.Many2one('upopark.etiqueta_ambiental', string='Etiqueta Ambiental',help='Dame la etiqueta ambiental del vehículo.')
-    tipo_combustible_id = fields.Many2one('upopark.tipo_combustible', string='Tipo de Combustible', required=True, help='Dame el tipo de combustible.')
-    contacto_id = fields.Many2one('upopark.contacto', string='Contacto', required=True, help='Dame el contacto propietario del vehiculo.')
-    marca_vehiculo_id = fields.Many2one('upopark.marca_vehiculo', string='Marca', help='Dame la marca del vehiculo.')
+    color_vehiculo_id = fields.Many2one('upopark.color_vehiculo', string='Color')
+    tipo_vehiculo_id = fields.Many2one('upopark.tipo_vehiculo', string='Tipo de Vehículo', required=True)
+    modelo_vehiculo_id = fields.Many2one('upopark.modelo_vehiculo', string='Modelo')
+    etiqueta_ambiental_id = fields.Many2one('upopark.etiqueta_ambiental', string='Etiqueta Ambiental')
+    tipo_combustible_id = fields.Many2one('upopark.tipo_combustible', string='Tipo de Combustible', required=True)
+    contacto_id = fields.Many2one('upopark.contacto', string='Contacto', required=True)
+    marca_vehiculo_id = fields.Many2one('upopark.marca_vehiculo', string='Marca')
 
-    conector_ids = fields.Many2many('upopark.conector', string='Conectores Compatibles', help='Dame los conectores compatibles con el vehiculo.')
+    conector_ids = fields.Many2many('upopark.conector', string='Conectores Compatibles')
 
-    restriccion_ids = fields.One2many('upopark.restriccion_acceso','vehiculo_id','Historial de Restricciones')
-    reserva_ids = fields.One2many('upopark.reserva','vehiculo_id','Historial de Reservas')
-    infraccion_ids = fields.One2many('upopark.infraccion', 'vehiculo_id','Historial de Infracciones')
+    restriccion_ids = fields.One2many('upopark.restriccion_acceso', 'vehiculo_id', string='Historial de Restricciones')
+    reserva_ids = fields.One2many('upopark.reserva', 'vehiculo_id', string='Historial de Reservas')
+    infraccion_ids = fields.One2many('upopark.infraccion', 'vehiculo_id', string='Historial de Infracciones')
 
-    #sql constraints
-    _sql_constraints = [
-       ('name_uniq', 'UNIQUE(name)', 'La matrícula del vehículo ya está registrada.')
-    ]
+    _sql_constraints = [('name_uniq', 'UNIQUE(name)', 'La matrícula del vehículo ya está registrada.')]
 
-    #validaciones
-    #matricula formato
     @api.constrains('name')
     def _check_formato_matricula(self):
-       for record in self:
-           if record.name:
-               if not re.match(r'^[A-Z0-9]{4,10}$', record.name):
-                   raise models.ValidationError('El formato de la matricula es incorrecto.')
+        for record in self:
+            if record.name and not re.match(r'^[A-Z0-9]{4,10}$', record.name):
+                raise ValidationError('El formato de la matrícula es incorrecto.')
 
-    #numero de puertas rango
-    @api.onchange('iNumeroPuertas')
-    def _onchange_rango_puertas(self):
-       if self.iNumeroPuertas and (self.iNumeroPuertas < 0 or self.iNumeroPuertas > 5):
-           raise models.ValidationError('Un vehiculo estandar no puede tener menos de 0 ni mas de 5 puertas.')
+    @api.constrains('numero_puertas')
+    def _check_rango_puertas(self):
+        for record in self:
+            if record.numero_puertas and not 0 <= record.numero_puertas <= 5:
+                raise ValidationError('El vehículo no puede tener menos de 0 ni más de 5 puertas.')
 
-    #uso de conectores solo para vehiculos electricos
-    @api.onchange('tipo_combustible_id', 'conector_ids')
-    def _onchange_combustible_conectores(self):
-       if self.tipo_combustible_id and self.conector_ids:
-           if self.tipo_combustible_id.name != 'Electrico':
-               raise models.ValidationError('Solo los vehiculos electricos pueden tener conectores asignados.')
-
+    @api.constrains('tipo_combustible_id', 'conector_ids')
+    def _check_combustible_conectores(self):
+        for record in self:
+            if record.tipo_combustible_id and record.conector_ids:
+                if record.tipo_combustible_id.nombre.lower() != 'electrico':
+                    raise ValidationError('Solo los vehículos eléctricos pueden tener conectores asignados.')

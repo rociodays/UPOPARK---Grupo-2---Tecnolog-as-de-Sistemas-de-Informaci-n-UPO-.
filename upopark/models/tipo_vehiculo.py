@@ -1,31 +1,22 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class TipoVehiculo(models.Model):
     _name = 'upopark.tipo_vehiculo'
     _description = 'Tipo de Vehiculo'
 
-    #atributos simples
     name = fields.Selection(
-        [('coche', 'Coche'),
-            ('moto', 'Moto'),
-            ('furgoneta', 'Furgoneta'),
-            ('camion', 'Camion'),
-            ('autobus', 'Autobus')], string='Tipo de Vehiculo', required=True)
-    cDescripcion = fields.Text(string='Descripcion')
+        [('coche', 'Coche'), ('moto', 'Moto'), ('furgoneta', 'Furgoneta'),
+         ('camion', 'Camion'), ('autobus', 'Autobus')],
+        string='Tipo de Vehiculo', required=True)
+    descripcion = fields.Text(string='Descripcion')
 
-    #atributos complejos
-    vehiculo_ids = fields.One2many('upopark.vehiculo','tipo_vehiculo_id','Vehiculos Registrados')
+    vehiculo_ids = fields.One2many('upopark.vehiculo', 'tipo_vehiculo_id', string='Vehiculos Registrados')
 
-    #sql constraints
-    _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'El tipo de vehículo ya está registrado.')
-    ]
+    _sql_constraints = [('name_uniq', 'UNIQUE(name)', 'El tipo de vehículo ya está registrado.')]
 
-    #validaciones
-    #longitud de la descripcion
-    @api.constrains('cDescripcion')
+    @api.constrains('descripcion')
     def _check_longitud_descripcion_tipo(self):
         for record in self:
-            if record.cDescripcion:
-                if len(record.cDescripcion) < 5 or len(record.cDescripcion) > 250:
-                    raise models.ValidationError('La descripcion del tipo de vehiculo debe tener entre 5 y 250 caracteres.')
+            if record.descripcion and not 5 <= len(record.descripcion) <= 250:
+                raise ValidationError('La descripción del tipo de vehículo debe tener entre 5 y 250 caracteres.')

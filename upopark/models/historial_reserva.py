@@ -1,34 +1,25 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class HistorialReserva(models.Model):
     _name = 'upopark.historial_reserva'
     _description = 'Historial de Cambios de Reserva'
 
-    fFechaCambio = fields.Datetime('Fecha de Cambio', required=True, autodate = True, help="Dame la fecha de cambio de la reserva.")
-    cNota = fields.Text(string='Nota', help='Observaciones sobre el motivo del cambio de estado.')
+    fecha_cambio = fields.Datetime(string='Fecha de Cambio', required=True)
+    nota = fields.Text(string='Nota', help='Observaciones sobre el motivo del cambio de estado.')
 
-    #atributos complejos  
-    name = fields.Many2one('upopark.reserva', string='Reserva', required=True,help='Dame la reserva a la que pertenece este historial.')
-    estado_anterior_id = fields.Many2one('upopark.estado_reserva',string='Estado Anterior',required=True,help='Dame el estado anterior de la reserva.')
-    estado_nuevo_id = fields.Many2one('upopark.estado_reserva',string='Estado Nuevo',required=True,help='Dame el estado nuevo de la reserva.')
+    reserva_id = fields.Many2one('upopark.reserva', string='Reserva', required=True)
+    estado_anterior_id = fields.Many2one('upopark.estado_reserva', string='Estado Anterior', required=True)
+    estado_nuevo_id = fields.Many2one('upopark.estado_reserva', string='Estado Nuevo', required=True)
 
-    #sql constraints no tiene
-
-    #validaciones
-    #fecha cambio
-    @api.onchange('fFechaCambio')
+    @api.onchange('fecha_cambio')
     def _onchange_fecha_cambio(self):
-        if self.fFechaCambio:
-            ahora = fields.Datetime.now()
-            if self.fFechaCambio > ahora:
-                self.fFechaCambio = ahora
-                raise models.ValidationError('El registro historico no puede estar en el futuro.')
-                   
+        if self.fecha_cambio and self.fecha_cambio > fields.Datetime.now():
+            self.fecha_cambio = fields.Datetime.now()
+            raise ValidationError('El registro histórico no puede estar en el futuro.')
 
-    #estados
     @api.constrains('estado_anterior_id', 'estado_nuevo_id')
     def _check_cambio_estado_real(self):
         for record in self:
-            if record.estado_anterior_id and record.estado_nuevo_id:
-                if record.estado_anterior_id.id == record.estado_nuevo_id.id:
-                    raise models.ValidationError('Operacion rechazada: El estado nuevo debe ser diferente al estado anterior.')
+            if record.estado_anterior_id and record.estado_nuevo_id and record.estado_anterior_id.id == record.estado_nuevo_id.id:
+                raise ValidationError('El estado nuevo debe ser diferente al estado anterior.')

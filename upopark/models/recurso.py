@@ -12,3 +12,4 @@ class Recurso(models.Model):
 
     organizacion_id = fields.Many2one('upopark.organizacion', string='Organizacion', required=True)
     tipo_recurso_id = fields.Many2one('upopark.tipo_recurso', string='Tipo de recurso', required=True)
+    calendario_id = fields.Many2one('upopark.calendario', string='Calendario')

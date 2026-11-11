@@ -10,4 +10,6 @@ class Conector(models.Model):
     estado_conector_id = fields.Many2one('upopark.estado_conector', string='Estado del Conector')
     estacion_id = fields.Many2one('upopark.estacion_recarga', string='Estación de Recarga')
     tipo_conector_id = fields.Many2one('upopark.tipo_conector', string='Tipo de Conector')
+    fabricante_hardware_id = fields.Many2one('upopark.fabricante_hardware', string='Fabricante')
+
     sesion_ids = fields.One2many('upopark.sesion_recarga', 'conector_id', string='Historial de Sesiones')

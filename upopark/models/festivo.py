@@ -1,10 +1,10 @@
 from odoo import models, fields
 
-
 class Festivo(models.Model):
     _name = 'upopark.festivo'
     _description = 'Festivo'
-    _rec_name = 'snombre'
+    _rec_name = 'nombre'
 
-    snombre = fields.Char(string='Nombre', required=True)
-    dfecha = fields.Date(string='Fecha', required=True)
+    nombre = fields.Char(string='Nombre', required=True)
+    fecha = fields.Date(string='Fecha', required=True)
+    calendario_id = fields.Many2one('upopark.calendario', string='Calendario')
