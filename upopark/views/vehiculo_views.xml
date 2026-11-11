@@ -74,9 +74,24 @@
     </field>
   </record>
 
+  <record id="upopark_vehiculo_search_view" model="ir.ui.view">
+    <field name="name">upopark.vehiculo.search</field>
+    <field name="model">upopark.vehiculo</field>
+    <field name="arch" type="xml">
+      <search>
+        <filter name="vehiculos_reservas_activas" string="Reservas Activas" domain="[('reserva_ids.estado_reserva_id.name', 'ilike', 'activa')]" />
+        <separator orientation="vertical" />
+        <group expand="0" string="Agrupar por...">
+          <filter name="group_by_combustible" string="Combustible" context="{'group_by':'tipo_combustible_id'}" />
+        </group>
+      </search>
+    </field>
+  </record>
+
   <record id="vehiculo_list_action" model="ir.actions.act_window">
     <field name="name">Vehiculos</field>
     <field name="res_model">upopark.vehiculo</field>
+    <field name="search_view_id" ref="upopark_vehiculo_search_view"/>
     <field name="view_mode">list,form,graph</field>
     <field name="help" type="html">
       <p>Crea el primer vehiculo</p>
