@@ -10,9 +10,9 @@
             <field name="num_doc" />
             <field name="telefono" />
             <field name="correo" />
-            <field name="tipo_doc_id" widget="many2one" />
-            <field name="usuario_id" widget="many2one" />
-            <field name="organizacion_id" widget="many2one" />
+            <field name="tipo_doc_id"  />
+            <field name="usuario_id"  />
+            <field name="organizacion_id"  />
           </group>
           <notebook>
             <page string="Vehículos"><field name="vehiculo_ids"/></page>
@@ -57,7 +57,7 @@
         <field name="nombre" />
         <field name="num_doc" />
         <field name="telefono" />
-        <field name="organizacion_id" widget="many2one" />
+        <field name="organizacion_id"  />
       </list>
     </field>
   </record>

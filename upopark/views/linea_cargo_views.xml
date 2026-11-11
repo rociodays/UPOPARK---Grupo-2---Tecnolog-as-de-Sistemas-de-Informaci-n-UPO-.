@@ -8,8 +8,8 @@
           <group>
             <field name="name" />
             <field name="importe_total" />
-            <field name="sesion_id" widget="many2one" />
-            <field name="tarifa_id" widget="many2one" />
+            <field name="sesion_id"  />
+            <field name="tarifa_id"  />
           </group>
         </sheet>
       </form>
@@ -23,7 +23,7 @@
       <list string="list_string">
         <field name="name" />
         <field name="importe_total" />
-        <field name="tarifa_id" widget="many2one" />
+        <field name="tarifa_id"  />
       </list>
     </field>
   </record>

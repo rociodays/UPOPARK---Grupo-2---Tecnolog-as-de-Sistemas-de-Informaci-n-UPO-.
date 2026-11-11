@@ -8,8 +8,8 @@
           <group>
             <field name="nombre" />
             <field name="codigo" />
-            <field name="zona_nivel_acceso" widget="many2one" />
-            <field name="zona_aparcamiento" widget="one2many" />
+            <field name="zona_nivel_acceso"  />
+            <field name="zona_aparcamiento"  />
           </group>
         </sheet>
       </form>
@@ -23,8 +23,8 @@
       <list string="list_string">
             <field name="nombre" />
             <field name="codigo" />
-            <field name="zona_nivel_acceso" widget="many2one" />
-            <field name="zona_aparcamiento" widget="one2many" />
+            <field name="zona_nivel_acceso"  />
+            <field name="zona_aparcamiento"  />
       </list>
     </field>
   </record>

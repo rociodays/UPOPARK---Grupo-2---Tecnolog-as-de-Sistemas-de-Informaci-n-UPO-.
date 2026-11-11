@@ -9,7 +9,7 @@
             <field name="dia_semana" />
             <field name="hora_desde" />
             <field name="hora_hasta" />
-            <field name="calendario_id" widget="many2one" />
+            <field name="calendario_id"  />
           </group>
         </sheet>
       </form>
@@ -24,7 +24,7 @@
         <field name="dia_semana" />
         <field name="hora_desde" />
         <field name="hora_hasta" />
-        <field name="calendario_id" widget="many2one" />
+        <field name="calendario_id"  />
       </list>
     </field>
   </record>

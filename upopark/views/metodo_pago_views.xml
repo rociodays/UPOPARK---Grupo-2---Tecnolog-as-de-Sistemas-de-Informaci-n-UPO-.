@@ -4,9 +4,9 @@
       <field name="model">upopark.metodo_pago</field>
       <field name="arch" type="xml">
         <list string="Métodos de Pago">
-          <field name="smetodo"/>
-          <field name="fcomision"/>
-          <field name="sdescripcion"/>
+          <field name="metodo"/>
+          <field name="comision"/>
+          <field name="descripcion"/>
         </list>
       </field>
     </record>
@@ -17,9 +17,9 @@
         <form string="Método de Pago">
           <sheet>
             <group>
-              <field name="smetodo"/>
-              <field name="fcomision"/>
-              <field name="sdescripcion"/>
+              <field name="metodo"/>
+              <field name="comision"/>
+              <field name="descripcion"/>
               <field name="entidad_bancaria_ids"/>
             </group>
           </sheet>

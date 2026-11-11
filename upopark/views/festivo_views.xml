@@ -4,8 +4,8 @@
       <field name="model">upopark.festivo</field>
       <field name="arch" type="xml">
         <list string="Festivos">
-          <field name="snombre"/>
-          <field name="dfecha"/>
+          <field name="nombre"/>
+          <field name="fecha"/>
         </list>
       </field>
     </record>
@@ -16,8 +16,8 @@
         <form string="Festivo">
           <sheet>
             <group>
-              <field name="snombre"/>
-              <field name="dfecha"/>
+              <field name="nombre"/>
+              <field name="fecha"/>
             </group>
           </sheet>
         </form>

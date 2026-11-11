@@ -3,14 +3,12 @@
     <field name="name">upopark.estado_conservacion_plaza.form</field>
     <field name="model">upopark.estado_conservacion_plaza</field>
     <field name="arch" type="xml">
-      <form string="Instructor">
-        <sheet layout="auto">
+      <form string="Estado de Conservación de Plaza">
+        <sheet>
           <group>
-            <field name="estado" />
-            <field name="activo" />
-            <field name="estadoPlaza_plaza" widget="one2many" />
-            <field name="estadoPlaza_indisponibilidad" widget="Many2one" />
-            <field name="estadoPlaza_incidencia" widget="Many2one" />
+            <field name="estado"/>
+            <field name="activo"/>
+            <field name="plaza_ids"/>
           </group>
         </sheet>
       </form>
@@ -21,22 +19,16 @@
     <field name="name">upopark.estado_conservacion_plaza.list</field>
     <field name="model">upopark.estado_conservacion_plaza</field>
     <field name="arch" type="xml">
-      <list string="list_string">
-            <field name="estado" />
-            <field name="activo" />
-            <field name="estadoPlaza_plaza" widget="one2many" />
-            <field name="estadoPlaza_indisponibilidad" widget="Many2one" />
-            <field name="estadoPlaza_incidencia" widget="Many2one" />
+      <list string="Estados de Conservación de Plaza">
+        <field name="estado"/>
+        <field name="activo"/>
       </list>
     </field>
   </record>
 
   <record id="estado_conservacion_plaza_list_action" model="ir.actions.act_window">
-    <field name="name">Estado de Conservacions de plaza</field>
+    <field name="name">Estados de Conservación de Plaza</field>
     <field name="res_model">upopark.estado_conservacion_plaza</field>
     <field name="view_mode">list,form</field>
-    <field name="help" type="html">
-      <p class="o_view_nocontent_smiling_face">Crea el primer Estado de Conservacion de plaza</p>
-    </field>
   </record>
 </odoo>

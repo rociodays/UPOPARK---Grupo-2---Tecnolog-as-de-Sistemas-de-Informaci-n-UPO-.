@@ -4,9 +4,9 @@
       <field name="model">upopark.evento_campus</field>
       <field name="arch" type="xml">
         <list string="Eventos Campus">
-          <field name="snombre"/>
-          <field name="dtfechainicio"/>
-          <field name="dtfechafin"/>
+          <field name="nombre"/>
+          <field name="fecha_inicio"/>
+          <field name="fecha_fin"/>
         </list>
       </field>
     </record>
@@ -17,9 +17,9 @@
         <form string="Evento Campus">
           <sheet>
             <group>
-              <field name="snombre"/>
-              <field name="dtfechainicio"/>
-              <field name="dtfechafin"/>
+              <field name="nombre"/>
+              <field name="fecha_inicio"/>
+              <field name="fecha_fin"/>
             </group>
           </sheet>
         </form>

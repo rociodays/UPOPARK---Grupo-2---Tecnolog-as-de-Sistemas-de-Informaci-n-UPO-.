@@ -9,7 +9,7 @@
             <field name="name" />
             <field name="argumento" />
             <field name="estado" />
-            <field name="usuario_id" widget="many2one" />
+            <field name="usuario_id"  />
           </group>
         </sheet>
       </form>
@@ -23,7 +23,7 @@
       <list string="list_string">
         <field name="name" />
         <field name="estado" />
-        <field name="usuario_id" widget="many2one" />
+        <field name="usuario_id"  />
       </list>
     </field>
   </record>

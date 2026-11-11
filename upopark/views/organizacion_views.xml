@@ -8,7 +8,7 @@
           <group>
             <field name="name" />
             <field name="cif" />
-            <field name="usuario_ids" widget="one2many" />
+            <field name="usuario_ids"  />
           </group>
         </sheet>
       </form>
@@ -22,7 +22,7 @@
       <list string="list_string">
         <field name="name" />
         <field name="cif" />
-        <field name="usuario_ids" widget="one2many" />
+        <field name="usuario_ids"  />
       </list>
     </field>
   </record>

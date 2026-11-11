@@ -22,7 +22,7 @@
                     </group>
                     <notebook>
                         <page string="Tarifas">
-                            <field name="tarifa_id">
+                            <field name="tarifa_ids">
                                 <list/>
                             </field>
                         </page>

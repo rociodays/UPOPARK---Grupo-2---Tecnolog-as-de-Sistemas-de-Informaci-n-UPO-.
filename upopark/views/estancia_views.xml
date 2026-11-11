@@ -37,12 +37,12 @@
                     </group>
                     <notebook>
                         <page string="Punto de Acceso (Comienza)">
-                            <field name="punto_acceso_comienza_id">
+                            <field name="punto_acceso_comienza_ids">
                                 <list/>
                             </field>
                         </page>
                         <page string="Punto de Acceso (Finaliza)">
-                            <field name="punto_acceso_finaliza_id">
+                            <field name="punto_acceso_finaliza_ids">
                                 <list/>
                             </field>
                         </page>

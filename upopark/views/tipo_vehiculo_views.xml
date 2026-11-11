@@ -7,12 +7,12 @@
         <sheet layout="auto">
           <group>
             <field name="name" />
-            <field name="cDescripcion" />
+            <field name="descripcion" />
           </group>
           <notebook>
             <page name="vehiculos_registrados" string="Vehiculos Registrados">
               <group>
-                <field name="vehiculo_ids" widget="one2many" />
+                <field name="vehiculo_ids" />
               </group>
             </page>
           </notebook>
@@ -27,7 +27,7 @@
     <field name="arch" type="xml">
       <list string="Tipos de Vehiculo">
         <field name="name" />
-        <field name="cDescripcion" />
+        <field name="descripcion" />
       </list>
     </field>
   </record>

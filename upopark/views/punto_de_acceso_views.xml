@@ -9,7 +9,7 @@
             <field name="name" />
             <field name="ubicacion" />
             <field name="tipo" />
-            <field name="permiso_ids" widget="one2many" />
+            <field name="permiso_ids"  />
           </group>
         </sheet>
       </form>

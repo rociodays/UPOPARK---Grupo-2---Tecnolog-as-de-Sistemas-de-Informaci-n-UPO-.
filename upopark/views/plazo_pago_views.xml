@@ -4,8 +4,8 @@
       <field name="model">upopark.plazo_pago</field>
       <field name="arch" type="xml">
         <list string="Plazos de Pago">
-          <field name="scategoria"/>
-          <field name="idias"/>
+          <field name="categoria"/>
+          <field name="dias"/>
         </list>
       </field>
     </record>
@@ -16,8 +16,8 @@
         <form string="Plazo de Pago">
           <sheet>
             <group>
-              <field name="scategoria"/>
-              <field name="idias"/>
+              <field name="categoria"/>
+              <field name="dias"/>
             </group>
           </sheet>
         </form>

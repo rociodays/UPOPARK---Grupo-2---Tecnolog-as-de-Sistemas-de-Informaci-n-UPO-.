@@ -9,7 +9,7 @@
             <field name="name" />
             <field name="precio_kw" />
             <field name="precio_minuto" />
-            <field name="linea_cargo_ids" widget="one2many" />
+            <field name="linea_cargo_ids"  />
           </group>
         </sheet>
       </form>

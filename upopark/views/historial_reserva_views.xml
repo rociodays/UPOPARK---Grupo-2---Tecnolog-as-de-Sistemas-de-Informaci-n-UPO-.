@@ -4,19 +4,19 @@
     <field name="model">upopark.historial_reserva</field>
     <field name="arch" type="xml">
       <form string="Historial de Reserva">
-        <sheet layout="auto">
+        <sheet>
           <group>
             <group>
-              <field name="name" widget="many2one" />
-              <field name="estado_anterior_id" widget="many2one" />
-              <field name="estado_nuevo_id" widget="many2one" />
+              <field name="reserva_id"/>
+              <field name="estado_anterior_id"/>
+              <field name="estado_nuevo_id"/>
             </group>
             <group>
-              <field name="fFechaCambio" />
+              <field name="fecha_cambio"/>
             </group>
           </group>
           <group>
-            <field name="cNota" />
+            <field name="nota"/>
           </group>
         </sheet>
       </form>
@@ -28,10 +28,10 @@
     <field name="model">upopark.historial_reserva</field>
     <field name="arch" type="xml">
       <list string="Historial de Cambios">
-        <field name="name" />
-        <field name="fFechaCambio" />
-        <field name="estado_anterior_id" />
-        <field name="estado_nuevo_id" />
+        <field name="reserva_id"/>
+        <field name="fecha_cambio"/>
+        <field name="estado_anterior_id"/>
+        <field name="estado_nuevo_id"/>
       </list>
     </field>
   </record>
@@ -40,9 +40,9 @@
     <field name="name">upopark.historial_reserva.calendar</field>
     <field name="model">upopark.historial_reserva</field>
     <field name="arch" type="xml">
-      <calendar string="Cambios de Estado" color="estado_nuevo_id" date_start="fFechaCambio" mode="month">
-        <field name="name" />
-        <field name="estado_nuevo_id" />
+      <calendar string="Cambios de Estado" color="estado_nuevo_id" date_start="fecha_cambio" mode="month">
+        <field name="reserva_id"/>
+        <field name="estado_nuevo_id"/>
       </calendar>
     </field>
   </record>
@@ -52,7 +52,7 @@
     <field name="model">upopark.historial_reserva</field>
     <field name="arch" type="xml">
       <graph string="Cambios por Estado" type="line">
-        <field name="estado_nuevo_id" type="row" />
+        <field name="estado_nuevo_id" type="row"/>
       </graph>
     </field>
   </record>
@@ -62,7 +62,8 @@
     <field name="model">upopark.historial_reserva</field>
     <field name="arch" type="xml">
       <search>
-        <filter name="historial_canceladas" string="Estado Nuevo Cancelacion" domain="[('estado_nuevo_id.name', 'ilike', 'cancelada')]" />
+        <field name="reserva_id"/>
+        <filter name="historial_canceladas" string="Estado Nuevo Cancelación" domain="[('estado_nuevo_id.name','=','cancelada')]"/>
       </search>
     </field>
   </record>
@@ -72,8 +73,5 @@
     <field name="res_model">upopark.historial_reserva</field>
     <field name="search_view_id" ref="upopark_historial_reserva_search_view"/>
     <field name="view_mode">list,form,calendar,graph</field>
-    <field name="help" type="html">
-      <p>Crea el primer registro en el historial de reservas</p>
-    </field>
   </record>
 </odoo>

@@ -4,8 +4,8 @@
       <field name="model">upopark.tipo_sancion</field>
       <field name="arch" type="xml">
         <list string="Tipos de Sanción">
-          <field name="snombre"/>
-          <field name="sdescripcion"/>
+          <field name="nombre"/>
+          <field name="descripcion"/>
         </list>
       </field>
     </record>
@@ -16,8 +16,8 @@
         <form string="Tipo de Sanción">
           <sheet>
             <group>
-              <field name="snombre"/>
-              <field name="sdescripcion"/>
+              <field name="nombre"/>
+              <field name="descripcion"/>
               <field name="sancion_ids"/>
             </group>
           </sheet>

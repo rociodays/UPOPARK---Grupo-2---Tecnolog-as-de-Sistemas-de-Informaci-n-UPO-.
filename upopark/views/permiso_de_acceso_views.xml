@@ -9,8 +9,8 @@
             <field name="name" />
             <field name="fecha_inicio" />
             <field name="fecha_fin" />
-            <field name="usuario_id" widget="many2one" />
-            <field name="punto_acceso_id" widget="many2one" />
+            <field name="usuario_id"  />
+            <field name="punto_acceso_id"  />
           </group>
         </sheet>
       </form>
@@ -25,8 +25,8 @@
         <field name="name" />
         <field name="fecha_inicio" />
         <field name="fecha_fin" />
-        <field name="usuario_id" widget="many2one" />
-        <field name="punto_acceso_id" widget="many2one" />
+        <field name="usuario_id"  />
+        <field name="punto_acceso_id"  />
       </list>
     </field>
   </record>

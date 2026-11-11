@@ -12,18 +12,18 @@
           </div>
           <group>
             <group>
-              <field name="cNombre" />
-              <field name="iDiasAntelacion" />
+              <field name="nombre" />
+              <field name="dias_antelacion" />
             </group>
             <group>
-              <field name="iDuracionMaxima" />
-              <field name="iAntelacionCancel" />
+              <field name="duracion_maxima" />
+              <field name="antelacion_cancelacion" />
             </group>
           </group>
           <notebook>
             <page name="reservas_vinculadas" string="Reservas Vinculadas">
               <group>
-                <field name="reserva_ids" widget="one2many" />
+                <field name="reserva_ids"  />
               </group>
             </page>
           </notebook>
@@ -38,10 +38,10 @@
     <field name="arch" type="xml">
       <list string="Politicas de Reserva">
         <field name="name" />
-        <field name="cNombre" />
-        <field name="iDiasAntelacion" />
-        <field name="iDuracionMaxima" />
-        <field name="iAntelacionCancel" />
+        <field name="nombre" />
+        <field name="dias_antelacion" />
+        <field name="duracion_maxima" />
+        <field name="antelacion_cancelacion" />
       </list>
     </field>
   </record>
@@ -52,7 +52,7 @@
     <field name="arch" type="xml">
       <graph string="Duracion Maxima por Politica" type="bar">
         <field name="name" type="row" />
-        <field name="iDuracionMaxima" type="measure" />
+        <field name="duracion_maxima" type="measure" />
       </graph>
     </field>
   </record>

@@ -9,9 +9,9 @@
             <field name="name" />
             <field name="fecha" />
             <field name="kw_consumidos" />
-            <field name="usuario_id" widget="many2one" />
-            <field name="conector_id" widget="many2one" />
-            <field name="linea_cargo_ids" widget="one2many" />
+            <field name="usuario_id"  />
+            <field name="conector_id"  />
+            <field name="linea_cargo_ids"  />
           </group>
         </sheet>
       </form>
@@ -26,7 +26,7 @@
         <field name="name" />
         <field name="fecha" />
         <field name="kw_consumidos" />
-        <field name="usuario_id" widget="many2one" />
+        <field name="usuario_id"  />
       </list>
     </field>
   </record>

@@ -22,7 +22,7 @@
                     </group>
                     <notebook>
                         <page string="Cargos">
-                            <field name="cargo_id">
+                            <field name="cargo_ids">
                                 <list>
                                     <field name="referencia"/>
                                     <field name="emision"/>

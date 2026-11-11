@@ -8,8 +8,8 @@
           <group>
             <field name="name" />
             <field name="potencia_kw" />
-            <field name="estacion_id" widget="many2one" />
-            <field name="sesion_ids" widget="one2many" />
+            <field name="estacion_id"  />
+            <field name="sesion_ids"  />
           </group>
         </sheet>
       </form>
@@ -23,7 +23,7 @@
       <list string="list_string">
         <field name="name" />
         <field name="potencia_kw" />
-        <field name="estacion_id" widget="many2one" />
+        <field name="estacion_id"  />
       </list>
     </field>
   </record>

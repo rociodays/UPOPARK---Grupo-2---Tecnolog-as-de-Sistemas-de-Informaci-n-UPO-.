@@ -7,12 +7,12 @@
         <sheet layout="auto">
           <group>
             <field name="name" />
-            <field name="cDescripcion" />
+            <field name="descripcion" />
           </group>
           <notebook>
             <page name="reservas_vinculadas" string="Reservas en este Estado">
               <group>
-                <field name="reserva_ids" widget="one2many" />
+                <field name="reserva_ids" />
               </group>
             </page>
           </notebook>
@@ -27,7 +27,7 @@
     <field name="arch" type="xml">
       <list string="Estados de Reserva">
         <field name="name" />
-        <field name="cDescripcion" />
+        <field name="descripcion" />
       </list>
     </field>
   </record>

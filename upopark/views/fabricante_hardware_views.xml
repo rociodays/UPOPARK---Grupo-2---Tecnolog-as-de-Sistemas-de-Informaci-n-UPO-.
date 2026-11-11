@@ -24,7 +24,7 @@
                     </group>
                     <notebook>
                         <page string="Conectores">
-                            <field name="conector_id">
+                            <field name="conector_ids">
                                 <list/>
                             </field>
                         </page>

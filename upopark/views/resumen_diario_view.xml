@@ -10,7 +10,7 @@
             <field name="min_ocup" />
             <field name="pico_ocup" />
             <field name="ratio_med" />
-            <field name="estancia_id" widget="many2one" />
+            <field name="estancia_id"  />
           </group>
         </sheet>
       </form>
@@ -26,7 +26,7 @@
         <field name="min_ocup" />
         <field name="pico_ocup" />
         <field name="ratio_med" />
-        <field name="estancia_id" widget="many2one" />
+        <field name="estancia_id"  />
       </list>
     </field>
   </record>

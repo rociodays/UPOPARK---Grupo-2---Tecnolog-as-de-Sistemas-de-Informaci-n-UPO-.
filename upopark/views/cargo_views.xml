@@ -41,7 +41,7 @@
                     </group>
                     <notebook>
                         <page string="Estancias">
-                            <field name="estancia_id">
+                            <field name="estancia_ids">
                                 <list>
                                     <field name="referencia"/>
                                     <field name="entrada"/>
@@ -51,14 +51,10 @@
                             </field>
                         </page>
                         <page string="Métodos de Pago">
-                            <field name="metodo_pago_id">
-                                <list/>
-                            </field>
+                            <field name="metodo_pago_ids"/>
                         </page>
-                        <page string="Sesiones de Carga">
-                            <field name="sesion_carga_id">
-                                <list/>
-                            </field>
+                        <page string="Sesión de Carga">
+                            <field name="sesion_carga_id"/>
                         </page>
                     </notebook>
                 </sheet>
@@ -75,8 +71,6 @@
                 <field name="contacto_id"/>
                 <field name="estado_cargo_id"/>
                 <field name="tipo_servicio_cargo_id"/>
-                <filter name="filter_pendiente" string="Pendientes"
-                        domain="[('estado_cargo_id','!=',False)]"/>
                 <group expand="0" string="Agrupar por">
                     <filter name="group_estado" string="Estado" context="{'group_by': 'estado_cargo_id'}"/>
                     <filter name="group_contacto" string="Contacto" context="{'group_by': 'contacto_id'}"/>

@@ -10,9 +10,8 @@
             <field name="inicio" />
             <field name="fin" />
             <field name="activo" />
-            <field name="bloqueo_plaza_plaza" widget="Many2one" />
-            <field name="bloqueo_plaza_motivo_bloqueo" widget="Many2one" />
-            <field name="bloqueo_plaza_incidencia" widget="Many2one" />
+            <field name="bloqueo_plaza_plaza" />
+            <field name="bloqueo_plaza_motivo_bloqueo" />
           </group>
         </sheet>
       </form>
@@ -28,9 +27,8 @@
             <field name="inicio" />
             <field name="fin" />
             <field name="activo" />
-            <field name="bloqueo_plaza_plaza" widget="Many2one" />
-            <field name="bloqueo_plaza_motivo_bloqueo" widget="Many2one" />
-            <field name="bloqueo_plaza_incidencia" widget="Many2one" />
+            <field name="bloqueo_plaza_plaza" />
+            <field name="bloqueo_plaza_motivo_bloqueo" />
       </list>
     </field>
   </record>

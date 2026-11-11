@@ -10,7 +10,7 @@
             <field name="nombre" />
             <field name="zona_horaria" />
             <field name="activo" />
-            <field name="organizacion_id" widget="many2one" />
+            <field name="organizacion_id"  />
           </group>
           <notebook>
             <page string="Franjas"><field name="franja_ids"/></page>

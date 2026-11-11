@@ -8,8 +8,8 @@
           <group>
             <field name="cod_ext" />
             <field name="ult_conex" />
-            <field name="estado_sensor_id" widget="many2one" />
-            <field name="estancia_id" widget="many2one" />
+            <field name="estado_sensor_id"  />
+            <field name="estancia_id"  />
           </group>
         </sheet>
       </form>
@@ -23,7 +23,7 @@
       <list string="list_string">
         <field name="cod_ext" />
         <field name="ult_conex" />
-        <field name="estado_sensor_id" widget="many2one" />
+        <field name="estado_sensor_id"  />
       </list>
     </field>
   </record>

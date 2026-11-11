@@ -4,9 +4,9 @@
       <field name="model">upopark.tipo_descuento</field>
       <field name="arch" type="xml">
         <list string="Tipos de Descuento">
-          <field name="scodigo"/>
-          <field name="snombre"/>
-          <field name="fporcentaje"/>
+          <field name="codigo"/>
+          <field name="nombre"/>
+          <field name="porcentaje"/>
         </list>
       </field>
     </record>
@@ -17,9 +17,9 @@
         <form string="Tipo de Descuento">
           <sheet>
             <group>
-              <field name="scodigo"/>
-              <field name="snombre"/>
-              <field name="fporcentaje"/>
+              <field name="codigo"/>
+              <field name="nombre"/>
+              <field name="porcentaje"/>
               <field name="descuento_asignado_ids"/>
             </group>
           </sheet>

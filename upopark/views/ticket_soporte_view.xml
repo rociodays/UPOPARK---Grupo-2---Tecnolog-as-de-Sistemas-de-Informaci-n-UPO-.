@@ -10,8 +10,8 @@
             <field name="asunto" />
             <field name="descripcion" />
             <field name="fecha_creacion" />
-            <field name="prioridad_id" widget="many2one" />
-            <field name="contacto_id" widget="many2one" />
+            <field name="prioridad_id"  />
+            <field name="contacto_id"  />
           </group>
           <notebook>
             <page string="Mensajes">
@@ -31,7 +31,7 @@
         <field name="referencia" />
         <field name="asunto" />
         <field name="fecha_creacion" />
-        <field name="prioridad_id" widget="many2one" />
+        <field name="prioridad_id"  />
       </list>
     </field>
   </record>

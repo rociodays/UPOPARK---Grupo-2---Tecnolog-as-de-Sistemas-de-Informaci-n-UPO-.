@@ -10,9 +10,9 @@
             <field name="codigo" />
             <field name="capacidad" />
             <field name="activo" />
-            <field name="aparcamiento_campus" widget="many2one" />
-            <field name="aparcamiento_zona" widget="many2many" />
-            <field name="aparcamiento_plaza" widget="one2many" />
+            <field name="aparcamiento_campus"  />
+            <field name="aparcamiento_zona"  />
+            <field name="aparcamiento_plaza"  />
           </group>
         </sheet>
       </form>
@@ -28,9 +28,9 @@
             <field name="codigo" />
             <field name="capacidad" />
             <field name="activo" />
-            <field name="aparcamiento_campus" widget="many2one" />
-            <field name="aparcamiento_zona" widget="many2many" />
-            <field name="aparcamiento_plaza" widget="one2many" />
+            <field name="aparcamiento_campus"  />
+            <field name="aparcamiento_zona"  />
+            <field name="aparcamiento_plaza"  />
       </list>
     </field>
   </record>

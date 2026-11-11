@@ -6,7 +6,7 @@
             <list string="Modelos de Vehículo">
                 <field name="nombre_modelo"/>
                 <field name="descripcion"/>
-                <field name="vehiculo_id"/>
+                <field name="vehiculo_ids"/>
             </list>
         </field>
     </record>
@@ -19,7 +19,7 @@
                 <sheet>
                     <group>
                         <field name="nombre_modelo"/>
-                        <field name="vehiculo_id"/>
+                        <field name="vehiculo_ids"/>
                         <field name="descripcion"/>
                     </group>
                 </sheet>
@@ -33,7 +33,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="nombre_modelo"/>
-                <field name="vehiculo_id"/>
+                <field name="vehiculo_ids"/>
             </search>
         </field>
     </record>

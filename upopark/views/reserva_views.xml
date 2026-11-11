@@ -12,26 +12,26 @@
           </div>
           <group>
             <group>
-              <field name="contacto_id" widget="many2one" />
-              <field name="vehiculo_id" widget="many2one" />
-              <field name="plaza_id" widget="many2one" />
-              <field name="politica_reserva_id" widget="many2one" />
-              <field name="estado_reserva_id" widget="many2one" />
+              <field name="contacto_id"  />
+              <field name="vehiculo_id"  />
+              <field name="plaza_id"  />
+              <field name="politica_reserva_id"  />
+              <field name="estado_reserva_id"  />
             </group>
             <group>
-              <field name="fInicio" />
-              <field name="fFin" />
+              <field name="fecha_inicio" />
+              <field name="fecha_fin" />
             </group>
           </group>
           <notebook>
             <page name="historial_cambios" string="Historial de Cambios">
               <group>
-                <field name="historial_ids" widget="one2many" />
+                <field name="historial_ids"  />
               </group>
             </page>
             <page name="registros_cancelacion" string="Registros de Cancelacion">
               <group>
-                <field name="cancelacion_ids" widget="one2many" />
+                <field name="cancelacion_ids"  />
               </group>
             </page>
           </notebook>
@@ -49,8 +49,8 @@
         <field name="contacto_id" />
         <field name="vehiculo_id" />
         <field name="plaza_id" />
-        <field name="fInicio" />
-        <field name="fFin" />
+        <field name="fecha_inicio" />
+        <field name="fecha_fin" />
         <field name="estado_reserva_id" />
       </list>
     </field>
@@ -60,7 +60,7 @@
     <field name="name">upopark.reserva.calendar</field>
     <field name="model">upopark.reserva</field>
     <field name="arch" type="xml">
-      <calendar string="Reservas" color="estado_reserva_id" date_start="fInicio" date_stop="fFin" mode="month">
+      <calendar string="Reservas" color="estado_reserva_id" date_start="fecha_inicio" date_stop="fecha_fin" mode="month">
         <field name="vehiculo_id" />
         <field name="name" />
       </calendar>

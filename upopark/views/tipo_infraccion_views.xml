@@ -4,8 +4,8 @@
       <field name="model">upopark.tipo_infraccion</field>
       <field name="arch" type="xml">
         <list string="Tipos de Infracción">
-          <field name="sgravedad"/>
-          <field name="fimporte_sugerido"/>
+          <field name="gravedad"/>
+          <field name="importe_sugerido"/>
         </list>
       </field>
     </record>
@@ -16,8 +16,8 @@
         <form string="Tipo de Infracción">
           <sheet>
             <group>
-              <field name="sgravedad"/>
-              <field name="fimporte_sugerido"/>
+              <field name="gravedad"/>
+              <field name="importe_sugerido"/>
             </group>
           </sheet>
         </form>

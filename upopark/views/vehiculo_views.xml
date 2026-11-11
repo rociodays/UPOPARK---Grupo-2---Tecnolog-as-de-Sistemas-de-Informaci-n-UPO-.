@@ -12,35 +12,35 @@
           </div>
           <group>
             <group>
-              <field name="contacto_id" widget="many2one" />
-              <field name="marca_vehiculo_id" widget="many2one" />
-              <field name="modelo_vehiculo_id" widget="many2one" />
-              <field name="tipo_vehiculo_id" widget="many2one" />
-              <field name="color_vehiculo_id" widget="many2one" />
+              <field name="contacto_id"  />
+              <field name="marca_vehiculo_id"  />
+              <field name="modelo_vehiculo_id"  />
+              <field name="tipo_vehiculo_id"  />
+              <field name="color_vehiculo_id"  />
             </group>
             <group>
-              <field name="cPaisMatricula" />
-              <field name="tipo_combustible_id" widget="many2one" />
-              <field name="etiqueta_medioambiental_id" widget="many2one" />
+              <field name="pais_matricula" />
+              <field name="tipo_combustible_id"  />
+              <field name="etiqueta_ambiental_id"  />
               <field name="conector_ids" widget="many2many_tags" />
-              <field name="iNumeroPuertas" />
-              <field name="bTieneRemolque" />
+              <field name="numero_puertas" />
+              <field name="tiene_remolque" />
             </group>
           </group>
           <notebook>
             <page name="historial_reservas" string="Historial de Reservas">
               <group>
-                <field name="reserva_ids" widget="one2many" />
+                <field name="reserva_ids"  />
               </group>
             </page>
             <page name="historial_restricciones" string="Historial de Restricciones">
               <group>
-                <field name="restriccion_ids" widget="one2many" />
+                <field name="restriccion_ids"  />
               </group>
             </page>
             <page name="historial_infracciones" string="Historial de Infracciones">
               <group>
-                <field name="infraccion_ids" widget="one2many" />
+                <field name="infraccion_ids"  />
               </group>
             </page>
           </notebook>
@@ -59,7 +59,7 @@
         <field name="marca_vehiculo_id" />
         <field name="modelo_vehiculo_id" />
         <field name="tipo_combustible_id" />
-        <field name="cPaisMatricula" />
+        <field name="pais_matricula" />
       </list>
     </field> 
   </record>

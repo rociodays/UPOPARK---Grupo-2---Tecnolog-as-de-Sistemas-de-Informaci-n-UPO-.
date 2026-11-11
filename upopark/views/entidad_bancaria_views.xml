@@ -4,9 +4,9 @@
       <field name="model">upopark.entidad_bancaria</field>
       <field name="arch" type="xml">
         <list string="Entidades Bancarias">
-          <field name="scodigo"/>
-          <field name="snombre"/>
-          <field name="sbic"/>
+          <field name="codigo"/>
+          <field name="nombre"/>
+          <field name="bic"/>
         </list>
       </field>
     </record>
@@ -17,9 +17,9 @@
         <form string="Entidad Bancaria">
           <sheet>
             <group>
-              <field name="scodigo"/>
-              <field name="snombre"/>
-              <field name="sbic"/>
+              <field name="codigo"/>
+              <field name="nombre"/>
+              <field name="bic"/>
               <field name="metodo_pago_ids"/>
             </group>
           </sheet>

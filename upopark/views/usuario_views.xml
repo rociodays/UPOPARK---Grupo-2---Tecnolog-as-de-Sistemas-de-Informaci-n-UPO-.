@@ -9,10 +9,10 @@
             <field name="name" />
             <field name="dni" />
             <field name="email" />
-            <field name="organizacion_id" widget="many2one" />
-            <field name="permiso_ids" widget="one2many" />
-            <field name="sesion_ids" widget="one2many" />
-            <field name="alegacion_ids" widget="one2many" />
+            <field name="organizacion_id"  />
+            <field name="permiso_ids"  />
+            <field name="sesion_ids"  />
+            <field name="alegacion_ids"  />
           </group>
         </sheet>
       </form>
@@ -27,7 +27,7 @@
         <field name="name" />
         <field name="dni" />
         <field name="email" />
-        <field name="organizacion_id" widget="many2one" />
+        <field name="organizacion_id"  />
       </list>
     </field>
   </record>

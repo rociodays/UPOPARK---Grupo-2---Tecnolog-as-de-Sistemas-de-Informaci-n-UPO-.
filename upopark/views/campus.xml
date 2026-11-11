@@ -11,8 +11,8 @@
             <field name="direccion" />
             <field name="latitud" />
             <field name="longitud" />
-            <field name="campus_organización" widget="many2one" />
-            <field name="campus_aparcamiento" widget="one2many" />
+            <field name="campus_organizacion"  />
+            <field name="campus_aparcamiento"  />
           </group>
         </sheet>
       </form>
@@ -29,8 +29,8 @@
             <field name="direccion" />
             <field name="latitud" />
             <field name="longitud" />
-            <field name="campus_organización" widget="many2one" />
-            <field name="campus_aparcamiento" widget="one2many" />
+            <field name="campus_organizacion"  />
+            <field name="campus_aparcamiento"  />
       </list>
     </field>
   </record>

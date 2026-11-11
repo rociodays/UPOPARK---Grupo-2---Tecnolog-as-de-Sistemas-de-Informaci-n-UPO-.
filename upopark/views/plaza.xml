@@ -3,17 +3,19 @@
     <field name="name">upopark.plaza.form</field>
     <field name="model">upopark.plaza</field>
     <field name="arch" type="xml">
-      <form string="Instructor">
-        <sheet layout="auto">
+      <form string="Plaza">
+        <sheet>
           <group>
-            <field name="codigo" />
-            <field name="longitud" />
-            <field name="anchura" />
-            <field name="plaza_bloqueo_plaza" widget="many2one" />
-            <field name="plaza_aparcamiento" widget="many2one" />
-            <field name="plaza_estadoPlaza" widget="Many2one" />
-            <field name="plaza_conector" widget="Many2one" />
-            <field name="plaza_sensorOcupacion" widget="Many2one" />
+            <field name="codigo"/>
+            <field name="longitud"/>
+            <field name="anchura"/>
+            <field name="plaza_bloqueo_plaza"/>
+            <field name="plaza_aparcamiento"/>
+            <field name="plaza_estado_plaza"/>
+            <field name="plaza_conector"/>
+            <field name="plaza_sensor_ocupacion"/>
+            <field name="plaza_estado_conservacion"/>
+            <field name="tipo_plaza_id"/>
           </group>
         </sheet>
       </form>
@@ -24,15 +26,14 @@
     <field name="name">upopark.plaza.list</field>
     <field name="model">upopark.plaza</field>
     <field name="arch" type="xml">
-      <list string="list_string">
-            <field name="codigo" />
-            <field name="longitud" />
-            <field name="anchura" />
-            <field name="plaza_bloqueo_plaza" widget="many2one" />
-            <field name="plaza_aparcamiento" widget="many2one" />
-            <field name="plaza_estadoPlaza" widget="Many2one" />
-            <field name="plaza_conector" widget="Many2one" />
-            <field name="plaza_sensorOcupacion" widget="Many2one" />
+      <list string="Plazas">
+        <field name="codigo"/>
+        <field name="longitud"/>
+        <field name="anchura"/>
+        <field name="plaza_aparcamiento"/>
+        <field name="plaza_estado_plaza"/>
+        <field name="plaza_estado_conservacion"/>
+        <field name="tipo_plaza_id"/>
       </list>
     </field>
   </record>
@@ -41,9 +42,5 @@
     <field name="name">Plazas</field>
     <field name="res_model">upopark.plaza</field>
     <field name="view_mode">list,form</field>
-    <field name="help" type="html">
-      <p class="o_view_nocontent_smiling_face">Crea la primera plaza</p>
-    </field>
   </record>
-
 </odoo>
