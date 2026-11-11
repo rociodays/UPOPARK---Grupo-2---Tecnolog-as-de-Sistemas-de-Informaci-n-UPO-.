@@ -12,9 +12,10 @@ class Contacto(models.Model):
     tipo_doc_id = fields.Many2one('upopark.tipo_doc', string='Tipo de Documento')
     usuario_id = fields.Many2one('upopark.usuario', string='Usuario del Sistema')
     organizacion_id = fields.Many2one('upopark.organizacion', string='Organización')
-
     cargo_ids = fields.One2many('upopark.cargo', 'contacto_id', string='Cargos')
     sancion_ids = fields.One2many('upopark.sancion', 'contacto_id', string='Sanciones')
     incidencia_ids = fields.One2many('upopark.mantenimiento.incidencia', 'contacto_id', string='Incidencias')
     ticket_ids = fields.One2many('upopark.ticket_soporte', 'contacto_id', string='Tickets')
     mensaje_ids = fields.One2many('upopark.mensaje_ticket', 'contacto_id', string='Mensajes')
+    vehiculo_ids = fields.One2many('upopark.vehiculo', 'contacto_id', string='Vehículos')
+    reserva_ids = fields.One2many('upopark.reserva', 'contacto_id', string='Reservas')
