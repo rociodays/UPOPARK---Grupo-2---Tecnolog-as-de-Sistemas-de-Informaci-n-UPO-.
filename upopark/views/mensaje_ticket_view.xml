@@ -10,6 +10,7 @@
             <field name="texto" />
             <field name="comentario" />
             <field name="ticket_id" widget="many2one" />
+            <field name="contacto_id" widget="many2one" />
           </group>
         </sheet>
       </form>

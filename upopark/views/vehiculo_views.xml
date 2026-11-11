@@ -1,0 +1,100 @@
+<odoo>
+  <record id="upopark_vehiculo_form_view" model="ir.ui.view">
+    <field name="name">upopark.vehiculo.form</field>
+    <field name="model">upopark.vehiculo</field>
+    <field name="arch" type="xml">
+      <form string="Vehiculo">
+        <sheet layout="auto">
+          <div class="oe_title">
+            <h1>
+              <field name="name" placeholder="Matricula" />
+            </h1>
+          </div>
+          <group>
+            <group>
+              <field name="contacto_id" widget="many2one" />
+              <field name="marca_vehiculo_id" widget="many2one" />
+              <field name="modelo_vehiculo_id" widget="many2one" />
+              <field name="tipo_vehiculo_id" widget="many2one" />
+              <field name="color_vehiculo_id" widget="many2one" />
+            </group>
+            <group>
+              <field name="cPaisMatricula" />
+              <field name="tipo_combustible_id" widget="many2one" />
+              <field name="etiqueta_medioambiental_id" widget="many2one" />
+              <field name="conector_ids" widget="many2many_tags" />
+              <field name="iNumeroPuertas" />
+              <field name="bTieneRemolque" />
+            </group>
+          </group>
+          <notebook>
+            <page name="historial_reservas" string="Historial de Reservas">
+              <group>
+                <field name="reserva_ids" widget="one2many" />
+              </group>
+            </page>
+            <page name="historial_restricciones" string="Historial de Restricciones">
+              <group>
+                <field name="restriccion_ids" widget="one2many" />
+              </group>
+            </page>
+            <page name="historial_infracciones" string="Historial de Infracciones">
+              <group>
+                <field name="infraccion_ids" widget="one2many" />
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_vehiculo_list_view" model="ir.ui.view">
+    <field name="name">upopark.vehiculo.list</field>
+    <field name="model">upopark.vehiculo</field>
+    <field name="arch" type="xml">
+      <list string="Vehiculos">
+        <field name="name" />
+        <field name="contacto_id" />
+        <field name="marca_vehiculo_id" />
+        <field name="modelo_vehiculo_id" />
+        <field name="tipo_combustible_id" />
+        <field name="cPaisMatricula" />
+      </list>
+    </field> 
+  </record>
+
+  <record id="upopark_vehiculo_graph_view" model="ir.ui.view">
+    <field name="name">upopark.vehiculo.graph</field>
+    <field name="model">upopark.vehiculo</field>
+    <field name="arch" type="xml">
+      <graph string="Vehiculos por Combustible" type="bar">
+        <field name="tipo_combustible_id" type="row" />
+      </graph>
+    </field>
+  </record>
+
+  <record id="upopark_vehiculo_search_view" model="ir.ui.view">
+    <field name="name">upopark.vehiculo.search</field>
+    <field name="model">upopark.vehiculo</field>
+    <field name="arch" type="xml">
+      <search>
+        <filter name="vehiculos_reservas_activas" string="Reservas Activas" domain="[('reserva_ids.estado_reserva_id.name', 'ilike', 'activa')]" />
+        <separator orientation="vertical" />
+        <group expand="0" string="Agrupar por...">
+          <filter name="group_by_combustible" string="Combustible" context="{'group_by':'tipo_combustible_id'}" />
+        </group>
+      </search>
+    </field>
+  </record>
+
+  <record id="vehiculo_list_action" model="ir.actions.act_window">
+    <field name="name">Vehiculos</field>
+    <field name="res_model">upopark.vehiculo</field>
+    <field name="search_view_id" ref="upopark_vehiculo_search_view"/>
+    <field name="view_mode">list,form,graph</field>
+    <field name="help" type="html">
+      <p>Crea el primer vehiculo</p>
+    </field>
+  </record>
+</odoo>

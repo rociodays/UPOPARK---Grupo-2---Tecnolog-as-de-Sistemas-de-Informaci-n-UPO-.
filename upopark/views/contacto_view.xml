@@ -12,9 +12,40 @@
             <field name="correo" />
             <field name="tipo_doc_id" widget="many2one" />
             <field name="usuario_id" widget="many2one" />
+            <field name="organizacion_id" widget="many2one" />
           </group>
+          <notebook>
+            <page string="Vehículos"><field name="vehiculo_ids"/></page>
+            <page string="Reservas"><field name="reserva_ids"/></page>
+            <page string="Cargos"><field name="cargo_ids"/></page>
+            <page string="Tickets"><field name="ticket_ids"/></page>
+            <page string="Sanciones"><field name="sancion_ids"/></page>
+          </notebook>
         </sheet>
       </form>
+    </field>
+  </record>
+
+  <record id="upopark_contacto_kanban_view" model="ir.ui.view">
+    <field name="name">upopark.contacto.kanban</field>
+    <field name="model">upopark.contacto</field>
+    <field name="arch" type="xml">
+      <kanban>
+        <field name="nombre" />
+        <field name="telefono" />
+        <field name="organizacion_id" />
+        <templates>
+          <t t-name="kanban-box">
+            <div class="oe_kanban_global_click">
+              <div class="o_kanban_record_title">
+                <strong><field name="nombre" /></strong>
+              </div>
+              <div><field name="telefono" /></div>
+              <div><field name="organizacion_id" /></div>
+            </div>
+          </t>
+        </templates>
+      </kanban>
     </field>
   </record>
 
@@ -26,8 +57,7 @@
         <field name="nombre" />
         <field name="num_doc" />
         <field name="telefono" />
-        <field name="correo" />
-        <field name="tipo_doc_id" widget="many2one" />
+        <field name="organizacion_id" widget="many2one" />
       </list>
     </field>
   </record>
@@ -35,7 +65,7 @@
   <record id="contacto_list_action" model="ir.actions.act_window">
     <field name="name">Contactos</field>
     <field name="res_model">upopark.contacto</field>
-    <field name="view_mode">list,form</field>
+    <field name="view_mode">list,form,kanban</field>
     <field name="help" type="html">
       <p class="o_view_nocontent_smiling_face">Create the first contact</p>
     </field>

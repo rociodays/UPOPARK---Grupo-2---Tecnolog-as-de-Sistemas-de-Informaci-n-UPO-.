@@ -1,0 +1,79 @@
+<odoo>
+  <record id="upopark_politica_reserva_form_view" model="ir.ui.view">
+    <field name="name">upopark.politica_reserva.form</field>
+    <field name="model">upopark.politica_reserva</field>
+    <field name="arch" type="xml">
+      <form string="Politica de Reserva">
+        <sheet layout="auto">
+          <div class="oe_title">
+            <h1>
+              <field name="name" placeholder="Codigo de Politica (ej. POL-001)" />
+            </h1>
+          </div>
+          <group>
+            <group>
+              <field name="cNombre" />
+              <field name="iDiasAntelacion" />
+            </group>
+            <group>
+              <field name="iDuracionMaxima" />
+              <field name="iAntelacionCancel" />
+            </group>
+          </group>
+          <notebook>
+            <page name="reservas_vinculadas" string="Reservas Vinculadas">
+              <group>
+                <field name="reserva_ids" widget="one2many" />
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="upopark_politica_reserva_list_view" model="ir.ui.view">
+    <field name="name">upopark.politica_reserva.list</field>
+    <field name="model">upopark.politica_reserva</field>
+    <field name="arch" type="xml">
+      <list string="Politicas de Reserva">
+        <field name="name" />
+        <field name="cNombre" />
+        <field name="iDiasAntelacion" />
+        <field name="iDuracionMaxima" />
+        <field name="iAntelacionCancel" />
+      </list>
+    </field>
+  </record>
+
+  <record id="upopark_politica_reserva_graph_view" model="ir.ui.view">
+    <field name="name">upopark.politica_reserva.graph</field>
+    <field name="model">upopark.politica_reserva</field>
+    <field name="arch" type="xml">
+      <graph string="Duracion Maxima por Politica" type="bar">
+        <field name="name" type="row" />
+        <field name="iDuracionMaxima" type="measure" />
+      </graph>
+    </field>
+  </record>
+
+  <record id="upopark_politica_reserva_search_view" model="ir.ui.view">
+    <field name="name">upopark.politica_reserva.search</field>
+    <field name="model">upopark.politica_reserva</field>
+    <field name="arch" type="xml">
+      <search>
+        <filter name="politicas_sin_uso" string="Sin reservas asociadas" domain="[('reserva_ids', '=', False)]" />
+      </search>
+    </field>
+  </record>
+
+  <record id="politica_reserva_list_action" model="ir.actions.act_window">
+    <field name="name">Politicas de Reserva</field>
+    <field name="res_model">upopark.politica_reserva</field>
+    <field name="search_view_id" ref="upopark_politica_reserva_search_view"/>
+    <field name="view_mode">list,form,graph</field>
+    <field name="help" type="html">
+      <p>Crea la primera politica de reserva en el sistema</p>
+    </field>
+  </record>
+</odoo>
