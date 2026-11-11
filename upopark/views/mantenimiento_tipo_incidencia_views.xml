@@ -1,7 +1,7 @@
 <odoo>
     <record id="view_mantenimiento_tipo_incidencia_list" model="ir.ui.view">
-        <field name="name">upopark.mantenimiento.tipo_incidencia.list</field>
-        <field name="model">upopark.mantenimiento.tipo_incidencia</field>
+        <field name="name">upopark.tipo_incidencia.list</field>
+        <field name="model">upopark.tipo_incidencia</field>
         <field name="arch" type="xml">
             <list>
                 <field name="strNombre"/>
@@ -11,8 +11,8 @@
     </record>
 
     <record id="view_mantenimiento_tipo_incidencia_form" model="ir.ui.view">
-        <field name="name">upopark.mantenimiento.tipo_incidencia.form</field>
-        <field name="model">upopark.mantenimiento.tipo_incidencia</field>
+        <field name="name">upopark.tipo_incidencia.form</field>
+        <field name="model">upopark.tipo_incidencia</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -27,7 +27,7 @@
 
     <record id="action_mantenimiento_tipo_incidencia" model="ir.actions.act_window">
         <field name="name">Tipos de incidencia</field>
-        <field name="res_model">upopark.mantenimiento.tipo_incidencia</field>
+        <field name="res_model">upopark.tipo_incidencia</field>
         <field name="view_mode">list,form</field>
     </record>
 </odoo>
