@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 class Aparcamiento(models.Model):
     
-    _name = 'upoPark.aparcamiento'
+    _name = 'upopark.aparcamiento'
     _description = 'Uno de los aparcaminento de la Universidad'
     
     nombre = fields.Char(string="Nombre Aparcamiento", size=60, required=True, help="El nombre del aparcamiento")
@@ -15,6 +15,6 @@ class Aparcamiento(models.Model):
             default=True
         )
         
-    aparcamiento_campus = fields.Many2one('upoPark.campus', 'Aparcamiento gestionado en Campus')
-    aparcamiento_zona = fields.Many2one('upoPark.zona','Aparcamiento pertenece a Zona')
-    aparcamiento_plaza = fields.One2many('upoPark.plaza', 'Aparcamiento posee Plazas')
+    aparcamiento_campus = fields.Many2one('upopark.campus', 'Aparcamiento gestionado en Campus')
+    aparcamiento_zona = fields.Many2one('upopark.zona','Aparcamiento pertenece a Zona')
+    aparcamiento_plaza = fields.One2many('upopark.plaza', 'Aparcamiento posee Plazas')

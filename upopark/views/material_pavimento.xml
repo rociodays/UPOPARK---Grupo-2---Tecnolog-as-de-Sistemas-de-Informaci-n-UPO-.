@@ -1,7 +1,7 @@
 <odoo>
-  <record id="upoPark_material_pavimento_form_view" model="ir.ui.view">
-    <field name="name">upoPark.material_pavimento.form</field>
-    <field name="model">upoPark.material_pavimento</field>
+  <record id="upopark_material_pavimento_form_view" model="ir.ui.view">
+    <field name="name">upopark.material_pavimento.form</field>
+    <field name="model">upopark.material_pavimento</field>
     <field name="arch" type="xml">
       <form string="Instructor">
         <sheet layout="auto">
@@ -13,9 +13,9 @@
     </field>
   </record>
 
-  <record id="upoPark_material_pavimento_list_view" model="ir.ui.view">
-    <field name="name">upoPark.material_pavimento.list</field>
-    <field name="model">upoPark.material_pavimento</field>
+  <record id="upopark_material_pavimento_list_view" model="ir.ui.view">
+    <field name="name">upopark.material_pavimento.list</field>
+    <field name="model">upopark.material_pavimento</field>
     <field name="arch" type="xml">
       <list string="list_string">
             <field name="material_pavimento_aparcamiento" widget="one2many" />

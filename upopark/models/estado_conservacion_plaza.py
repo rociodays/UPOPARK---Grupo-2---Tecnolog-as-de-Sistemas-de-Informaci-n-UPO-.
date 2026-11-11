@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 class EstadoConservacionPlaza(models.Model):
     
-    _name = 'upoPark.estado_conservacion_plaza'
+    _name = 'upopark.estado_conservacion_plaza'
     _description = 'Estado de conservacion de una plaza'
 
     estado = fields.Char('Estado', size=9, required=True)
@@ -13,6 +13,6 @@ class EstadoConservacionPlaza(models.Model):
             default=True
         )
         
-    estadoPlaza_plaza = fields.One2many('upoPark.plaza', 'EstadoPlaza muestra condicion de Plaza')
-    estadoPlaza_indisponibilidad = fields.One2one('upoPark.indisponibilidad', 'EstadoPlaza puede generar Indisponibilidad')
-    estadoPlaza_incidencia = fields.One2one('upoPark.incidencia', 'EstadoPlaza puede generar Incidencia')
+    estadoPlaza_plaza = fields.One2many('upopark.plaza', 'EstadoPlaza muestra condicion de Plaza')
+    estadoPlaza_indisponibilidad = fields.One2one('upopark.indisponibilidad', 'EstadoPlaza puede generar Indisponibilidad')
+    estadoPlaza_incidencia = fields.One2one('upopark.incidencia', 'EstadoPlaza puede generar Incidencia')

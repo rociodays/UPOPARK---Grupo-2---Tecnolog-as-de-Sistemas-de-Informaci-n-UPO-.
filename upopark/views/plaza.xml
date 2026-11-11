@@ -1,7 +1,7 @@
 <odoo>
-  <record id="upoPark_plaza_form_view" model="ir.ui.view">
-    <field name="name">upoPark.plaza.form</field>
-    <field name="model">upoPark.plaza</field>
+  <record id="upopark_plaza_form_view" model="ir.ui.view">
+    <field name="name">upopark.plaza.form</field>
+    <field name="model">upopark.plaza</field>
     <field name="arch" type="xml">
       <form string="Instructor">
         <sheet layout="auto">
@@ -20,9 +20,9 @@
     </field>
   </record>
 
-  <record id="upoPark_plaza_list_view" model="ir.ui.view">
-    <field name="name">upoPark.plaza.list</field>
-    <field name="model">upoPark.plaza</field>
+  <record id="upopark_plaza_list_view" model="ir.ui.view">
+    <field name="name">upopark.plaza.list</field>
+    <field name="model">upopark.plaza</field>
     <field name="arch" type="xml">
       <list string="list_string">
             <field name="codigo" />

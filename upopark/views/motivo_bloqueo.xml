@@ -1,7 +1,7 @@
 <odoo>
-  <record id="upoPark_motivo_bloqueo_form_view" model="ir.ui.view">
-    <field name="name">upoPark.motivo_bloqueo.form</field>
-    <field name="model">upoPark.motivo_bloqueo</field>
+  <record id="upopark_motivo_bloqueo_form_view" model="ir.ui.view">
+    <field name="name">upopark.motivo_bloqueo.form</field>
+    <field name="model">upopark.motivo_bloqueo</field>
     <field name="arch" type="xml">
       <form string="Instructor">
         <sheet layout="auto">
@@ -14,9 +14,9 @@
     </field>
   </record>
 
-  <record id="upoPark_motivo_bloqueo_list_view" model="ir.ui.view">
-    <field name="name">upoPark.motivo_bloqueo.list</field>
-    <field name="model">upoPark.motivo_bloqueo</field>
+  <record id="upopark_motivo_bloqueo_list_view" model="ir.ui.view">
+    <field name="name">upopark.motivo_bloqueo.list</field>
+    <field name="model">upopark.motivo_bloqueo</field>
     <field name="arch" type="xml">
       <list string="list_string">
             <field name="motivo" />

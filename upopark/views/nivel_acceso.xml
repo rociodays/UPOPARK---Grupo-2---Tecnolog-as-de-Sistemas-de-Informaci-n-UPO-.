@@ -1,7 +1,7 @@
 <odoo>
-  <record id="upoPark_nivel_acceso_form_view" model="ir.ui.view">
-    <field name="name">upoPark.nivel_acceso.form</field>
-    <field name="model">upoPark.nivel_acceso</field>
+  <record id="upopark_nivel_acceso_form_view" model="ir.ui.view">
+    <field name="name">upopark.nivel_acceso.form</field>
+    <field name="model">upopark.nivel_acceso</field>
     <field name="arch" type="xml">
       <form string="Instructor">
         <sheet layout="auto">
@@ -15,9 +15,9 @@
     </field>
   </record>
 
-  <record id="upoPark_nivel_acceso_list_view" model="ir.ui.view">
-    <field name="name">upoPark.nivel_acceso.list</field>
-    <field name="model">upoPark.nivel_acceso</field>
+  <record id="upopark_nivel_acceso_list_view" model="ir.ui.view">
+    <field name="name">upopark.nivel_acceso.list</field>
+    <field name="model">upopark.nivel_acceso</field>
     <field name="arch" type="xml">
       <list string="list_string">
             <field name="nivel" />

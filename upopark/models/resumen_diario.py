@@ -9,4 +9,4 @@ class ResumenDiario(models.Model):
     pico_ocup = fields.Integer(string='Pico de Ocupación')
     ratio_med = fields.Float(string='Ratio Medio')
     
-    estancia_id = fields.Many2one('upoPark.estancia', string='Estancia')
+    estancia_id = fields.Many2one('upopark.estancia', string='Estancia')
