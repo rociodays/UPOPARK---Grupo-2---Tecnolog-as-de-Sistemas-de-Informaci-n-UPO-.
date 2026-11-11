@@ -42,9 +42,20 @@
     </field>
   </record>
 
+  <record id="upopark_estado_reserva_search_view" model="ir.ui.view">
+    <field name="name">upopark.estado_reserva.search</field>
+    <field name="model">upopark.estado_reserva</field>
+    <field name="arch" type="xml">
+      <search>
+        <filter name="estados_sin_uso" string="Sin reservas asociadas" domain="[('reserva_ids', '=', False)]" />
+      </search>
+    </field>
+  </record>
+
   <record id="estado_reserva_list_action" model="ir.actions.act_window">
     <field name="name">Estados de Reserva</field>
     <field name="res_model">upopark.estado_reserva</field>
+    <field name="search_view_id" ref="upopark_estado_reserva_search_view"/>
     <field name="view_mode">list,form,graph</field>
     <field name="help" type="html">
       <p>Crea el primer estado de reserva en el sistema</p>
