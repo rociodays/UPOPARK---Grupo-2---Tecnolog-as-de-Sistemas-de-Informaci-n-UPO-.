@@ -8,19 +8,19 @@ class Vehiculo(models.Model):
     _description = 'Vehiculo'
 
     #atributos simples
-    name = fields.Char(string="Matricula", required=True, help="Dame la matrícula del vehiculo.")
-    cPaisMatricula = fields.Char(string="Pais Matricula", required=True,help="Dame el pais de la matrícula del vehiculo.")
-    iNumeroPuertas = fields.Integer(string="Numero de Puertas", help="Número de puertas del vehículo.")
-    bTieneRemolque = fields.Boolean(string="Tiene Remolque", default=False, help="Indica si el vehículo tiene remolque.")
+    name = fields.Char(string="Matricula", required=True, help="Dame la matricula del vehiculo.")
+    cPaisMatricula = fields.Char(string="Pais Matricula", required=True,help="Dame el pais de la matricula del vehiculo.")
+    iNumeroPuertas = fields.Integer(string="Numero de Puertas", help="Número de puertas del vehiculo.")
+    bTieneRemolque = fields.Boolean(string="Tiene Remolque", help="Indica si el vehiculo tiene remolque.")
 
     #atributos complejos
     color_vehiculo_id = fields.Many2one('upopark.color_vehiculo',string='Color', help="Dame el color del vehiculo.")
     tipo_vehiculo_id = fields.Many2one('upopark.tipo_vehiculo',string='Tipo de Vehículo',required=True, help="Dame el tipo de vehiculo.")
-    modelo_vehiculo_id = fields.Many2one('upopark.modelo_vehiculo', string='Modelo', required=True, help='Dame el modelo del vehiculo.')
+    modelo_vehiculo_id = fields.Many2one('upopark.modelo_vehiculo', string='Modelo', help='Dame el modelo del vehiculo.')
     etiqueta_medioambiental_id = fields.Many2one('upopark.etiqueta_medioambiental', string='Etiqueta Medioambiental', help='Dame la etiqueta medioambiental del vehiculo.')
     tipo_combustible_id = fields.Many2one('upopark.tipo_combustible', string='Tipo de Combustible', required=True, help='Dame el tipo de combustible.')
     contacto_id = fields.Many2one('upopark.contacto', string='Contacto', required=True, help='Dame el contacto propietario del vehiculo.')
-    marca_vehiculo_id = fields.Many2one('upopark.marca_vehiculo', string='Marca', required=True, help='Dame la marca del vehiculo.')
+    marca_vehiculo_id = fields.Many2one('upopark.marca_vehiculo', string='Marca', help='Dame la marca del vehiculo.')
 
     conector_ids = fields.Many2many('upopark.conector', string='Conectores Compatibles', help='Dame los conectores compatibles con el vehiculo.')
 
